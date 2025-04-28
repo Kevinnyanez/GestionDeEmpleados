@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WindowsFormsApp1
 {
     public partial class Form2: Form
@@ -50,6 +51,13 @@ namespace WindowsFormsApp1
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormRegistroEmpleados formRegistroEmpleados = new FormRegistroEmpleados();
+            formRegistroEmpleados.Show();
+            this.Hide();
         }
     }
 }

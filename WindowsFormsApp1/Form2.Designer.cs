@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewEmpleados = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnRegistrarEmpleado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(814, 557);
+            this.btnSalir.Location = new System.Drawing.Point(787, 557);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 2;
@@ -64,11 +65,22 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnRegistrarEmpleado
+            // 
+            this.btnRegistrarEmpleado.Location = new System.Drawing.Point(706, 557);
+            this.btnRegistrarEmpleado.Name = "btnRegistrarEmpleado";
+            this.btnRegistrarEmpleado.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistrarEmpleado.TabIndex = 3;
+            this.btnRegistrarEmpleado.Text = "Registrar";
+            this.btnRegistrarEmpleado.UseVisualStyleBackColor = true;
+            this.btnRegistrarEmpleado.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1529, 622);
+            this.Controls.Add(this.btnRegistrarEmpleado);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dataGridViewEmpleados);
             this.Controls.Add(this.label1);
@@ -87,5 +99,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewEmpleados;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnRegistrarEmpleado;
     }
 }
