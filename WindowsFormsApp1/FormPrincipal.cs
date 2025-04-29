@@ -98,5 +98,9 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void lblBuscarPorNombre_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

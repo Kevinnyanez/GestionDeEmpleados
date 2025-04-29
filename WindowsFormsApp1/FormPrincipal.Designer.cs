@@ -41,6 +41,7 @@ namespace WindowsFormsApp1
             this.btnRegistrarEmpleado = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.lblBuscarPorNombre = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).BeginInit();
             this.panelPrincipal.SuspendLayout();
             this.flowLayoutPanelSalir.SuspendLayout();
@@ -81,6 +82,7 @@ namespace WindowsFormsApp1
             // panelPrincipal
             // 
             this.panelPrincipal.BackColor = System.Drawing.Color.LightGray;
+            this.panelPrincipal.Controls.Add(this.lblBuscarPorNombre);
             this.panelPrincipal.Controls.Add(this.btnBuscar);
             this.panelPrincipal.Controls.Add(this.textBox1);
             this.panelPrincipal.Controls.Add(this.btnEliminar);
@@ -154,12 +156,23 @@ namespace WindowsFormsApp1
             // 
             this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(3, 282);
+            this.btnBuscar.Location = new System.Drawing.Point(12, 351);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(191, 35);
+            this.btnBuscar.Size = new System.Drawing.Size(168, 35);
             this.btnBuscar.TabIndex = 6;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // lblBuscarPorNombre
+            // 
+            this.lblBuscarPorNombre.AutoSize = true;
+            this.lblBuscarPorNombre.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscarPorNombre.Location = new System.Drawing.Point(31, 293);
+            this.lblBuscarPorNombre.Name = "lblBuscarPorNombre";
+            this.lblBuscarPorNombre.Size = new System.Drawing.Size(125, 17);
+            this.lblBuscarPorNombre.TabIndex = 7;
+            this.lblBuscarPorNombre.Text = "Buscar por nombre";
+            this.lblBuscarPorNombre.Click += new System.EventHandler(this.lblBuscarPorNombre_Click);
             // 
             // FormPrincipal
             // 
@@ -196,5 +209,6 @@ namespace WindowsFormsApp1
         public System.Windows.Forms.Button btnEliminar;
         public System.Windows.Forms.Button btnEditar;
         public System.Windows.Forms.Button btnRegistrarEmpleado;
+        private System.Windows.Forms.Label lblBuscarPorNombre;
     }
 }
