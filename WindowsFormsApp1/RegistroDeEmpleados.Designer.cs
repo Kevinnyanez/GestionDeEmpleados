@@ -46,9 +46,9 @@
             this.comboBoxDiasPersonales = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblDatosPersonales = new System.Windows.Forms.Label();
+            this.btnRegistrarEmpleado = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.btnRegistrarEmpleado = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -266,6 +266,16 @@
             this.lblDatosPersonales.TabIndex = 37;
             this.lblDatosPersonales.Text = "DATOS PERSONALES";
             // 
+            // btnRegistrarEmpleado
+            // 
+            this.btnRegistrarEmpleado.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarEmpleado.Location = new System.Drawing.Point(3, 357);
+            this.btnRegistrarEmpleado.Name = "btnRegistrarEmpleado";
+            this.btnRegistrarEmpleado.Size = new System.Drawing.Size(120, 35);
+            this.btnRegistrarEmpleado.TabIndex = 34;
+            this.btnRegistrarEmpleado.Text = "Registrar Empleado";
+            this.btnRegistrarEmpleado.UseVisualStyleBackColor = true;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -287,16 +297,6 @@
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // btnRegistrarEmpleado
-            // 
-            this.btnRegistrarEmpleado.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarEmpleado.Location = new System.Drawing.Point(3, 357);
-            this.btnRegistrarEmpleado.Name = "btnRegistrarEmpleado";
-            this.btnRegistrarEmpleado.Size = new System.Drawing.Size(120, 35);
-            this.btnRegistrarEmpleado.TabIndex = 34;
-            this.btnRegistrarEmpleado.Text = "Registrar Empleado";
-            this.btnRegistrarEmpleado.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 

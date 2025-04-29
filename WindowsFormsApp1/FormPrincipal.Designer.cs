@@ -42,9 +42,13 @@ namespace WindowsFormsApp1
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblBuscarPorNombre = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).BeginInit();
             this.panelPrincipal.SuspendLayout();
             this.flowLayoutPanelSalir.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -82,12 +86,8 @@ namespace WindowsFormsApp1
             // panelPrincipal
             // 
             this.panelPrincipal.BackColor = System.Drawing.Color.LightGray;
-            this.panelPrincipal.Controls.Add(this.lblBuscarPorNombre);
-            this.panelPrincipal.Controls.Add(this.btnBuscar);
-            this.panelPrincipal.Controls.Add(this.textBox1);
-            this.panelPrincipal.Controls.Add(this.btnEliminar);
-            this.panelPrincipal.Controls.Add(this.btnEditar);
-            this.panelPrincipal.Controls.Add(this.btnRegistrarEmpleado);
+            this.panelPrincipal.Controls.Add(this.flowLayoutPanel2);
+            this.panelPrincipal.Controls.Add(this.flowLayoutPanel1);
             this.panelPrincipal.Controls.Add(this.flowLayoutPanelSalir);
             this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelPrincipal.Location = new System.Drawing.Point(0, 0);
@@ -116,7 +116,7 @@ namespace WindowsFormsApp1
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(3, 94);
+            this.btnEliminar.Location = new System.Drawing.Point(3, 85);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(191, 35);
             this.btnEliminar.TabIndex = 5;
@@ -127,7 +127,7 @@ namespace WindowsFormsApp1
             // 
             this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(3, 53);
+            this.btnEditar.Location = new System.Drawing.Point(3, 44);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(191, 35);
             this.btnEditar.TabIndex = 4;
@@ -137,7 +137,7 @@ namespace WindowsFormsApp1
             // btnRegistrarEmpleado
             // 
             this.btnRegistrarEmpleado.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarEmpleado.Location = new System.Drawing.Point(3, 12);
+            this.btnRegistrarEmpleado.Location = new System.Drawing.Point(3, 3);
             this.btnRegistrarEmpleado.Name = "btnRegistrarEmpleado";
             this.btnRegistrarEmpleado.Size = new System.Drawing.Size(191, 35);
             this.btnRegistrarEmpleado.TabIndex = 3;
@@ -147,7 +147,7 @@ namespace WindowsFormsApp1
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 323);
+            this.textBox1.Location = new System.Drawing.Point(3, 20);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(168, 22);
             this.textBox1.TabIndex = 0;
@@ -156,7 +156,7 @@ namespace WindowsFormsApp1
             // 
             this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(12, 351);
+            this.btnBuscar.Location = new System.Drawing.Point(3, 48);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(168, 35);
             this.btnBuscar.TabIndex = 6;
@@ -167,12 +167,32 @@ namespace WindowsFormsApp1
             // 
             this.lblBuscarPorNombre.AutoSize = true;
             this.lblBuscarPorNombre.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscarPorNombre.Location = new System.Drawing.Point(31, 293);
+            this.lblBuscarPorNombre.Location = new System.Drawing.Point(3, 0);
             this.lblBuscarPorNombre.Name = "lblBuscarPorNombre";
             this.lblBuscarPorNombre.Size = new System.Drawing.Size(125, 17);
             this.lblBuscarPorNombre.TabIndex = 7;
             this.lblBuscarPorNombre.Text = "Buscar por nombre";
             this.lblBuscarPorNombre.Click += new System.EventHandler(this.lblBuscarPorNombre_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btnRegistrarEmpleado);
+            this.flowLayoutPanel1.Controls.Add(this.btnEditar);
+            this.flowLayoutPanel1.Controls.Add(this.btnEliminar);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 132);
+            this.flowLayoutPanel1.TabIndex = 8;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.lblBuscarPorNombre);
+            this.flowLayoutPanel2.Controls.Add(this.textBox1);
+            this.flowLayoutPanel2.Controls.Add(this.btnBuscar);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 185);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(182, 100);
+            this.flowLayoutPanel2.TabIndex = 9;
             // 
             // FormPrincipal
             // 
@@ -189,8 +209,10 @@ namespace WindowsFormsApp1
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).EndInit();
             this.panelPrincipal.ResumeLayout(false);
-            this.panelPrincipal.PerformLayout();
             this.flowLayoutPanelSalir.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,5 +232,7 @@ namespace WindowsFormsApp1
         public System.Windows.Forms.Button btnEditar;
         public System.Windows.Forms.Button btnRegistrarEmpleado;
         private System.Windows.Forms.Label lblBuscarPorNombre;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
