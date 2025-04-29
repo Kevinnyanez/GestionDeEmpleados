@@ -8,13 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WindowsFormsApp1
 {
-    public partial class FormRegistroEmpleados : Form
+    public partial class RegistroDeEmpleados : UserControl
     {
-        public FormRegistroEmpleados()
+        
+        private Panel panelPrincipal;
+        private DataGridView dataGridViewEmpleados;
+        private Button btnSalir;
+
+
+        public RegistroDeEmpleados()
         {
             InitializeComponent();
+
+           
 
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(txtboxDni, "Ingrese su DNI");
@@ -28,21 +37,9 @@ namespace WindowsFormsApp1
             toolTip.SetToolTip(btnRegistrarEmpleado, "Registrar empleado");
         }
 
-
-
-        private void FormRegistroEmpleados_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnRegistrarEmpleado_Click(object sender, EventArgs e)
         {
-           
+
 
             string Nombre = txtboxNombre.Text;
             string Celular = txtboxCelular.Text;
@@ -50,18 +47,25 @@ namespace WindowsFormsApp1
             String DNI = txtboxDni.Text;
             DateTime Nacimiento = DateTime.Parse(txtboxNacimiento.Text);
             int DiasPersonales = int.Parse(comboBoxVacaciones.Text);
-            int VacacionesAsignadas =  int.Parse(comboBoxVacaciones.Text);
+            int VacacionesAsignadas = int.Parse(comboBoxVacaciones.Text);
 
-            
+
             txtboxNombre.Focus();
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
-            form2.Show();
-            this.Hide();
+            FormPrincipal formularioPrincipal = (FormPrincipal)this.ParentForm;
+
+            formularioPrincipal.panelContenido.Controls.Remove(this);
+            formularioPrincipal.panelPrincipal.Visible = true;
+            formularioPrincipal.dataGridViewEmpleados.Visible = true;
+            formularioPrincipal.panelContenido.Visible = false;
+            formularioPrincipal.RestaurarControles();
+
+
+
         }
     }
 }

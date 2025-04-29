@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1: Form
+    public partial class FormLogin: Form
     {
-        public Form1()
+        public FormLogin()
         {
             InitializeComponent();
         }
@@ -48,7 +48,7 @@ namespace WindowsFormsApp1
                     if (count > 0)
                     {
                         MessageBox.Show("Inicio de sesión exitoso.");
-                        Form2 principal = new Form2();
+                        FormPrincipal principal = new FormPrincipal();
                         principal.Show();
                         this.Hide();
                     }
