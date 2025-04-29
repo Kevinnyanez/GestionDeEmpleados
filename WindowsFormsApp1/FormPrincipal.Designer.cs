@@ -33,16 +33,16 @@ namespace WindowsFormsApp1
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewEmpleados = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnRegistrarEmpleado = new System.Windows.Forms.Button();
             this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.panelContenido = new System.Windows.Forms.Panel();
-            this.flowLayoutPanelMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanelSalir = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.panelContenido = new System.Windows.Forms.Panel();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnRegistrarEmpleado = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).BeginInit();
             this.panelPrincipal.SuspendLayout();
-            this.flowLayoutPanelMenu.SuspendLayout();
             this.flowLayoutPanelSalir.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,46 +78,20 @@ namespace WindowsFormsApp1
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnRegistrarEmpleado
-            // 
-            this.btnRegistrarEmpleado.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarEmpleado.Location = new System.Drawing.Point(3, 3);
-            this.btnRegistrarEmpleado.Name = "btnRegistrarEmpleado";
-            this.btnRegistrarEmpleado.Size = new System.Drawing.Size(191, 35);
-            this.btnRegistrarEmpleado.TabIndex = 3;
-            this.btnRegistrarEmpleado.Text = "Registrar";
-            this.btnRegistrarEmpleado.UseVisualStyleBackColor = true;
-            this.btnRegistrarEmpleado.Click += new System.EventHandler(this.button1_Click);
-            // 
             // panelPrincipal
             // 
             this.panelPrincipal.BackColor = System.Drawing.Color.LightGray;
+            this.panelPrincipal.Controls.Add(this.btnBuscar);
+            this.panelPrincipal.Controls.Add(this.textBox1);
+            this.panelPrincipal.Controls.Add(this.btnEliminar);
+            this.panelPrincipal.Controls.Add(this.btnEditar);
+            this.panelPrincipal.Controls.Add(this.btnRegistrarEmpleado);
             this.panelPrincipal.Controls.Add(this.flowLayoutPanelSalir);
-            this.panelPrincipal.Controls.Add(this.flowLayoutPanelMenu);
             this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelPrincipal.Location = new System.Drawing.Point(0, 0);
             this.panelPrincipal.Name = "panelPrincipal";
             this.panelPrincipal.Size = new System.Drawing.Size(200, 622);
             this.panelPrincipal.TabIndex = 4;
-            // 
-            // panelContenido
-            // 
-            this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenido.Location = new System.Drawing.Point(200, 0);
-            this.panelContenido.Name = "panelContenido";
-            this.panelContenido.Size = new System.Drawing.Size(1329, 622);
-            this.panelContenido.TabIndex = 5;
-            // 
-            // flowLayoutPanelMenu
-            // 
-            this.flowLayoutPanelMenu.Controls.Add(this.btnRegistrarEmpleado);
-            this.flowLayoutPanelMenu.Controls.Add(this.btnEditar);
-            this.flowLayoutPanelMenu.Controls.Add(this.btnEliminar);
-            this.flowLayoutPanelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelMenu.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanelMenu.Name = "flowLayoutPanelMenu";
-            this.flowLayoutPanelMenu.Size = new System.Drawing.Size(200, 622);
-            this.flowLayoutPanelMenu.TabIndex = 4;
             // 
             // flowLayoutPanelSalir
             // 
@@ -128,27 +102,64 @@ namespace WindowsFormsApp1
             this.flowLayoutPanelSalir.Size = new System.Drawing.Size(200, 60);
             this.flowLayoutPanelSalir.TabIndex = 5;
             // 
+            // panelContenido
+            // 
+            this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenido.Location = new System.Drawing.Point(200, 0);
+            this.panelContenido.Name = "panelContenido";
+            this.panelContenido.Size = new System.Drawing.Size(1329, 622);
+            this.panelContenido.TabIndex = 5;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(3, 94);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(191, 35);
+            this.btnEliminar.TabIndex = 5;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
             // btnEditar
             // 
             this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(3, 44);
+            this.btnEditar.Location = new System.Drawing.Point(3, 53);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(191, 35);
             this.btnEditar.TabIndex = 4;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             // 
-            // btnEliminar
+            // btnRegistrarEmpleado
             // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(3, 85);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(191, 35);
-            this.btnEliminar.TabIndex = 5;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnRegistrarEmpleado.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarEmpleado.Location = new System.Drawing.Point(3, 12);
+            this.btnRegistrarEmpleado.Name = "btnRegistrarEmpleado";
+            this.btnRegistrarEmpleado.Size = new System.Drawing.Size(191, 35);
+            this.btnRegistrarEmpleado.TabIndex = 3;
+            this.btnRegistrarEmpleado.Text = "Registrar";
+            this.btnRegistrarEmpleado.UseVisualStyleBackColor = true;
+            this.btnRegistrarEmpleado.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 323);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(168, 22);
+            this.textBox1.TabIndex = 0;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(3, 282);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(191, 35);
+            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // FormPrincipal
             // 
@@ -165,7 +176,7 @@ namespace WindowsFormsApp1
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).EndInit();
             this.panelPrincipal.ResumeLayout(false);
-            this.flowLayoutPanelMenu.ResumeLayout(false);
+            this.panelPrincipal.PerformLayout();
             this.flowLayoutPanelSalir.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -177,12 +188,13 @@ namespace WindowsFormsApp1
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.DataGridView dataGridViewEmpleados;
         public System.Windows.Forms.Button btnSalir;
-        public System.Windows.Forms.Button btnRegistrarEmpleado;
         public System.Windows.Forms.Panel panelPrincipal;
         public System.Windows.Forms.Panel panelContenido;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelSalir;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMenu;
-        public System.Windows.Forms.Button btnEditar;
+        public System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.Button btnEliminar;
+        public System.Windows.Forms.Button btnEditar;
+        public System.Windows.Forms.Button btnRegistrarEmpleado;
     }
 }
