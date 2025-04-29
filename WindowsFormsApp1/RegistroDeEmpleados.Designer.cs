@@ -57,39 +57,40 @@
             // txtboxNacimiento
             // 
             this.txtboxNacimiento.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtboxNacimiento.Location = new System.Drawing.Point(244, 208);
+            this.txtboxNacimiento.Location = new System.Drawing.Point(228, 348);
             this.txtboxNacimiento.Name = "txtboxNacimiento";
-            this.txtboxNacimiento.Size = new System.Drawing.Size(436, 22);
+            this.txtboxNacimiento.Size = new System.Drawing.Size(219, 22);
             this.txtboxNacimiento.TabIndex = 31;
+            this.txtboxNacimiento.TextChanged += new System.EventHandler(this.txtboxNacimiento_TextChanged);
             // 
             // txtboxDni
             // 
             this.txtboxDni.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtboxDni.Location = new System.Drawing.Point(244, 167);
+            this.txtboxDni.Location = new System.Drawing.Point(228, 279);
             this.txtboxDni.Name = "txtboxDni";
-            this.txtboxDni.Size = new System.Drawing.Size(436, 22);
+            this.txtboxDni.Size = new System.Drawing.Size(219, 22);
             this.txtboxDni.TabIndex = 30;
             // 
             // txtboxGmail
             // 
             this.txtboxGmail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtboxGmail.Location = new System.Drawing.Point(244, 126);
+            this.txtboxGmail.Location = new System.Drawing.Point(228, 210);
             this.txtboxGmail.Name = "txtboxGmail";
-            this.txtboxGmail.Size = new System.Drawing.Size(436, 22);
+            this.txtboxGmail.Size = new System.Drawing.Size(219, 22);
             this.txtboxGmail.TabIndex = 29;
             // 
             // txtboxCelular
             // 
             this.txtboxCelular.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtboxCelular.Location = new System.Drawing.Point(244, 85);
+            this.txtboxCelular.Location = new System.Drawing.Point(228, 141);
             this.txtboxCelular.Name = "txtboxCelular";
-            this.txtboxCelular.Size = new System.Drawing.Size(436, 22);
+            this.txtboxCelular.Size = new System.Drawing.Size(219, 22);
             this.txtboxCelular.TabIndex = 28;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 369);
+            this.label7.Location = new System.Drawing.Point(453, 207);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(147, 16);
             this.label7.TabIndex = 27;
@@ -98,7 +99,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 328);
+            this.label6.Location = new System.Drawing.Point(453, 138);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(173, 16);
             this.label6.TabIndex = 26;
@@ -107,7 +108,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 205);
+            this.label5.Location = new System.Drawing.Point(3, 345);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 16);
             this.label5.TabIndex = 25;
@@ -116,7 +117,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 164);
+            this.label4.Location = new System.Drawing.Point(3, 276);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 16);
             this.label4.TabIndex = 24;
@@ -125,7 +126,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 123);
+            this.label3.Location = new System.Drawing.Point(3, 207);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 16);
             this.label3.TabIndex = 23;
@@ -134,7 +135,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 82);
+            this.label2.Location = new System.Drawing.Point(3, 138);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 16);
             this.label2.TabIndex = 22;
@@ -143,7 +144,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 41);
+            this.label1.Location = new System.Drawing.Point(3, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 16);
             this.label1.TabIndex = 21;
@@ -152,15 +153,15 @@
             // txtboxNombre
             // 
             this.txtboxNombre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtboxNombre.Location = new System.Drawing.Point(244, 44);
+            this.txtboxNombre.Location = new System.Drawing.Point(228, 72);
             this.txtboxNombre.Name = "txtboxNombre";
-            this.txtboxNombre.Size = new System.Drawing.Size(436, 22);
+            this.txtboxNombre.Size = new System.Drawing.Size(219, 22);
             this.txtboxNombre.TabIndex = 20;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 287);
+            this.label8.Location = new System.Drawing.Point(453, 69);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(132, 16);
             this.label8.TabIndex = 8;
@@ -175,9 +176,9 @@
             "20",
             "25",
             "30"});
-            this.comboBoxLicenciaAsignada.Location = new System.Drawing.Point(244, 290);
+            this.comboBoxLicenciaAsignada.Location = new System.Drawing.Point(678, 72);
             this.comboBoxLicenciaAsignada.Name = "comboBoxLicenciaAsignada";
-            this.comboBoxLicenciaAsignada.Size = new System.Drawing.Size(436, 24);
+            this.comboBoxLicenciaAsignada.Size = new System.Drawing.Size(220, 24);
             this.comboBoxLicenciaAsignada.TabIndex = 22;
             // 
             // comboBoxVacaciones
@@ -189,9 +190,9 @@
             "15",
             "20",
             "30"});
-            this.comboBoxVacaciones.Location = new System.Drawing.Point(244, 372);
+            this.comboBoxVacaciones.Location = new System.Drawing.Point(678, 210);
             this.comboBoxVacaciones.Name = "comboBoxVacaciones";
-            this.comboBoxVacaciones.Size = new System.Drawing.Size(436, 24);
+            this.comboBoxVacaciones.Size = new System.Drawing.Size(220, 24);
             this.comboBoxVacaciones.TabIndex = 21;
             // 
             // comboBoxDiasPersonales
@@ -202,50 +203,48 @@
             "1",
             "2",
             "3"});
-            this.comboBoxDiasPersonales.Location = new System.Drawing.Point(244, 331);
+            this.comboBoxDiasPersonales.Location = new System.Drawing.Point(678, 141);
             this.comboBoxDiasPersonales.Name = "comboBoxDiasPersonales";
-            this.comboBoxDiasPersonales.Size = new System.Drawing.Size(436, 24);
+            this.comboBoxDiasPersonales.Size = new System.Drawing.Size(220, 24);
             this.comboBoxDiasPersonales.TabIndex = 23;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 6);
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Controls.Add(this.lblDatosPersonales, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxVacaciones, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxDiasPersonales, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxLicenciaAsignada, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.txtboxNombre, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.txtboxCelular, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtboxGmail, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtboxDni, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtboxNacimiento, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxLicenciaAsignada, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxDiasPersonales, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxVacaciones, 3, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(185, 50);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 10;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(683, 418);
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 418);
             this.tableLayoutPanel1.TabIndex = 36;
             // 
             // lblDatosPersonales
@@ -255,7 +254,7 @@
             this.lblDatosPersonales.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblDatosPersonales.Location = new System.Drawing.Point(3, 0);
             this.lblDatosPersonales.Name = "lblDatosPersonales";
-            this.lblDatosPersonales.Size = new System.Drawing.Size(235, 31);
+            this.lblDatosPersonales.Size = new System.Drawing.Size(156, 62);
             this.lblDatosPersonales.TabIndex = 37;
             this.lblDatosPersonales.Text = "DATOS PERSONALES";
             // 
@@ -264,9 +263,9 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label9.Location = new System.Drawing.Point(3, 246);
+            this.label9.Location = new System.Drawing.Point(453, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(222, 31);
+            this.label9.Size = new System.Drawing.Size(143, 62);
             this.label9.TabIndex = 38;
             this.label9.Text = "DATOS LABORALES";
             // 

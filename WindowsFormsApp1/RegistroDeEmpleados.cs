@@ -72,5 +72,10 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void txtboxNacimiento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
