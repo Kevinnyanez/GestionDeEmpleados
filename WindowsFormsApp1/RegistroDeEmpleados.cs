@@ -67,5 +67,10 @@ namespace WindowsFormsApp1
 
 
         }
+
+        private void RegistroDeEmpleados_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
