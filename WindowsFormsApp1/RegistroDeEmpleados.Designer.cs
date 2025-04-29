@@ -57,113 +57,118 @@
             // txtboxNacimiento
             // 
             this.txtboxNacimiento.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtboxNacimiento.Location = new System.Drawing.Point(228, 348);
+            this.txtboxNacimiento.Location = new System.Drawing.Point(244, 298);
             this.txtboxNacimiento.Name = "txtboxNacimiento";
-            this.txtboxNacimiento.Size = new System.Drawing.Size(219, 22);
+            this.txtboxNacimiento.Size = new System.Drawing.Size(169, 34);
             this.txtboxNacimiento.TabIndex = 31;
             this.txtboxNacimiento.TextChanged += new System.EventHandler(this.txtboxNacimiento_TextChanged);
             // 
             // txtboxDni
             // 
             this.txtboxDni.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtboxDni.Location = new System.Drawing.Point(228, 279);
+            this.txtboxDni.Location = new System.Drawing.Point(244, 239);
             this.txtboxDni.Name = "txtboxDni";
-            this.txtboxDni.Size = new System.Drawing.Size(219, 22);
+            this.txtboxDni.Size = new System.Drawing.Size(169, 34);
             this.txtboxDni.TabIndex = 30;
             // 
             // txtboxGmail
             // 
             this.txtboxGmail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtboxGmail.Location = new System.Drawing.Point(228, 210);
+            this.txtboxGmail.Location = new System.Drawing.Point(244, 180);
             this.txtboxGmail.Name = "txtboxGmail";
-            this.txtboxGmail.Size = new System.Drawing.Size(219, 22);
+            this.txtboxGmail.Size = new System.Drawing.Size(169, 34);
             this.txtboxGmail.TabIndex = 29;
             // 
             // txtboxCelular
             // 
             this.txtboxCelular.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtboxCelular.Location = new System.Drawing.Point(228, 141);
+            this.txtboxCelular.Location = new System.Drawing.Point(244, 121);
             this.txtboxCelular.Name = "txtboxCelular";
-            this.txtboxCelular.Size = new System.Drawing.Size(219, 22);
+            this.txtboxCelular.Size = new System.Drawing.Size(169, 34);
             this.txtboxCelular.TabIndex = 28;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(453, 207);
+            this.label7.Location = new System.Drawing.Point(419, 177);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(147, 16);
+            this.label7.Size = new System.Drawing.Size(255, 29);
             this.label7.TabIndex = 27;
             this.label7.Text = "Vacaciones Asignadas";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(453, 138);
+            this.label6.Location = new System.Drawing.Point(419, 118);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(173, 16);
+            this.label6.Size = new System.Drawing.Size(304, 29);
             this.label6.TabIndex = 26;
             this.label6.Text = "Dias personales asignados";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 345);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 295);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 16);
+            this.label5.Size = new System.Drawing.Size(135, 29);
             this.label5.TabIndex = 25;
             this.label5.Text = "Nacimiento";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 276);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 236);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 16);
+            this.label4.Size = new System.Drawing.Size(54, 29);
             this.label4.TabIndex = 24;
             this.label4.Text = "DNI";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 207);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 177);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 16);
+            this.label3.Size = new System.Drawing.Size(76, 29);
             this.label3.TabIndex = 23;
             this.label3.Text = "Gmail";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 138);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 118);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 16);
+            this.label2.Size = new System.Drawing.Size(90, 29);
             this.label2.TabIndex = 22;
             this.label2.Text = "Celular";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 69);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 16);
+            this.label1.Size = new System.Drawing.Size(212, 29);
             this.label1.TabIndex = 21;
             this.label1.Text = "Nombre Completo";
             // 
             // txtboxNombre
             // 
             this.txtboxNombre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtboxNombre.Location = new System.Drawing.Point(228, 72);
+            this.txtboxNombre.Location = new System.Drawing.Point(244, 62);
             this.txtboxNombre.Name = "txtboxNombre";
-            this.txtboxNombre.Size = new System.Drawing.Size(219, 22);
+            this.txtboxNombre.Size = new System.Drawing.Size(169, 34);
             this.txtboxNombre.TabIndex = 20;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(453, 69);
+            this.label8.Location = new System.Drawing.Point(419, 59);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(132, 16);
+            this.label8.Size = new System.Drawing.Size(232, 29);
             this.label8.TabIndex = 8;
             this.label8.Text = "Licencias Asignadas";
             // 
@@ -176,9 +181,9 @@
             "20",
             "25",
             "30"});
-            this.comboBoxLicenciaAsignada.Location = new System.Drawing.Point(678, 72);
+            this.comboBoxLicenciaAsignada.Location = new System.Drawing.Point(729, 62);
             this.comboBoxLicenciaAsignada.Name = "comboBoxLicenciaAsignada";
-            this.comboBoxLicenciaAsignada.Size = new System.Drawing.Size(220, 24);
+            this.comboBoxLicenciaAsignada.Size = new System.Drawing.Size(169, 37);
             this.comboBoxLicenciaAsignada.TabIndex = 22;
             // 
             // comboBoxVacaciones
@@ -190,9 +195,9 @@
             "15",
             "20",
             "30"});
-            this.comboBoxVacaciones.Location = new System.Drawing.Point(678, 210);
+            this.comboBoxVacaciones.Location = new System.Drawing.Point(729, 180);
             this.comboBoxVacaciones.Name = "comboBoxVacaciones";
-            this.comboBoxVacaciones.Size = new System.Drawing.Size(220, 24);
+            this.comboBoxVacaciones.Size = new System.Drawing.Size(169, 37);
             this.comboBoxVacaciones.TabIndex = 21;
             // 
             // comboBoxDiasPersonales
@@ -203,9 +208,9 @@
             "1",
             "2",
             "3"});
-            this.comboBoxDiasPersonales.Location = new System.Drawing.Point(678, 141);
+            this.comboBoxDiasPersonales.Location = new System.Drawing.Point(729, 121);
             this.comboBoxDiasPersonales.Name = "comboBoxDiasPersonales";
-            this.comboBoxDiasPersonales.Size = new System.Drawing.Size(220, 24);
+            this.comboBoxDiasPersonales.Size = new System.Drawing.Size(169, 37);
             this.comboBoxDiasPersonales.TabIndex = 23;
             // 
             // tableLayoutPanel1
@@ -213,11 +218,12 @@
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.lblDatosPersonales, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnRegistrarEmpleado, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
@@ -235,15 +241,17 @@
             this.tableLayoutPanel1.Controls.Add(this.comboBoxLicenciaAsignada, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxDiasPersonales, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxVacaciones, 3, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(185, 50);
+            this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(180, 18);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(901, 418);
             this.tableLayoutPanel1.TabIndex = 36;
             // 
@@ -254,7 +262,7 @@
             this.lblDatosPersonales.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblDatosPersonales.Location = new System.Drawing.Point(3, 0);
             this.lblDatosPersonales.Name = "lblDatosPersonales";
-            this.lblDatosPersonales.Size = new System.Drawing.Size(156, 62);
+            this.lblDatosPersonales.Size = new System.Drawing.Size(235, 31);
             this.lblDatosPersonales.TabIndex = 37;
             this.lblDatosPersonales.Text = "DATOS PERSONALES";
             // 
@@ -263,9 +271,9 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label9.Location = new System.Drawing.Point(453, 0);
+            this.label9.Location = new System.Drawing.Point(419, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 62);
+            this.label9.Size = new System.Drawing.Size(222, 31);
             this.label9.TabIndex = 38;
             this.label9.Text = "DATOS LABORALES";
             // 
@@ -283,7 +291,7 @@
             // btnRegistrarEmpleado
             // 
             this.btnRegistrarEmpleado.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarEmpleado.Location = new System.Drawing.Point(3, 44);
+            this.btnRegistrarEmpleado.Location = new System.Drawing.Point(3, 357);
             this.btnRegistrarEmpleado.Name = "btnRegistrarEmpleado";
             this.btnRegistrarEmpleado.Size = new System.Drawing.Size(120, 35);
             this.btnRegistrarEmpleado.TabIndex = 34;
@@ -292,12 +300,11 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.Controls.Add(this.btnVolver);
-            this.flowLayoutPanel1.Controls.Add(this.btnRegistrarEmpleado);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(470, 474);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 499);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1256, 100);
             this.flowLayoutPanel1.TabIndex = 37;
             // 
             // RegistroDeEmpleados
