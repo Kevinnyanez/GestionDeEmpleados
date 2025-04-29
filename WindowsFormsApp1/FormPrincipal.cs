@@ -27,15 +27,18 @@ namespace WindowsFormsApp1
         {
             // Llamamos a una función que llena la tabla
             CargarEmpleados();
+
+            // Inicializamos el panel de contenido
             panelContenido.Visible = false; // Oculta el panel de contenido al inicio
 
+            // Guardamos los controles originales del panel principal
             foreach (Control control in panelPrincipal.Controls)
             {
                 controlesOriginales.Add(control);
             }
         }
 
-        private void CargarEmpleados()
+        public void CargarEmpleados()
         {
             try
             {

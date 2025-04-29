@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 
 namespace WindowsFormsApp1
@@ -39,7 +40,7 @@ namespace WindowsFormsApp1
 
         private void btnRegistrarEmpleado_Click(object sender, EventArgs e)
         {
-
+            txtboxNombre.Focus();
 
             string Nombre = txtboxNombre.Text;
             string Celular = txtboxCelular.Text;
@@ -49,8 +50,22 @@ namespace WindowsFormsApp1
             int DiasPersonales = int.Parse(comboBoxVacaciones.Text);
             int VacacionesAsignadas = int.Parse(comboBoxVacaciones.Text);
 
+            
+                SqlConnection connection = new SqlConnection(DatabaseHelper.ConnectionString);
+                connection.Open();
+                string query = "INSERT INTO Empleados (Nombre, Celular, Gmail, DNI, Nacimiento, DiasPersonales, VacacionesAsignadas) VALUES (@Nombre, @Celular, @Gmail, @DNI, @Nacimiento, @DiasPersonales, @VacacionesAsignadas)";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Nombre", Nombre);
+                command.Parameters.AddWithValue("@Celular", Celular);
+                command.Parameters.AddWithValue("@Gmail", Gmail);
+                command.Parameters.AddWithValue("@DNI", DNI);
+                command.Parameters.AddWithValue("@Nacimiento", Nacimiento);
+                command.Parameters.AddWithValue("@DiasPersonales", DiasPersonales);
+                command.Parameters.AddWithValue("@VacacionesAsignadas", VacacionesAsignadas);
+                command.ExecuteNonQuery();
+                connection.Close();
+            
 
-            txtboxNombre.Focus();
 
         }
 
@@ -63,7 +78,7 @@ namespace WindowsFormsApp1
             formularioPrincipal.dataGridViewEmpleados.Visible = true;
             formularioPrincipal.panelContenido.Visible = false;
             formularioPrincipal.RestaurarControles();
-
+            formularioPrincipal.CargarEmpleados();
 
 
         }
