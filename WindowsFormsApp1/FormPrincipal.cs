@@ -14,12 +14,24 @@ namespace WindowsFormsApp1
 {
     public partial class FormPrincipal: Form
     {
+        // LISTA DE CONTROLOES DE LA PANTALLA PRINCIPAL
         private List<Control> controlesOriginales = new List<Control>();
         public FormPrincipal()
         {
             InitializeComponent();
 
            
+        }
+
+        //LÓGICA PARA RESTAURAR LOS BOTONES
+        public void RestaurarControles()
+        {
+            panelPrincipal.Controls.Clear(); // Limpia por si hay residuos
+
+            foreach (Control control in controlesOriginales)
+            {
+                panelPrincipal.Controls.Add(control);
+            }
         }
 
         //LÓGICA DEL DATAGRIDVIEW
@@ -38,6 +50,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        //LÓGICA PARA CARGAR LOS EMPLEADOS EN EL DATAGRIDVIEW
         public void CargarEmpleados()
         {
             try
@@ -90,16 +103,6 @@ namespace WindowsFormsApp1
             panelContenido.Controls.Add(nuevoControl);
         }
 
-        //LÓGICA PARA RESTAURAR LOS BOTONES
-        public void RestaurarControles()
-        {
-            panelPrincipal.Controls.Clear(); // Limpia por si hay residuos
-
-            foreach (Control control in controlesOriginales)
-            {
-                panelPrincipal.Controls.Add(control);
-            }
-        }
 
         private void lblBuscarPorNombre_Click(object sender, EventArgs e)
         {

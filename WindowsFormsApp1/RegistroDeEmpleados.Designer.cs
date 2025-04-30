@@ -36,7 +36,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblContra = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtboxNombre = new System.Windows.Forms.TextBox();
@@ -50,6 +50,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtBoxContraseña = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +60,7 @@
             // txtboxNacimiento
             // 
             this.txtboxNacimiento.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtboxNacimiento.Location = new System.Drawing.Point(244, 298);
+            this.txtboxNacimiento.Location = new System.Drawing.Point(244, 239);
             this.txtboxNacimiento.Name = "txtboxNacimiento";
             this.txtboxNacimiento.Size = new System.Drawing.Size(169, 34);
             this.txtboxNacimiento.TabIndex = 31;
@@ -65,7 +68,7 @@
             // txtboxDni
             // 
             this.txtboxDni.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtboxDni.Location = new System.Drawing.Point(244, 239);
+            this.txtboxDni.Location = new System.Drawing.Point(244, 180);
             this.txtboxDni.Name = "txtboxDni";
             this.txtboxDni.Size = new System.Drawing.Size(169, 34);
             this.txtboxDni.TabIndex = 30;
@@ -73,7 +76,7 @@
             // txtboxGmail
             // 
             this.txtboxGmail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtboxGmail.Location = new System.Drawing.Point(244, 180);
+            this.txtboxGmail.Location = new System.Drawing.Point(729, 298);
             this.txtboxGmail.Name = "txtboxGmail";
             this.txtboxGmail.Size = new System.Drawing.Size(169, 34);
             this.txtboxGmail.TabIndex = 29;
@@ -108,7 +111,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 295);
+            this.label5.Location = new System.Drawing.Point(3, 236);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(135, 29);
             this.label5.TabIndex = 25;
@@ -118,21 +121,21 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 236);
+            this.label4.Location = new System.Drawing.Point(3, 177);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 29);
             this.label4.TabIndex = 24;
             this.label4.Text = "DNI";
             // 
-            // label3
+            // lblContra
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 177);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 29);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "Gmail";
+            this.lblContra.AutoSize = true;
+            this.lblContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContra.Location = new System.Drawing.Point(419, 354);
+            this.lblContra.Name = "lblContra";
+            this.lblContra.Size = new System.Drawing.Size(136, 29);
+            this.lblContra.TabIndex = 23;
+            this.lblContra.Text = "Contraseña";
             // 
             // label2
             // 
@@ -225,14 +228,8 @@
             this.tableLayoutPanel1.Controls.Add(this.btnRegistrarEmpleado, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.txtboxNombre, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtboxCelular, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtboxGmail, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtboxDni, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txtboxNacimiento, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label9, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label8, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label6, 2, 2);
@@ -240,6 +237,15 @@
             this.tableLayoutPanel1.Controls.Add(this.comboBoxLicenciaAsignada, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxDiasPersonales, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxVacaciones, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtboxDni, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtboxNacimiento, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lblContra, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.txtboxGmail, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.txtBoxContraseña, 3, 6);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(180, 18);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -307,6 +313,37 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1256, 100);
             this.flowLayoutPanel1.TabIndex = 37;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label10.Location = new System.Drawing.Point(419, 236);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(229, 31);
+            this.label10.TabIndex = 39;
+            this.label10.Text = "DATOS DE USUARIO";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(419, 295);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 29);
+            this.label11.TabIndex = 40;
+            this.label11.Text = "Gmail";
+            // 
+            // txtBoxContraseña
+            // 
+            this.txtBoxContraseña.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBoxContraseña.Location = new System.Drawing.Point(729, 357);
+            this.txtBoxContraseña.Name = "txtBoxContraseña";
+            this.txtBoxContraseña.Size = new System.Drawing.Size(169, 34);
+            this.txtBoxContraseña.TabIndex = 41;
+            this.txtBoxContraseña.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // RegistroDeEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -332,7 +369,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblContra;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtboxNombre;
@@ -346,5 +383,8 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnRegistrarEmpleado;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtBoxContraseña;
     }
 }

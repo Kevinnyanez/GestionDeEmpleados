@@ -66,9 +66,10 @@ namespace WindowsFormsApp1
             int DiasPersonales = int.Parse(comboBoxDiasPersonales.Text);
             int VacacionesAsignadas = int.Parse(comboBoxVacaciones.Text);
             int LicenciasAsignadas = int.Parse(comboBoxLicenciaAsignada.Text);
+            string Contraseña = txtBoxContraseña.Text; // Contraseña por defecto
 
             //Validamos que los campos no estén vacíos
-            if (string.IsNullOrEmpty(Nombre) || string.IsNullOrEmpty(Celular) || string.IsNullOrEmpty(Gmail) || string.IsNullOrEmpty(DNI) || string.IsNullOrEmpty(Nacimiento))
+            if (string.IsNullOrEmpty(Nombre) || string.IsNullOrEmpty(Celular) || string.IsNullOrEmpty(Gmail) || string.IsNullOrEmpty(DNI) || string.IsNullOrEmpty(Nacimiento) || string.IsNullOrEmpty(Contraseña))
             {
                 MessageBox.Show("Todos los campos deben estar llenos.");
                 return;
@@ -88,8 +89,8 @@ namespace WindowsFormsApp1
                 connection.Open();
 
                 // Armamos el query
-                string query = "INSERT INTO Empleados (NombreCompleto, NumeroCelular, Gmail, DNI, FechaCumple, DiasPersonalesAsignados, VacacionesAsignadas, LicenciasAsignadas) " +
-                "VALUES (@NombreCompleto, @NumeroCelular, @Gmail, @DNI, @FechaCumple, @DiasPersonalesAsignados, @VacacionesAsignadas, @LicenciasAsignadas)";
+                string query = "INSERT INTO Empleados (NombreCompleto, NumeroCelular, Gmail, DNI, FechaCumple, DiasPersonalesAsignados, VacacionesAsignadas, LicenciasAsignadas, Contraseña) " +
+                "VALUES (@NombreCompleto, @NumeroCelular, @Gmail, @DNI, @FechaCumple, @DiasPersonalesAsignados, @VacacionesAsignadas, @LicenciasAsignadas, @Contraseña)";
 
                 // Ejecutamos el query
                 SqlCommand command = new SqlCommand(query, connection);
@@ -101,6 +102,7 @@ namespace WindowsFormsApp1
                 command.Parameters.AddWithValue("@DiasPersonalesAsignados", DiasPersonales);
                 command.Parameters.AddWithValue("@VacacionesAsignadas", VacacionesAsignadas);
                 command.Parameters.AddWithValue("@LicenciasAsignadas", LicenciasAsignadas);
+                command.Parameters.AddWithValue("@Contraseña", Contraseña); // Contraseña por defecto
                 int rowaffected = command.ExecuteNonQuery();
 
                 // Verificamos si se registró el empleado
@@ -116,6 +118,7 @@ namespace WindowsFormsApp1
                     txtboxGmail.Clear();
                     txtboxDni.Clear();
                     txtboxNacimiento.Clear();
+                    txtBoxContraseña.Clear();
                     comboBoxDiasPersonales.SelectedIndex = -1;
                     comboBoxVacaciones.SelectedIndex = -1;
                     comboBoxLicenciaAsignada.SelectedIndex = -1;
@@ -129,6 +132,16 @@ namespace WindowsFormsApp1
                 MessageBox.Show($"Error de SQL: {ex.Message}");
 
             }
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
