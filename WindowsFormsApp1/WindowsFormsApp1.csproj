@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Emplado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Emplado.Designer.cs">
+      <DependentUpon>Emplado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="RegistroDeEmpleados.Designer.cs">
       <DependentUpon>RegistroDeEmpleados.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Emplado.resx">
+      <DependentUpon>Emplado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>

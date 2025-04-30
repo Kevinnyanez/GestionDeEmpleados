@@ -48,11 +48,11 @@
             this.lblDatosPersonales = new System.Windows.Forms.Label();
             this.btnRegistrarEmpleado = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtBoxContraseña = new System.Windows.Forms.TextBox();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -293,26 +293,6 @@
             this.label9.TabIndex = 38;
             this.label9.Text = "DATOS LABORALES";
             // 
-            // btnVolver
-            // 
-            this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(3, 3);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(120, 35);
-            this.btnVolver.TabIndex = 35;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.btnVolver);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 499);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1256, 100);
-            this.flowLayoutPanel1.TabIndex = 37;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -343,6 +323,26 @@
             this.txtBoxContraseña.Size = new System.Drawing.Size(169, 34);
             this.txtBoxContraseña.TabIndex = 41;
             this.txtBoxContraseña.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Location = new System.Drawing.Point(3, 3);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(120, 35);
+            this.btnVolver.TabIndex = 35;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btnVolver);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 499);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1256, 100);
+            this.flowLayoutPanel1.TabIndex = 37;
             // 
             // RegistroDeEmpleados
             // 

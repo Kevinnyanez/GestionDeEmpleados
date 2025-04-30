@@ -35,6 +35,8 @@
             this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.lblMensaje = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnSoyEmpleado = new System.Windows.Forms.Button();
+            this.panelRegistroTrabajador = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -91,7 +93,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(356, 403);
+            this.btnSalir.Location = new System.Drawing.Point(356, 409);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 6;
@@ -99,11 +101,32 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnSoyEmpleado
+            // 
+            this.btnSoyEmpleado.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSoyEmpleado.Location = new System.Drawing.Point(594, 398);
+            this.btnSoyEmpleado.Name = "btnSoyEmpleado";
+            this.btnSoyEmpleado.Size = new System.Drawing.Size(167, 40);
+            this.btnSoyEmpleado.TabIndex = 7;
+            this.btnSoyEmpleado.Text = "Soy Empleado";
+            this.btnSoyEmpleado.UseVisualStyleBackColor = true;
+            this.btnSoyEmpleado.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panelRegistroTrabajador
+            // 
+            this.panelRegistroTrabajador.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelRegistroTrabajador.Location = new System.Drawing.Point(0, 0);
+            this.panelRegistroTrabajador.Name = "panelRegistroTrabajador";
+            this.panelRegistroTrabajador.Size = new System.Drawing.Size(800, 450);
+            this.panelRegistroTrabajador.TabIndex = 8;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panelRegistroTrabajador);
+            this.Controls.Add(this.btnSoyEmpleado);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.btnIniciarSesion);
@@ -127,6 +150,8 @@
         private System.Windows.Forms.Button btnIniciarSesion;
         private System.Windows.Forms.Label lblMensaje;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnSoyEmpleado;
+        public System.Windows.Forms.Panel panelRegistroTrabajador;
     }
 }
 

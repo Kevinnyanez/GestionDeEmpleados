@@ -13,10 +13,13 @@ namespace WindowsFormsApp1
 {
     public partial class FormLogin: Form
     {
+     
         public FormLogin()
         {
             InitializeComponent();
+            panelRegistroTrabajador.Visible = false; // Oculta el panel de registro al inicio
         }
+
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
@@ -67,6 +70,22 @@ namespace WindowsFormsApp1
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            CargarUserControl(new Emplado());
+        }
+
+
+        private void CargarUserControl(UserControl nuevoControl)
+        {
+            panelRegistroTrabajador.Visible = true; // Muestra el panel de registro
+            panelRegistroTrabajador.Controls.Clear();
+            nuevoControl.Dock = DockStyle.Fill;
+            panelRegistroTrabajador.Controls.Add(nuevoControl);
+
         }
     }
 }
