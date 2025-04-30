@@ -61,7 +61,6 @@
             this.txtboxNacimiento.Name = "txtboxNacimiento";
             this.txtboxNacimiento.Size = new System.Drawing.Size(169, 34);
             this.txtboxNacimiento.TabIndex = 31;
-            this.txtboxNacimiento.TextChanged += new System.EventHandler(this.txtboxNacimiento_TextChanged);
             // 
             // txtboxDni
             // 
@@ -275,6 +274,7 @@
             this.btnRegistrarEmpleado.TabIndex = 34;
             this.btnRegistrarEmpleado.Text = "Registrar Empleado";
             this.btnRegistrarEmpleado.UseVisualStyleBackColor = true;
+            this.btnRegistrarEmpleado.Click += new System.EventHandler(this.btnRegistrarEmpleado_Click_1);
             // 
             // label9
             // 
@@ -316,7 +316,6 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "RegistroDeEmpleados";
             this.Size = new System.Drawing.Size(1256, 599);
-            this.Load += new System.EventHandler(this.RegistroDeEmpleados_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);

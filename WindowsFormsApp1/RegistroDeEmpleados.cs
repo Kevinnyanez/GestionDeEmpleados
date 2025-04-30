@@ -27,46 +27,15 @@ namespace WindowsFormsApp1
            
 
             ToolTip toolTip = new ToolTip();
-            toolTip.SetToolTip(txtboxDni, "Ingrese su DNI");
-            toolTip.SetToolTip(txtboxNombre, "Ingrese su nombre");
-            toolTip.SetToolTip(txtboxCelular, "Ingrese su celular");
-            toolTip.SetToolTip(txtboxGmail, "Ingrese su Gmail");
-            toolTip.SetToolTip(txtboxNacimiento, "Ingrese su fecha de nacimiento");
+            toolTip.SetToolTip(txtboxDni, "Ej: 41.254.123");
+            toolTip.SetToolTip(txtboxNombre, "Ej: Ana María Díaz");
+            toolTip.SetToolTip(txtboxCelular, "2923365417");
+            toolTip.SetToolTip(txtboxGmail, "example@gmail.com");
+            toolTip.SetToolTip(txtboxNacimiento, "1999/11/30");
             toolTip.SetToolTip(comboBoxDiasPersonales, "Ingrese sus días personales");
             toolTip.SetToolTip(comboBoxVacaciones, "Seleccione sus vacaciones asignadas");
             toolTip.SetToolTip(comboBoxLicenciaAsignada, "Seleccione su licencia asignada");
             toolTip.SetToolTip(btnRegistrarEmpleado, "Registrar empleado");
-        }
-
-        private void btnRegistrarEmpleado_Click(object sender, EventArgs e)
-        {
-            txtboxNombre.Focus();
-
-            string Nombre = txtboxNombre.Text;
-            string Celular = txtboxCelular.Text;
-            string Gmail = txtboxGmail.Text;
-            String DNI = txtboxDni.Text;
-            DateTime Nacimiento = DateTime.Parse(txtboxNacimiento.Text);
-            int DiasPersonales = int.Parse(comboBoxVacaciones.Text);
-            int VacacionesAsignadas = int.Parse(comboBoxVacaciones.Text);
-
-            
-                SqlConnection connection = new SqlConnection(DatabaseHelper.ConnectionString);
-                connection.Open();
-                string query = "INSERT INTO Empleados (Nombre, Celular, Gmail, DNI, Nacimiento, DiasPersonales, VacacionesAsignadas) VALUES (@Nombre, @Celular, @Gmail, @DNI, @Nacimiento, @DiasPersonales, @VacacionesAsignadas)";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Nombre", Nombre);
-                command.Parameters.AddWithValue("@Celular", Celular);
-                command.Parameters.AddWithValue("@Gmail", Gmail);
-                command.Parameters.AddWithValue("@DNI", DNI);
-                command.Parameters.AddWithValue("@Nacimiento", Nacimiento);
-                command.Parameters.AddWithValue("@DiasPersonales", DiasPersonales);
-                command.Parameters.AddWithValue("@VacacionesAsignadas", VacacionesAsignadas);
-                command.ExecuteNonQuery();
-                connection.Close();
-            
-
-
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -83,13 +52,83 @@ namespace WindowsFormsApp1
 
         }
 
-        private void RegistroDeEmpleados_Load(object sender, EventArgs e)
+        private void btnRegistrarEmpleado_Click_1(object sender, EventArgs e)
         {
+            // Enfocar en el txt de nombre
+            txtboxNombre.Focus();
 
-        }
+            //Llenamos las variables con los valores introducidos por el usuario
+            string Nombre = txtboxNombre.Text.ToLower();
+            string Celular = txtboxCelular.Text.ToLower();
+            string Gmail = txtboxGmail.Text.ToLower();
+            String DNI = txtboxDni.Text;
+            String Nacimiento = txtboxNacimiento.Text;
+            int DiasPersonales = int.Parse(comboBoxDiasPersonales.Text);
+            int VacacionesAsignadas = int.Parse(comboBoxVacaciones.Text);
+            int LicenciasAsignadas = int.Parse(comboBoxLicenciaAsignada.Text);
 
-        private void txtboxNacimiento_TextChanged(object sender, EventArgs e)
-        {
+            //Validamos que los campos no estén vacíos
+            if (string.IsNullOrEmpty(Nombre) || string.IsNullOrEmpty(Celular) || string.IsNullOrEmpty(Gmail) || string.IsNullOrEmpty(DNI) || string.IsNullOrEmpty(Nacimiento))
+            {
+                MessageBox.Show("Todos los campos deben estar llenos.");
+                return;
+            }
+            //Validamos que el DNI tenga 8 dígitos
+            if (DNI.Length != 10)
+            {
+                MessageBox.Show("El DNI debe tener 10 dígitos.");
+                return;
+            }
+            
+            
+            try
+            {
+                // Conectamos a la base de datos
+                SqlConnection connection = new SqlConnection(DatabaseHelper.ConnectionString);
+                connection.Open();
+
+                // Armamos el query
+                string query = "INSERT INTO Empleados (NombreCompleto, NumeroCelular, Gmail, DNI, FechaCumple, DiasPersonalesAsignados, VacacionesAsignadas, LicenciasAsignadas) " +
+                "VALUES (@NombreCompleto, @NumeroCelular, @Gmail, @DNI, @FechaCumple, @DiasPersonalesAsignados, @VacacionesAsignadas, @LicenciasAsignadas)";
+
+                // Ejecutamos el query
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@NombreCompleto", Nombre);
+                command.Parameters.AddWithValue("@NumeroCelular", Celular);
+                command.Parameters.AddWithValue("@Gmail", Gmail);
+                command.Parameters.AddWithValue("@DNI", DNI);
+                command.Parameters.AddWithValue("@FechaCumple", Nacimiento);
+                command.Parameters.AddWithValue("@DiasPersonalesAsignados", DiasPersonales);
+                command.Parameters.AddWithValue("@VacacionesAsignadas", VacacionesAsignadas);
+                command.Parameters.AddWithValue("@LicenciasAsignadas", LicenciasAsignadas);
+                int rowaffected = command.ExecuteNonQuery();
+
+                // Verificamos si se registró el empleado
+                if (rowaffected == 0)
+                {
+                    MessageBox.Show("No se pudo registrar el empleado.");
+                }
+                else
+                {
+                    MessageBox.Show("Empleado registrado correctamente.");
+                    txtboxNombre.Clear();
+                    txtboxCelular.Clear();
+                    txtboxGmail.Clear();
+                    txtboxDni.Clear();
+                    txtboxNacimiento.Clear();
+                    comboBoxDiasPersonales.SelectedIndex = -1;
+                    comboBoxVacaciones.SelectedIndex = -1;
+                    comboBoxLicenciaAsignada.SelectedIndex = -1;
+                }
+
+                // Cerramos la conexión
+                connection.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Error de SQL: {ex.Message}");
+
+            }
 
         }
     }
