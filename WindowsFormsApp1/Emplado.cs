@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
             FormLogin formularioLogin = (FormLogin)this.ParentForm;
 
             formularioLogin.panelRegistroTrabajador.Controls.Remove(this); 
-            formularioLogin.panelRegistroTrabajador.Visible = false;
+            formularioLogin.RestaurarControles(); // Restaura los controles originales
         }
 
         private void btnIngresarEmpleado_Click(object sender, EventArgs e)

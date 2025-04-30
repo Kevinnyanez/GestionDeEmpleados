@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblContraseña = new System.Windows.Forms.Label();
+            this.btnIngresarEmpleado = new System.Windows.Forms.Button();
             this.lblGmail = new System.Windows.Forms.Label();
             this.txtBoxGmail = new System.Windows.Forms.TextBox();
             this.txtBoxContraseñaEmpleado = new System.Windows.Forms.TextBox();
-            this.lblContraseña = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.flowLayoutPanelBotones = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnIngresarEmpleado = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanelBotones.SuspendLayout();
             this.SuspendLayout();
@@ -61,14 +61,36 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(405, 233);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // lblContraseña
+            // 
+            this.lblContraseña.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblContraseña.AutoSize = true;
+            this.lblContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContraseña.Location = new System.Drawing.Point(134, 92);
+            this.lblContraseña.Name = "lblContraseña";
+            this.lblContraseña.Size = new System.Drawing.Size(136, 29);
+            this.lblContraseña.TabIndex = 3;
+            this.lblContraseña.Text = "Contraseña";
+            // 
+            // btnIngresarEmpleado
+            // 
+            this.btnIngresarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresarEmpleado.Location = new System.Drawing.Point(3, 187);
+            this.btnIngresarEmpleado.Name = "btnIngresarEmpleado";
+            this.btnIngresarEmpleado.Size = new System.Drawing.Size(109, 33);
+            this.btnIngresarEmpleado.TabIndex = 2;
+            this.btnIngresarEmpleado.Text = "Ingresar";
+            this.btnIngresarEmpleado.UseVisualStyleBackColor = true;
+            this.btnIngresarEmpleado.Click += new System.EventHandler(this.btnIngresarEmpleado_Click);
+            // 
             // lblGmail
             // 
+            this.lblGmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblGmail.AutoSize = true;
-            this.lblGmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblGmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGmail.Location = new System.Drawing.Point(3, 0);
+            this.lblGmail.Location = new System.Drawing.Point(164, 0);
             this.lblGmail.Name = "lblGmail";
-            this.lblGmail.Size = new System.Drawing.Size(399, 46);
+            this.lblGmail.Size = new System.Drawing.Size(76, 29);
             this.lblGmail.TabIndex = 0;
             this.lblGmail.Text = "Gmail";
             // 
@@ -90,22 +112,12 @@
             this.txtBoxContraseñaEmpleado.Size = new System.Drawing.Size(399, 27);
             this.txtBoxContraseñaEmpleado.TabIndex = 2;
             // 
-            // lblContraseña
-            // 
-            this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContraseña.Location = new System.Drawing.Point(3, 92);
-            this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(136, 29);
-            this.lblContraseña.TabIndex = 3;
-            this.lblContraseña.Text = "Contraseña";
-            // 
             // btnVolver
             // 
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.Location = new System.Drawing.Point(3, 3);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(109, 33);
+            this.btnVolver.Size = new System.Drawing.Size(121, 41);
             this.btnVolver.TabIndex = 1;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -115,21 +127,10 @@
             // 
             this.flowLayoutPanelBotones.Controls.Add(this.btnVolver);
             this.flowLayoutPanelBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanelBotones.Location = new System.Drawing.Point(0, 445);
+            this.flowLayoutPanelBotones.Location = new System.Drawing.Point(0, 457);
             this.flowLayoutPanelBotones.Name = "flowLayoutPanelBotones";
-            this.flowLayoutPanelBotones.Size = new System.Drawing.Size(985, 65);
+            this.flowLayoutPanelBotones.Size = new System.Drawing.Size(985, 53);
             this.flowLayoutPanelBotones.TabIndex = 2;
-            // 
-            // btnIngresarEmpleado
-            // 
-            this.btnIngresarEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresarEmpleado.Location = new System.Drawing.Point(3, 187);
-            this.btnIngresarEmpleado.Name = "btnIngresarEmpleado";
-            this.btnIngresarEmpleado.Size = new System.Drawing.Size(109, 33);
-            this.btnIngresarEmpleado.TabIndex = 2;
-            this.btnIngresarEmpleado.Text = "Ingresar";
-            this.btnIngresarEmpleado.UseVisualStyleBackColor = true;
-            this.btnIngresarEmpleado.Click += new System.EventHandler(this.btnIngresarEmpleado_Click);
             // 
             // Emplado
             // 

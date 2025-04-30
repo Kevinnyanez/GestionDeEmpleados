@@ -20,7 +20,8 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
 
-           
+           btnVolverMenuPrincipal.Visible = false;
+           panelDataGridView.Visible = true; // Muestra el panel del DataGridView
         }
 
         //LÓGICA PARA RESTAURAR LOS BOTONES
@@ -85,19 +86,20 @@ namespace WindowsFormsApp1
         {
 
             CargarUserControl(new RegistroDeEmpleados());
+            btnVolverMenuPrincipal.Visible = true;
         }
 
         //LOGICA PARA CONTROL USER
         private void CargarUserControl(UserControl nuevoControl)
         {
 
-            dataGridViewEmpleados.Visible = false;
-            panelPrincipal.Visible = false; 
+            //dataGridViewEmpleados.Visible = false;
+            // panelPrincipal.Visible = false; 
             // Limpia el contenido actual del Panel
-            panelPrincipal.Controls.Clear();
+            //panelPrincipal.Controls.Clear();
             panelContenido.Visible = true;
             // Ajusta el nuevo control al tamaño del Panel
-            nuevoControl.Dock = DockStyle.Fill;
+            //nuevoControl.Dock = DockStyle.Bottom;
 
             // Agrega el UserControl al Panel
             panelContenido.Controls.Add(nuevoControl);
@@ -107,6 +109,25 @@ namespace WindowsFormsApp1
         private void lblBuscarPorNombre_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVolverMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            FormPrincipal formularioPrincipal = (FormPrincipal)this.ParentForm;
+
+            panelContenido.Controls.Remove(this);
+            //panelPrincipal.Visible = true;
+            dataGridViewEmpleados.Visible = true;
+            panelContenido.Visible = false;
+            btnVolverMenuPrincipal.Visible = false;
+            //RestaurarControles();
+            CargarEmpleados();
+            
         }
     }
 }

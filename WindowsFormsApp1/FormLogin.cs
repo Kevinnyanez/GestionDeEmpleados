@@ -13,14 +13,26 @@ namespace WindowsFormsApp1
 {
     public partial class FormLogin: Form
     {
-     
+        private List<Control> controlesOriginales = new List<Control>();
         public FormLogin()
         {
             InitializeComponent();
-            panelRegistroTrabajador.Visible = false; // Oculta el panel de registro al inicio
+
+            foreach (Control control in panelRegistroTrabajador.Controls)
+            {
+                controlesOriginales.Add(control);
+            }
         }
 
+        public void RestaurarControles()
+        {
+            panelRegistroTrabajador.Controls.Clear(); // Limpia por si hay residuos
 
+            foreach (Control control in controlesOriginales)
+            {
+                panelRegistroTrabajador.Controls.Add(control);
+            }
+        }
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             // Tomamos los valores que ingresó la jefa
@@ -81,7 +93,7 @@ namespace WindowsFormsApp1
 
         private void CargarUserControl(UserControl nuevoControl)
         {
-            panelRegistroTrabajador.Visible = true; // Muestra el panel de registro
+            
             panelRegistroTrabajador.Controls.Clear();
             nuevoControl.Dock = DockStyle.Fill;
             panelRegistroTrabajador.Controls.Add(nuevoControl);

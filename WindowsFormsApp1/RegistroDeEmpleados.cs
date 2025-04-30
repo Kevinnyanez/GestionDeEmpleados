@@ -40,14 +40,7 @@ namespace WindowsFormsApp1
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            FormPrincipal formularioPrincipal = (FormPrincipal)this.ParentForm;
-
-            formularioPrincipal.panelContenido.Controls.Remove(this);
-            formularioPrincipal.panelPrincipal.Visible = true;
-            formularioPrincipal.dataGridViewEmpleados.Visible = true;
-            formularioPrincipal.panelContenido.Visible = false;
-            formularioPrincipal.RestaurarControles();
-            formularioPrincipal.CargarEmpleados();
+            
 
 
         }
