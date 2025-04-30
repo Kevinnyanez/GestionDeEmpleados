@@ -87,6 +87,8 @@ namespace WindowsFormsApp1
 
             CargarUserControl(new RegistroDeEmpleados());
             btnVolverMenuPrincipal.Visible = true;
+            
+
         }
 
         //LOGICA PARA CONTROL USER
@@ -98,6 +100,7 @@ namespace WindowsFormsApp1
             // Limpia el contenido actual del Panel
             //panelPrincipal.Controls.Clear();
             panelContenido.Visible = true;
+            nuevoControl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             // Ajusta el nuevo control al tamaño del Panel
             //nuevoControl.Dock = DockStyle.Bottom;
 
