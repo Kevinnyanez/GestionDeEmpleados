@@ -84,25 +84,40 @@ namespace WindowsFormsApp1
         //LÓGICA DEL BOTÓN REGISTRAR EMPLEADO
         private void button1_Click(object sender, EventArgs e)
         {
-
+            btnEditar.Enabled = false;
             CargarUserControl(new RegistroDeEmpleados());
             btnVolverMenuPrincipal.Visible = true;
-            
+            btnEliminar.Enabled = false;
 
+
+        }
+
+        //LÓGICA DEL BOTÓN EDITAR EMPLEADO
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            CargarUserControl(new EditarEmpleado());
+            btnVolverMenuPrincipal.Visible = true;
+            btnRegistrarEmpleado.Enabled = false;
+            btnEliminar.Enabled = false;
+        }
+
+        //LÓGICA DEL BOTÓN ELIMINAR EMPLEADO
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            CargarUserControl(new EliminarEmpleado());
+            btnVolverMenuPrincipal.Visible = true;
+            btnRegistrarEmpleado.Enabled = false;
+            btnEditar.Enabled = false;
         }
 
         //LOGICA PARA CONTROL USER
         private void CargarUserControl(UserControl nuevoControl)
         {
 
-            //dataGridViewEmpleados.Visible = false;
-            // panelPrincipal.Visible = false; 
-            // Limpia el contenido actual del Panel
-            //panelPrincipal.Controls.Clear();
+           
             panelContenido.Visible = true;
             nuevoControl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            // Ajusta el nuevo control al tamaño del Panel
-            //nuevoControl.Dock = DockStyle.Bottom;
+         
 
             // Agrega el UserControl al Panel
             panelContenido.Controls.Add(nuevoControl);
@@ -114,23 +129,32 @@ namespace WindowsFormsApp1
 
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+       private void EliminarUsersControls()
         {
-
+            // Elimina todos los controles del panel de contenido
+            foreach (Control control in panelContenido.Controls)
+            {
+                panelContenido.Controls.Remove(control);
+            }
         }
 
         private void btnVolverMenuPrincipal_Click(object sender, EventArgs e)
         {
-            FormPrincipal formularioPrincipal = (FormPrincipal)this.ParentForm;
 
-            panelContenido.Controls.Remove(this);
-            //panelPrincipal.Visible = true;
-            dataGridViewEmpleados.Visible = true;
+            // Método para eliminar los controles del panel de contenido 
+            EliminarUsersControls();
+            //Hacer no visible al panelContenido
             panelContenido.Visible = false;
+            //Hago Invisible el botón volver
             btnVolverMenuPrincipal.Visible = false;
-            //RestaurarControles();
+            //Volvermos a cargar el DataGridView
             CargarEmpleados();
-            
+            // Volvemos a activar los botones de edición
+            btnEditar.Enabled = true;
+            btnRegistrarEmpleado.Enabled = true;
+            btnEliminar.Enabled = true;
+
         }
+       
     }
 }

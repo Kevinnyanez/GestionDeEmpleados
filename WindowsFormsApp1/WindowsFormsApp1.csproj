@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditarEmpleado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditarEmpleado.Designer.cs">
+      <DependentUpon>EditarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarEmpleado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EliminarEmpleado.Designer.cs">
+      <DependentUpon>EliminarEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Emplado.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -72,6 +84,12 @@
     <Compile Include="RegistroDeEmpleados.Designer.cs">
       <DependentUpon>RegistroDeEmpleados.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EditarEmpleado.resx">
+      <DependentUpon>EditarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarEmpleado.resx">
+      <DependentUpon>EliminarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Emplado.resx">
       <DependentUpon>Emplado.cs</DependentUpon>
     </EmbeddedResource>
