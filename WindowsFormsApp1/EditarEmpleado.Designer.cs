@@ -34,20 +34,20 @@
             this.lblNuevoValor = new System.Windows.Forms.Label();
             this.textBoxNuevoValor = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.comboBoxDatoPersonalModificar = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.comboBoxDiasPersonalesAsignadosCambio = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.comboBoxVacacionesAsignadasCambio = new System.Windows.Forms.ComboBox();
-            this.comboBoxDiasPersonalesRestantesCambio = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxDiasPersonalesRestantesCambio = new System.Windows.Forms.ComboBox();
             this.comboBoxVacacionesRestantesCambio = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxLicenciasAsignadasCambio = new System.Windows.Forms.ComboBox();
             this.comboBoxLicenciasRestantesCambio = new System.Windows.Forms.ComboBox();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,6 +146,21 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(897, 463);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
+            // btnEditar
+            // 
+            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.btnEditar, 2);
+            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(3, 423);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(891, 37);
+            this.btnEditar.TabIndex = 6;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // comboBoxDatoPersonalModificar
             // 
             this.comboBoxDatoPersonalModificar.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -173,6 +188,20 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Días Personales Asignados";
             // 
+            // comboBoxDiasPersonalesAsignadosCambio
+            // 
+            this.comboBoxDiasPersonalesAsignadosCambio.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBoxDiasPersonalesAsignadosCambio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxDiasPersonalesAsignadosCambio.FormattingEnabled = true;
+            this.comboBoxDiasPersonalesAsignadosCambio.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.comboBoxDiasPersonalesAsignadosCambio.Location = new System.Drawing.Point(126, 213);
+            this.comboBoxDiasPersonalesAsignadosCambio.Name = "comboBoxDiasPersonalesAsignadosCambio";
+            this.comboBoxDiasPersonalesAsignadosCambio.Size = new System.Drawing.Size(196, 31);
+            this.comboBoxDiasPersonalesAsignadosCambio.TabIndex = 8;
+            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -184,56 +213,20 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Días Personales Restantes";
             // 
-            // comboBoxDiasPersonalesAsignadosCambio
-            // 
-            this.comboBoxDiasPersonalesAsignadosCambio.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBoxDiasPersonalesAsignadosCambio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxDiasPersonalesAsignadosCambio.FormattingEnabled = true;
-            this.comboBoxDiasPersonalesAsignadosCambio.Items.AddRange(new object[] {
-            "Días Personales Asignados",
-            "Días Personales Restantes",
-            "Vacaciones Asignadas",
-            "Vacaciones Usadas",
-            "Licencias Asignadas",
-            "Licencias Usadas"});
-            this.comboBoxDiasPersonalesAsignadosCambio.Location = new System.Drawing.Point(126, 213);
-            this.comboBoxDiasPersonalesAsignadosCambio.Name = "comboBoxDiasPersonalesAsignadosCambio";
-            this.comboBoxDiasPersonalesAsignadosCambio.Size = new System.Drawing.Size(196, 31);
-            this.comboBoxDiasPersonalesAsignadosCambio.TabIndex = 8;
-            // 
             // comboBoxVacacionesAsignadasCambio
             // 
             this.comboBoxVacacionesAsignadasCambio.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBoxVacacionesAsignadasCambio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxVacacionesAsignadasCambio.FormattingEnabled = true;
             this.comboBoxVacacionesAsignadasCambio.Items.AddRange(new object[] {
-            "Días Personales Asignados",
-            "Días Personales Restantes",
-            "Vacaciones Asignadas",
-            "Vacaciones Usadas",
-            "Licencias Asignadas",
-            "Licencias Usadas"});
+            "10",
+            "15",
+            "20",
+            "30"});
             this.comboBoxVacacionesAsignadasCambio.Location = new System.Drawing.Point(126, 297);
             this.comboBoxVacacionesAsignadasCambio.Name = "comboBoxVacacionesAsignadasCambio";
             this.comboBoxVacacionesAsignadasCambio.Size = new System.Drawing.Size(196, 31);
             this.comboBoxVacacionesAsignadasCambio.TabIndex = 14;
-            // 
-            // comboBoxDiasPersonalesRestantesCambio
-            // 
-            this.comboBoxDiasPersonalesRestantesCambio.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBoxDiasPersonalesRestantesCambio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxDiasPersonalesRestantesCambio.FormattingEnabled = true;
-            this.comboBoxDiasPersonalesRestantesCambio.Items.AddRange(new object[] {
-            "Días Personales Asignados",
-            "Días Personales Restantes",
-            "Vacaciones Asignadas",
-            "Vacaciones Usadas",
-            "Licencias Asignadas",
-            "Licencias Usadas"});
-            this.comboBoxDiasPersonalesRestantesCambio.Location = new System.Drawing.Point(574, 213);
-            this.comboBoxDiasPersonalesRestantesCambio.Name = "comboBoxDiasPersonalesRestantesCambio";
-            this.comboBoxDiasPersonalesRestantesCambio.Size = new System.Drawing.Size(196, 31);
-            this.comboBoxDiasPersonalesRestantesCambio.TabIndex = 15;
             // 
             // label5
             // 
@@ -257,18 +250,34 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "Vacaciones Restantes";
             // 
+            // comboBoxDiasPersonalesRestantesCambio
+            // 
+            this.comboBoxDiasPersonalesRestantesCambio.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBoxDiasPersonalesRestantesCambio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxDiasPersonalesRestantesCambio.FormattingEnabled = true;
+            this.comboBoxDiasPersonalesRestantesCambio.Items.AddRange(new object[] {
+            "3",
+            "2",
+            "1",
+            "0"});
+            this.comboBoxDiasPersonalesRestantesCambio.Location = new System.Drawing.Point(574, 213);
+            this.comboBoxDiasPersonalesRestantesCambio.Name = "comboBoxDiasPersonalesRestantesCambio";
+            this.comboBoxDiasPersonalesRestantesCambio.Size = new System.Drawing.Size(196, 31);
+            this.comboBoxDiasPersonalesRestantesCambio.TabIndex = 15;
+            // 
             // comboBoxVacacionesRestantesCambio
             // 
             this.comboBoxVacacionesRestantesCambio.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.comboBoxVacacionesRestantesCambio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxVacacionesRestantesCambio.FormattingEnabled = true;
             this.comboBoxVacacionesRestantesCambio.Items.AddRange(new object[] {
-            "Días Personales Asignados",
-            "Días Personales Restantes",
-            "Vacaciones Asignadas",
-            "Vacaciones Usadas",
-            "Licencias Asignadas",
-            "Licencias Usadas"});
+            "30",
+            "25",
+            "20",
+            "15",
+            "10",
+            "5",
+            "0"});
             this.comboBoxVacacionesRestantesCambio.Location = new System.Drawing.Point(574, 297);
             this.comboBoxVacacionesRestantesCambio.Name = "comboBoxVacacionesRestantesCambio";
             this.comboBoxVacacionesRestantesCambio.Size = new System.Drawing.Size(196, 31);
@@ -302,12 +311,10 @@
             this.comboBoxLicenciasAsignadasCambio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxLicenciasAsignadasCambio.FormattingEnabled = true;
             this.comboBoxLicenciasAsignadasCambio.Items.AddRange(new object[] {
-            "Días Personales Asignados",
-            "Días Personales Restantes",
-            "Vacaciones Asignadas",
-            "Vacaciones Usadas",
-            "Licencias Asignadas",
-            "Licencias Usadas"});
+            "15",
+            "20",
+            "25",
+            "30"});
             this.comboBoxLicenciasAsignadasCambio.Location = new System.Drawing.Point(126, 381);
             this.comboBoxLicenciasAsignadasCambio.Name = "comboBoxLicenciasAsignadasCambio";
             this.comboBoxLicenciasAsignadasCambio.Size = new System.Drawing.Size(196, 31);
@@ -319,31 +326,17 @@
             this.comboBoxLicenciasRestantesCambio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxLicenciasRestantesCambio.FormattingEnabled = true;
             this.comboBoxLicenciasRestantesCambio.Items.AddRange(new object[] {
-            "Días Personales Asignados",
-            "Días Personales Restantes",
-            "Vacaciones Asignadas",
-            "Vacaciones Usadas",
-            "Licencias Asignadas",
-            "Licencias Usadas"});
+            "30",
+            "25",
+            "20",
+            "15",
+            "10",
+            "5",
+            "0"});
             this.comboBoxLicenciasRestantesCambio.Location = new System.Drawing.Point(574, 381);
             this.comboBoxLicenciasRestantesCambio.Name = "comboBoxLicenciasRestantesCambio";
             this.comboBoxLicenciasRestantesCambio.Size = new System.Drawing.Size(196, 31);
             this.comboBoxLicenciasRestantesCambio.TabIndex = 22;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.btnEditar, 2);
-            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(3, 423);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(891, 37);
-            this.btnEditar.TabIndex = 6;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // EditarEmpleado
             // 
