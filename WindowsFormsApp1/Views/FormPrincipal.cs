@@ -12,8 +12,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class FormPrincipal: Form
+    public partial class FormPrincipal: Form 
     {
+        public bool admin {get; set; } // Propiedad para almacenar el estado de administrador
         // LISTA DE CONTROLOES DE LA PANTALLA PRINCIPAL
         private List<Control> controlesOriginales = new List<Control>();
         public FormPrincipal()
@@ -100,33 +101,61 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
-        //LÓGICA DEL BOTÓN REGISTRAR EMPLEADO
+        //LÓGICA DEL BOTÓN REGISTRAR EMPLEADO Y CREAR PRODUCTO
         private void button1_Click(object sender, EventArgs e)
         {
+            if(admin == true) { 
             btnEditar.Enabled = false;
             CargarUserControl(new RegistroDeEmpleados());
             btnVolverMenuPrincipal.Visible = true;
             btnEliminar.Enabled = false;
-
+            }
+            else
+            {
+                btnEditar.Enabled = false;
+                CargarUserControl(new CrearProductos());
+                btnVolverMenuPrincipal.Visible = true;
+                btnEliminar.Enabled = false;
+            }
 
         }
 
-        //LÓGICA DEL BOTÓN EDITAR EMPLEADO
+        //LÓGICA DEL BOTÓN EDITAR EMPLEADO Y EDITAR PRODUCTO
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            CargarUserControl(new EditarEmpleado());
-            btnVolverMenuPrincipal.Visible = true;
-            btnRegistrarEmpleado.Enabled = false;
-            btnEliminar.Enabled = false;
+            if (admin == true)
+            {
+                CargarUserControl(new EditarEmpleado());
+                btnVolverMenuPrincipal.Visible = true;
+                btnRegistrarEmpleado.Enabled = false;
+                btnEliminar.Enabled = false;
+            }
+            else
+            {
+                CargarUserControl(new EditarProducto());
+                btnVolverMenuPrincipal.Visible = true;
+                btnRegistrarEmpleado.Enabled = false;
+                btnEliminar.Enabled = false;
+            }
         }
 
-        //LÓGICA DEL BOTÓN ELIMINAR EMPLEADO
+        //LÓGICA DEL BOTÓN ELIMINAR EMPLEADO Y ELIMINAR PRODUCTO
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            CargarUserControl(new EliminarEmpleado());
-            btnVolverMenuPrincipal.Visible = true;
-            btnRegistrarEmpleado.Enabled = false;
-            btnEditar.Enabled = false;
+            if (admin == true)
+            {
+                CargarUserControl(new EliminarEmpleado());
+                btnVolverMenuPrincipal.Visible = true;
+                btnRegistrarEmpleado.Enabled = false;
+                btnEditar.Enabled = false;
+            }
+            else
+            {
+                CargarUserControl(new EliminarProducto());
+                btnVolverMenuPrincipal.Visible = true;
+                btnRegistrarEmpleado.Enabled = false;
+                btnEditar.Enabled = false;
+            }
         }
 
         //LOGICA PARA CONTROL USER
@@ -159,7 +188,7 @@ namespace WindowsFormsApp1
 
         private void btnVolverMenuPrincipal_Click(object sender, EventArgs e)
         {
-
+            if (admin == true) { 
             // Método para eliminar los controles del panel de contenido 
             EliminarUsersControls();
             //Hacer no visible al panelContenido
@@ -172,8 +201,26 @@ namespace WindowsFormsApp1
             btnEditar.Enabled = true;
             btnRegistrarEmpleado.Enabled = true;
             btnEliminar.Enabled = true;
+            }
+            else {
+                // Método para eliminar los controles del panel de contenido 
+                EliminarUsersControls();
+                //Hacer no visible al panelContenido
+                panelContenido.Visible = false;
+                //Hago Invisible el botón volver
+                btnVolverMenuPrincipal.Visible = false;
+                //Volvermos a cargar el DataGridView
+                CargarProductos();
+                // Volvemos a activar los botones de edición
+                btnEditar.Enabled = true;
+                btnRegistrarEmpleado.Enabled = true;
+                btnEliminar.Enabled = true;
+            }
 
         }
-       
+
+
+  
+
     }
 }

@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
     public partial class FormLogin: Form
     {
         private List<Control> controlesOriginales = new List<Control>();
+        
         public FormLogin()
         {
             InitializeComponent();
@@ -35,6 +36,7 @@ namespace WindowsFormsApp1
         }
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
+            
             // Tomamos los valores que ingresó la jefa
             string usuario = txtUsuario.Text.Trim();
             string contraseña = txtContraseña.Text.Trim();
@@ -67,6 +69,9 @@ namespace WindowsFormsApp1
                         principal.Show();
                         this.Hide();
                         principal.CargarEmpleados(); // Carga los empleados en el DataGridView
+                        principal.panelPrincipal.Controls.Remove(this); // Elimina el control actual
+                        principal.admin = true; // Cambia el estado de administrador
+
                     }
                     else
                     {

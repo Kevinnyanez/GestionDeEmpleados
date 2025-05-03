@@ -61,11 +61,14 @@ namespace WindowsFormsApp1
                     if (count > 0)
                     {
                         MessageBox.Show("Inicio de sesión exitoso.");
+                        FormLogin formulario = (FormLogin)this.ParentForm;
                         FormPrincipal principal = new FormPrincipal();
                         principal.Show();
+                        formulario.Hide(); // Oculta el formulario de inicio de sesión
                         this.Hide();
                         principal.CargarProductos(); // Carga los empleados en el DataGridView
                         principal.panelPrincipal.Controls.Remove(this); // Elimina el control actual
+                        principal.admin = false; // Cambia el estado de administrador
                     }
                     else
                     {
