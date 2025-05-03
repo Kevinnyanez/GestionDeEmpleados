@@ -38,8 +38,6 @@ namespace WindowsFormsApp1
         //LÓGICA DEL DATAGRIDVIEW
         private void Form2_Load(object sender, EventArgs e)
         {
-            // Llamamos a una función que llena la tabla
-            CargarEmpleados();
 
             // Inicializamos el panel de contenido
             panelContenido.Visible = false; // Oculta el panel de contenido al inicio
@@ -72,6 +70,27 @@ namespace WindowsFormsApp1
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar empleados: " + ex.Message);
+            }
+        }
+
+        //LÓGICA PARA CARGAR LOS PRODUCTOS EN EL DATAGRIDVIEW
+        public void CargarProductos()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(DatabaseHelper.ConnectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT * FROM VistaProductos";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    System.Data.DataTable table = new System.Data.DataTable();
+                    adapter.Fill(table);
+                    dataGridViewEmpleados.DataSource = table;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar productos: " + ex.Message);
             }
         }
 

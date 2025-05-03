@@ -66,6 +66,7 @@ namespace WindowsFormsApp1
                         FormPrincipal principal = new FormPrincipal();
                         principal.Show();
                         this.Hide();
+                        principal.CargarEmpleados(); // Carga los empleados en el DataGridView
                     }
                     else
                     {
@@ -76,6 +77,11 @@ namespace WindowsFormsApp1
                 {
                     MessageBox.Show("Error al intentar conectar a la base de datos: " + ex.Message);
                 }
+                finally
+                {
+                    connection.Close();
+                }
+
             }
         }
 

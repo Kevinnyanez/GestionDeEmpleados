@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,11 +12,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
+    
     public partial class Emplado : UserControl
     {
+        public int contador = 0;
         public Emplado()
         {
             InitializeComponent();
+            
+            TextBox txtBoxContraseñaEmpleado = new TextBox();
+            
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -31,7 +37,7 @@ namespace WindowsFormsApp1
             FormLogin formularioLogin = (FormLogin)this.ParentForm;
 
             string Contraseña = txtBoxContraseñaEmpleado.Text; // Contraseña por defecto
-            string Gmail = txtBoxGmail.Text.ToLower();
+            string Gmail = txtBoxGmail.Text;
 
             if (string.IsNullOrEmpty(Contraseña) || string.IsNullOrEmpty(Gmail))
             {
@@ -39,12 +45,67 @@ namespace WindowsFormsApp1
                 return;
             }
 
+            using (SqlConnection connection = new SqlConnection(DatabaseHelper.GetConnectionString()))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "SELECT COUNT(*) FROM Empleados WHERE Contraseña = @Contraseña AND Gmail = @Gmail";
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    cmd.Parameters.AddWithValue("@Contraseña", Contraseña);
+                    cmd.Parameters.AddWithValue("@Gmail", Gmail);
+
+                    int count = (int)cmd.ExecuteScalar(); // Devuelve un número
+
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Inicio de sesión exitoso.");
+                        FormPrincipal principal = new FormPrincipal();
+                        principal.Show();
+                        this.Hide();
+                        principal.CargarProductos(); // Carga los empleados en el DataGridView
+                        principal.panelPrincipal.Controls.Remove(this); // Elimina el control actual
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario o contraseña incorrectos.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al intentar conectar a la base de datos: " + ex.Message);
+                    return;
+                }
+            }
+
             
 
-            FormPrincipal formularioPrincipal = new FormPrincipal();
-            formularioPrincipal.Show();
-            formularioLogin.Hide();
 
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            
+            contador += 1;
+
+
+            if (contador % 2 == 0)
+            {
+                txtBoxContraseñaEmpleado.UseSystemPasswordChar = true;
+            }
+            else
+            {
+                txtBoxContraseñaEmpleado.UseSystemPasswordChar = false;
+            }
+            
         }
     }
 }

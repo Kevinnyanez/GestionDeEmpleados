@@ -136,6 +136,13 @@ namespace WindowsFormsApp1
                     if (columnasAfectadas > 0)
                     {
                         MessageBox.Show("El dato se ha modificado correctamente.");
+                        textBoxNuevoValor.Clear(); // Limpiar el campo de texto
+                        textBoxNuevoValor.Focus(); // Enfocar el campo de texto
+                        // Aquí puedes agregar código para actualizar el DataGridView o realizar otras acciones necesarias
+                        
+                        FormPrincipal form = (FormPrincipal)this.ParentForm;
+                        form.CargarEmpleados(); // Llamar al método para cargar los empleados nuevamente
+
                     }
                     else
                     {
@@ -207,6 +214,11 @@ namespace WindowsFormsApp1
                         if (columnasAfectadas > 0)
                         {
                             MessageBox.Show("El dato se ha modificado correctamente.");
+                            textBoxNuevoValor.Clear(); // Limpiar el campo de texto
+                            textBoxNuevoValor.Focus(); // Enfocar el campo de texto
+                            // Aquí puedes agregar código para actualizar el DataGridView o realizar otras acciones necesarias
+                            FormPrincipal form = (FormPrincipal)this.ParentForm;
+                            form.CargarEmpleados(); // Llamar al método para cargar los empleados nuevamente
                         }
                         else
                         {

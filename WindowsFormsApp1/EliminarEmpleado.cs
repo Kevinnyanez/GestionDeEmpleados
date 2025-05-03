@@ -44,19 +44,42 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            // Si el empleado existe, procedemos a eliminarlo
-            string queryEliminar = "DELETE FROM Empleados WHERE NombreCompleto = @Empleado";
-            SqlCommand commandEliminar = new SqlCommand(queryEliminar, connection);
-            commandEliminar.Parameters.AddWithValue("@Empleado", Empleado);
-            int rowsAffected = commandEliminar.ExecuteNonQuery();
-            if (rowsAffected > 0)
+            DialogResult resultado = MessageBox.Show(
+            "¿Seguro que quiere eliminar?",
+            "Confirmación",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Warning
+            );
+
+            if (resultado == DialogResult.Yes)
             {
-                MessageBox.Show("Empleado eliminado exitosamente.");
+                // Si el empleado existe, procedemos a eliminarlo
+                string queryEliminar = "DELETE FROM Empleados WHERE NombreCompleto = @Empleado";
+                SqlCommand commandEliminar = new SqlCommand(queryEliminar, connection);
+                commandEliminar.Parameters.AddWithValue("@Empleado", Empleado);
+                int rowsAffected = commandEliminar.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Empleado eliminado exitosamente.");
+                    textBoxEmpleadoAEliminar.Clear(); // Limpiar el campo de texto
+                    textBoxEmpleadoAEliminar.Focus(); // Enfocar el campo de texto
+                    // Aquí puedes agregar código para actualizar el DataGridView o realizar otras acciones necesarias
+                    FormPrincipal form = (FormPrincipal)this.ParentForm;
+                    form.CargarEmpleados(); // Llamar al método para cargar los empleados nuevamente
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar el empleado.");
+                }
             }
             else
             {
-                MessageBox.Show("Error al eliminar el empleado.");
+                MessageBox.Show("Operación cancelada.");
+                return;
             }
+
+
+         
         }
     }
 }

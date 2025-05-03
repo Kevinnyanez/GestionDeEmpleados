@@ -72,6 +72,7 @@
             // 
             // txtboxGmail
             // 
+            this.txtboxGmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtboxGmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtboxGmail.Location = new System.Drawing.Point(1132, 363);
             this.txtboxGmail.Name = "txtboxGmail";
@@ -156,6 +157,7 @@
             // 
             // txtboxNombre
             // 
+            this.txtboxNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtboxNombre.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtboxNombre.Location = new System.Drawing.Point(244, 75);
             this.txtboxNombre.Name = "txtboxNombre";

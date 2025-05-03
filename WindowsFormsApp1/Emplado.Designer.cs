@@ -36,6 +36,7 @@
             this.txtBoxContraseñaEmpleado = new System.Windows.Forms.TextBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.flowLayoutPanelBotones = new System.Windows.Forms.FlowLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanelBotones.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +61,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(405, 233);
             this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // lblContraseña
             // 
@@ -97,6 +99,7 @@
             // txtBoxGmail
             // 
             this.txtBoxGmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBoxGmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtBoxGmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxGmail.Location = new System.Drawing.Point(3, 55);
             this.txtBoxGmail.Name = "txtBoxGmail";
@@ -111,6 +114,7 @@
             this.txtBoxContraseñaEmpleado.Name = "txtBoxContraseñaEmpleado";
             this.txtBoxContraseñaEmpleado.Size = new System.Drawing.Size(399, 27);
             this.txtBoxContraseñaEmpleado.TabIndex = 2;
+            this.txtBoxContraseñaEmpleado.UseSystemPasswordChar = true;
             // 
             // btnVolver
             // 
@@ -132,10 +136,21 @@
             this.flowLayoutPanelBotones.Size = new System.Drawing.Size(985, 53);
             this.flowLayoutPanelBotones.TabIndex = 2;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(687, 283);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(58, 27);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Emplado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.flowLayoutPanelBotones);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Emplado";
@@ -157,5 +172,6 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelBotones;
         private System.Windows.Forms.Button btnIngresarEmpleado;
+        private System.Windows.Forms.Button button1;
     }
 }
