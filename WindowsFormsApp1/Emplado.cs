@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
     
     public partial class Emplado : UserControl
     {
-        public int contador = 0;
+        private int contador = 0;
         public Emplado()
         {
             InitializeComponent();
