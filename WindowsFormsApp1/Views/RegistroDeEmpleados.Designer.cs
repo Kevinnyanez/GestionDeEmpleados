@@ -301,7 +301,6 @@
             this.label10.Size = new System.Drawing.Size(229, 31);
             this.label10.TabIndex = 39;
             this.label10.Text = "DATOS DE USUARIO";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -320,7 +319,6 @@
             this.txtBoxContraseña.Name = "txtBoxContraseña";
             this.txtBoxContraseña.Size = new System.Drawing.Size(572, 34);
             this.txtBoxContraseña.TabIndex = 41;
-            this.txtBoxContraseña.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // RegistroDeEmpleados
             // 

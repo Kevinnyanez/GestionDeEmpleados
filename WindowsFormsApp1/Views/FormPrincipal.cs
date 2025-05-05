@@ -8,19 +8,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Database;
+using WindowsFormsApp1.Models;
 
 
 namespace WindowsFormsApp1
 {
     public partial class FormPrincipal: Form 
     {
-        public bool admin {get; set; } // Propiedad para almacenar el estado de administrador
+        public Admin admin { get; set; }
         // LISTA DE CONTROLOES DE LA PANTALLA PRINCIPAL
         private List<Control> controlesOriginales = new List<Control>();
-        public FormPrincipal()
+        public FormPrincipal(Admin admin)
         {
             InitializeComponent();
-
+           this.admin = admin;
            btnVolverMenuPrincipal.Visible = false;
            panelDataGridView.Visible = true; // Muestra el panel del DataGridView
         }
@@ -72,6 +74,7 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Error al cargar empleados: " + ex.Message);
             }
+            
         }
 
         //LÓGICA PARA CARGAR LOS PRODUCTOS EN EL DATAGRIDVIEW
@@ -104,7 +107,7 @@ namespace WindowsFormsApp1
         //LÓGICA DEL BOTÓN REGISTRAR EMPLEADO Y CREAR PRODUCTO
         private void button1_Click(object sender, EventArgs e)
         {
-            if(admin == true) { 
+            if(admin.EsAdmin == true) { 
             btnEditar.Enabled = false;
             CargarUserControl(new RegistroDeEmpleados());
             btnVolverMenuPrincipal.Visible = true;
@@ -123,7 +126,7 @@ namespace WindowsFormsApp1
         //LÓGICA DEL BOTÓN EDITAR EMPLEADO Y EDITAR PRODUCTO
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (admin == true)
+            if (admin.EsAdmin == true)
             {
                 CargarUserControl(new EditarEmpleado());
                 btnVolverMenuPrincipal.Visible = true;
@@ -142,7 +145,7 @@ namespace WindowsFormsApp1
         //LÓGICA DEL BOTÓN ELIMINAR EMPLEADO Y ELIMINAR PRODUCTO
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (admin == true)
+            if (admin.EsAdmin == true)
             {
                 CargarUserControl(new EliminarEmpleado());
                 btnVolverMenuPrincipal.Visible = true;
@@ -188,7 +191,7 @@ namespace WindowsFormsApp1
 
         private void btnVolverMenuPrincipal_Click(object sender, EventArgs e)
         {
-            if (admin == true) { 
+            if (admin.EsAdmin == true) { 
             // Método para eliminar los controles del panel de contenido 
             EliminarUsersControls();
             //Hacer no visible al panelContenido

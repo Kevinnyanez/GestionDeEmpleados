@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Controllers;
+using WindowsFormsApp1.Database;
 
 namespace WindowsFormsApp1
 {
@@ -21,65 +23,23 @@ namespace WindowsFormsApp1
         private void btnEliminaTrabajador_Click(object sender, EventArgs e)
         {
 
-            String Empleado = textBoxEmpleadoAEliminar.Text;
-            // Verificar si el campo de texto está vacío
-            if (string.IsNullOrEmpty(Empleado))
+            int rowsAffected = EmpleadoController.EliminarEmpleado(textBoxEmpleadoAEliminar.Text);
+
+            if (rowsAffected > 0)
             {
-                MessageBox.Show("El campo de texto no puede estar vacío.");
-                return;
-            }
-
-            // Conectamos a la base de datos
-            SqlConnection connection = new SqlConnection(DatabaseHelper.ConnectionString);
-            connection.Open();
-
-            // Verificamos si el empleado existe
-            string queryVerificar = "SELECT COUNT(*) FROM Empleados WHERE NombreCompleto = @Empleado";
-            SqlCommand commandVerificar = new SqlCommand(queryVerificar, connection);
-            commandVerificar.Parameters.AddWithValue("@Empleado", Empleado);
-            int count = (int)commandVerificar.ExecuteScalar();
-            if (count == 0)
-            {
-                MessageBox.Show("El empleado no existe.");
-                return;
-            }
-
-            DialogResult resultado = MessageBox.Show(
-            "¿Seguro que quiere eliminar?",
-            "Confirmación",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Warning
-            );
-
-            if (resultado == DialogResult.Yes)
-            {
-                // Si el empleado existe, procedemos a eliminarlo
-                string queryEliminar = "DELETE FROM Empleados WHERE NombreCompleto = @Empleado";
-                SqlCommand commandEliminar = new SqlCommand(queryEliminar, connection);
-                commandEliminar.Parameters.AddWithValue("@Empleado", Empleado);
-                int rowsAffected = commandEliminar.ExecuteNonQuery();
-                if (rowsAffected > 0)
-                {
-                    MessageBox.Show("Empleado eliminado exitosamente.");
-                    textBoxEmpleadoAEliminar.Clear(); // Limpiar el campo de texto
-                    textBoxEmpleadoAEliminar.Focus(); // Enfocar el campo de texto
-                    // Aquí puedes agregar código para actualizar el DataGridView o realizar otras acciones necesarias
-                    FormPrincipal form = (FormPrincipal)this.ParentForm;
-                    form.CargarEmpleados(); // Llamar al método para cargar los empleados nuevamente
-                }
-                else
-                {
-                    MessageBox.Show("Error al eliminar el empleado.");
-                }
+                MessageBox.Show("Empleado eliminado exitosamente.");
+                textBoxEmpleadoAEliminar.Clear(); // Limpiar el campo de texto
+                textBoxEmpleadoAEliminar.Focus(); // Enfocar el campo de texto
+                                                  // Aquí puedes agregar código para actualizar el DataGridView o realizar otras acciones necesarias
+                FormPrincipal form = (FormPrincipal)this.ParentForm;
+                form.CargarEmpleados(); // Llamar al método para cargar los empleados nuevamente
             }
             else
             {
-                MessageBox.Show("Operación cancelada.");
-                return;
+                MessageBox.Show("Error al eliminar el empleado.");
             }
 
 
-         
         }
     }
 }

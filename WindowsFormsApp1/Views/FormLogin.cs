@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Database;
+using WindowsFormsApp1.Controllers;
+using WindowsFormsApp1.Models;
 
 namespace WindowsFormsApp1
 {
@@ -36,59 +39,42 @@ namespace WindowsFormsApp1
         }
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            
+            Admin admin = new Admin();
             // Tomamos los valores que ingresó la jefa
-            string usuario = txtUsuario.Text.Trim();
-            string contraseña = txtContraseña.Text.Trim();
+            admin.Contraseña = txtContraseña.Text;
+            admin.NombreUsuario = txtUsuario.Text;
 
             // Verificamos que no estén vacíos
-            if (usuario == "" || contraseña == "")
+            if (admin.NombreUsuario == "" || admin.Contraseña == "")
             {
                 MessageBox.Show("Por favor ingrese usuario y contraseña.");
                 return;
             }
 
-            // Conectamos a la base de datos
-            using (SqlConnection connection = new SqlConnection(DatabaseHelper.GetConnectionString()))
+        int count = AdminController.IniciarSesion(admin);
+
+            if (count > 0)
             {
-                try
-                {
-                    connection.Open();
 
-                    string query = "SELECT COUNT(*) FROM Admins WHERE NombreUsuario = @Usuario AND Contraseña = @Contraseña";
-                    SqlCommand cmd = new SqlCommand(query, connection);
-                    cmd.Parameters.AddWithValue("@Usuario", usuario);
-                    cmd.Parameters.AddWithValue("@Contraseña", contraseña);
+                MessageBox.Show("Inicio de sesión exitoso.");
+                FormPrincipal principal = new FormPrincipal(admin);
+                principal.Show();
+                this.Hide();
+                principal.CargarEmpleados(); // Carga los empleados en el DataGridView
+                principal.panelPrincipal.Controls.Remove(this); // Elimina el control actual
+                admin.EsAdmin = true; // Cambia el estado de administrador
 
-                    int count = (int)cmd.ExecuteScalar(); // Devuelve un número
-
-                    if (count > 0)
-                    {
-                        MessageBox.Show("Inicio de sesión exitoso.");
-                        FormPrincipal principal = new FormPrincipal();
-                        principal.Show();
-                        this.Hide();
-                        principal.CargarEmpleados(); // Carga los empleados en el DataGridView
-                        principal.panelPrincipal.Controls.Remove(this); // Elimina el control actual
-                        principal.admin = true; // Cambia el estado de administrador
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Usuario o contraseña incorrectos.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al intentar conectar a la base de datos: " + ex.Message);
-                }
-                finally
-                {
-                    connection.Close();
-                }
 
             }
+            else
+            {
+              MessageBox.Show("Usuario o contraseña incorrectos.");
+            }
+                
+               
+
         }
+        
 
         private void btnSalir_Click(object sender, EventArgs e)
         {

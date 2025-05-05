@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Controllers;
+using WindowsFormsApp1.Database;
+using WindowsFormsApp1.Models;
 
 
 namespace WindowsFormsApp1
@@ -36,56 +39,36 @@ namespace WindowsFormsApp1
         {
             FormLogin formularioLogin = (FormLogin)this.ParentForm;
 
-            string Contraseña = txtBoxContraseñaEmpleado.Text; // Contraseña por defecto
-            string Gmail = txtBoxGmail.Text;
+            int count = EmpleadoController.inicioSesionEmpleado(txtBoxContraseñaEmpleado.Text, txtBoxGmail.Text);
 
-            if (string.IsNullOrEmpty(Contraseña) || string.IsNullOrEmpty(Gmail))
-            {
-                MessageBox.Show("Por favor, complete todos los campos.");
-                return;
-            }
+            if (count > 0)
+             {
+                Admin admin = new Admin();
 
-            using (SqlConnection connection = new SqlConnection(DatabaseHelper.GetConnectionString()))
-            {
-                try
-                {
-                    connection.Open();
+                MessageBox.Show("Inicio de sesión exitoso.");
 
-                    string query = "SELECT COUNT(*) FROM Empleados WHERE Contraseña = @Contraseña AND Gmail = @Gmail";
-                    SqlCommand cmd = new SqlCommand(query, connection);
-                    cmd.Parameters.AddWithValue("@Contraseña", Contraseña);
-                    cmd.Parameters.AddWithValue("@Gmail", Gmail);
+                FormLogin formulario = (FormLogin)this.ParentForm;
+                FormPrincipal principal = new FormPrincipal(admin);
 
-                    int count = (int)cmd.ExecuteScalar(); // Devuelve un número
+                principal.Show();
+                formulario.Hide(); // Oculta el formulario de inicio de sesión
+                this.Hide();
 
-                    if (count > 0)
-                    {
-                        MessageBox.Show("Inicio de sesión exitoso.");
-                        FormLogin formulario = (FormLogin)this.ParentForm;
-                        FormPrincipal principal = new FormPrincipal();
-                        principal.Show();
-                        formulario.Hide(); // Oculta el formulario de inicio de sesión
-                        this.Hide();
-                        principal.CargarProductos(); // Carga los empleados en el DataGridView
-                        principal.panelPrincipal.Controls.Remove(this); // Elimina el control actual
-                        principal.admin = false; // Cambia el estado de administrador
-                    }
-                    else
-                    {
-                        MessageBox.Show("Usuario o contraseña incorrectos.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al intentar conectar a la base de datos: " + ex.Message);
-                    return;
-                }
-            }
+                principal.CargarProductos(); // Carga los productos en el DataGridView
+                principal.panelPrincipal.Controls.Remove(this); // Elimina el control actual
+                admin.EsAdmin = false; // Cambia el estado de administrador
+             }
+            else
+             {
+                MessageBox.Show("Usuario o contraseña incorrectos.");
+             }
+                
+         }
 
             
 
 
-        }
+        
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {

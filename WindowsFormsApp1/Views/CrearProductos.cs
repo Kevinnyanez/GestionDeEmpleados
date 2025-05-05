@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using WindowsFormsApp1.Database;
 namespace WindowsFormsApp1
 {
     public partial class CrearProductos : UserControl

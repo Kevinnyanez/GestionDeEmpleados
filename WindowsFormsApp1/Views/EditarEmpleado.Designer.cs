@@ -194,6 +194,7 @@
             this.comboBoxDiasPersonalesAsignadosCambio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDiasPersonalesAsignadosCambio.FormattingEnabled = true;
             this.comboBoxDiasPersonalesAsignadosCambio.Items.AddRange(new object[] {
+            "0",
             "1",
             "2",
             "3"});
@@ -219,6 +220,7 @@
             this.comboBoxVacacionesAsignadasCambio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxVacacionesAsignadasCambio.FormattingEnabled = true;
             this.comboBoxVacacionesAsignadasCambio.Items.AddRange(new object[] {
+            "0",
             "10",
             "15",
             "20",
@@ -256,10 +258,10 @@
             this.comboBoxDiasPersonalesRestantesCambio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDiasPersonalesRestantesCambio.FormattingEnabled = true;
             this.comboBoxDiasPersonalesRestantesCambio.Items.AddRange(new object[] {
+            "0",
             "3",
             "2",
-            "1",
-            "0"});
+            "1"});
             this.comboBoxDiasPersonalesRestantesCambio.Location = new System.Drawing.Point(574, 213);
             this.comboBoxDiasPersonalesRestantesCambio.Name = "comboBoxDiasPersonalesRestantesCambio";
             this.comboBoxDiasPersonalesRestantesCambio.Size = new System.Drawing.Size(196, 31);
@@ -271,13 +273,13 @@
             this.comboBoxVacacionesRestantesCambio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxVacacionesRestantesCambio.FormattingEnabled = true;
             this.comboBoxVacacionesRestantesCambio.Items.AddRange(new object[] {
-            "30",
-            "25",
-            "20",
-            "15",
-            "10",
+            "0",
             "5",
-            "0"});
+            "10",
+            "15",
+            "20",
+            "25",
+            "30"});
             this.comboBoxVacacionesRestantesCambio.Location = new System.Drawing.Point(574, 297);
             this.comboBoxVacacionesRestantesCambio.Name = "comboBoxVacacionesRestantesCambio";
             this.comboBoxVacacionesRestantesCambio.Size = new System.Drawing.Size(196, 31);
@@ -311,6 +313,7 @@
             this.comboBoxLicenciasAsignadasCambio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxLicenciasAsignadasCambio.FormattingEnabled = true;
             this.comboBoxLicenciasAsignadasCambio.Items.AddRange(new object[] {
+            "0",
             "15",
             "20",
             "25",
@@ -326,13 +329,13 @@
             this.comboBoxLicenciasRestantesCambio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxLicenciasRestantesCambio.FormattingEnabled = true;
             this.comboBoxLicenciasRestantesCambio.Items.AddRange(new object[] {
-            "30",
-            "25",
-            "20",
-            "15",
-            "10",
+            "0",
             "5",
-            "0"});
+            "10",
+            "15",
+            "20",
+            "25",
+            "30"});
             this.comboBoxLicenciasRestantesCambio.Location = new System.Drawing.Point(574, 381);
             this.comboBoxLicenciasRestantesCambio.Name = "comboBoxLicenciasRestantesCambio";
             this.comboBoxLicenciasRestantesCambio.Size = new System.Drawing.Size(196, 31);
