@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using WindowsFormsApp1.Database;
-using WindowsFormsApp1.Models;
+using Microsoft.Data.SqlClient;
+using GestionDeEmpleados.Models;
+using GestionDeEmpleados.Database;
+using System.Windows.Form;
 
-namespace WindowsFormsApp1.Controllers
+namespace GestionDeEmpleados.Controllers
 {
     public static class EmpleadoController
     {
         //Método para iniciar sesión
         //Recibe la cantidad de registros que hay en la base de datos y cumplen con la condición
         //Si el empleado existe, devuelve 1, si no, devuelve 0
-        public static int inicioSesionEmpleado(string contraseña, string gmail)
+        public static (int, string) inicioSesionEmpleado(string contraseña, string gmail)
         {
             Empleados empleado = new Empleados();
             int count = 0;
@@ -28,7 +28,7 @@ namespace WindowsFormsApp1.Controllers
             if (string.IsNullOrEmpty(empleado.Contraseña) || string.IsNullOrEmpty(empleado.Gmail))
             {
                 MessageBox.Show("Por favor, complete todos los campos.");
-                return count;
+                return (count, "");
             }
 
             using (SqlConnection connection = new SqlConnection(DatabaseHelper.GetConnectionString()))
@@ -43,17 +43,31 @@ namespace WindowsFormsApp1.Controllers
                     commandVerificar.Parameters.AddWithValue("@Gmail", empleado.Gmail);
 
                     count = (int)commandVerificar.ExecuteScalar();
+                    
+                    string queryNombre = "SELECT NombreCompleto FROM Empleados WHERE Contraseña = @Contraseña AND Gmail = @Gmail";
+                    SqlCommand commandNombre = new SqlCommand(queryNombre, connection);
+                    commandNombre.Parameters.AddWithValue("@Contraseña", empleado.Contraseña);
+                    commandNombre.Parameters.AddWithValue("@Gmail", empleado.Gmail);
+                    SqlDataReader reader = commandNombre.ExecuteReader();
+                    if (reader.Read())
+                    {
 
-                    return count;
+                        string nombre = reader["NombreCompleto"].ToString();
+                        MessageBox.Show("Inicio de sesión exitoso.");
+                        MessageBox.Show("Bienvenido " + nombre);
+                        return (count, nombre);
+                    }
+                    
                 }
                 // Si hay un error, mostrar mensaje
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
-                    return count;
+                    return (count, "");
                 }
                 finally { connection.Close(); }
             }
+            return (count, ""); // Retorna 0 si no se encontró el empleado
         }
 
 

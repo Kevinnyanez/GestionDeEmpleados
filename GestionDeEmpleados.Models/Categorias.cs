@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp1.Models
+
+namespace GestionDeEmpleados.Models
 {
     public class Categorias
     {

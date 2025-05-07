@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using WindowsFormsApp1.Database;
-using WindowsFormsApp1.Models;
+using GestionDeEmpleados.Models;
+using GestionDeEmpleados.Database;
+using System.Windows.Forms;
 
-namespace WindowsFormsApp1.Controllers
+
+namespace GestionDeEmpleados.Controllers
 {
     public static class AdminController
     {

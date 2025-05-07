@@ -13,6 +13,7 @@ using WindowsFormsApp1.Database;
 using WindowsFormsApp1.Models;
 
 
+
 namespace WindowsFormsApp1
 {
     
@@ -39,13 +40,14 @@ namespace WindowsFormsApp1
         {
             FormLogin formularioLogin = (FormLogin)this.ParentForm;
 
-            int count = EmpleadoController.inicioSesionEmpleado(txtBoxContraseñaEmpleado.Text, txtBoxGmail.Text);
+            (int count,string nombre)  = EmpleadoController.inicioSesionEmpleado(txtBoxContraseñaEmpleado.Text, txtBoxGmail.Text);
 
             if (count > 0)
              {
+    
                 Admin admin = new Admin();
 
-                MessageBox.Show("Inicio de sesión exitoso.");
+               
 
                 FormLogin formulario = (FormLogin)this.ParentForm;
                 FormPrincipal principal = new FormPrincipal(admin);
@@ -56,6 +58,7 @@ namespace WindowsFormsApp1
 
                 principal.CargarProductos(); // Carga los productos en el DataGridView
                 principal.panelPrincipal.Controls.Remove(this); // Elimina el control actual
+                principal.Text = "Gestión de productos - Bienvenido " + nombre; // Cambia el título del formulario
                 admin.EsAdmin = false; // Cambia el estado de administrador
              }
             else

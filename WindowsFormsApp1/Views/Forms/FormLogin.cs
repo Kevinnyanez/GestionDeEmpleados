@@ -63,6 +63,7 @@ namespace WindowsFormsApp1
                 principal.CargarEmpleados(); // Carga los empleados en el DataGridView
                 principal.panelPrincipal.Controls.Remove(this); // Elimina el control actual
                 admin.EsAdmin = true; // Cambia el estado de administrador
+                principal.Text = "Gestión de empleados - Bienvenida Miriam";
 
 
             }

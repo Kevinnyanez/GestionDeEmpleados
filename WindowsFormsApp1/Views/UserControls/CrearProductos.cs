@@ -25,7 +25,7 @@ namespace WindowsFormsApp1
         {
             using (SqlConnection connection = new SqlConnection(DatabaseHelper.ConnectionString))
             {
-                string query = "SELECT CategoriaID, NombreCat FROM CategoriaProd";
+                string query = "SELECT CategoriaID, NombreCat FROM Categorias";
                 SqlCommand command = new SqlCommand(query, connection);
                 connection.Open();
 
@@ -48,7 +48,7 @@ namespace WindowsFormsApp1
         {
             using (SqlConnection connection = new SqlConnection(DatabaseHelper.ConnectionString))
             {
-                string query = "SELECT SubCatID, SubCatNombre FROM SubCategoria";
+                string query = "SELECT SubCatID, SubCatNombre FROM SubCategorias";
                 SqlCommand command = new SqlCommand(query, connection);
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
