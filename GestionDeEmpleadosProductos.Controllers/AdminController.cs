@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Data.SqlClient;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WindowsFormsApp1.Database;
-using GestionDeEmpleados.Models;
-using GestionDeEmpleados.Database;
-using System.Windows.Forms;
+using GestionDeempleadosProductos.Models;
+using GestionDeEmpleadosProductosDatabase;
 
 
-namespace GestionDeEmpleados.Controllers
+namespace GestionDeEmpleadosProductos.Controllers
 {
     public static class AdminController
     {
@@ -35,12 +33,7 @@ namespace GestionDeEmpleados.Controllers
                     count = (int)cmd.ExecuteScalar(); // Devuelve un número
                     return count;
                 }
-                catch (Exception ex) {
-                    // Si hay un error, mostrar mensaje
-                    MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
-                    return count;
-
-                }
+               
                 finally { connection.Close(); }
 
                 

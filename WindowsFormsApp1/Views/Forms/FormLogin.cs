@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.Database;
-using WindowsFormsApp1.Controllers;
-using WindowsFormsApp1.Models;
+using GestionDeEmpleadosProductos.Controllers;
+using GestionDeempleadosProductos.Models;
+using GestionDeEmpleadosProductos;
 
 namespace WindowsFormsApp1
 {

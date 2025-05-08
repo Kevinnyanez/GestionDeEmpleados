@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using WindowsFormsApp1.Database;
-using WindowsFormsApp1.Models;
-using WindowsFormsApp1.Controllers;
+using GestionDeEmpleadosProductos.Controllers;
+using GestionDeempleadosProductos.Models;
+using GestionDeEmpleadosProductos;
 
 
 namespace WindowsFormsApp1
@@ -46,16 +46,20 @@ namespace WindowsFormsApp1
             //y le pasamos los datos del empleado que ingreso el usuario
             //El método devuelve la cantidad de filas afectadas
             //Si se registró correctamente, devuelve 1, si no, devuelve 0
-            int rowaffected = EmpleadoController.RegistrarEmpleado(txtboxNombre.Text, txtboxCelular.Text, txtboxGmail.Text, txtboxGmail.Text, txtboxNacimiento.Text, comboBoxDiasPersonales.Text, comboBoxVacaciones.Text, comboBoxLicenciaAsignada.Text, txtBoxContraseña.Text);
+            (int rowaffected, string mensaje) = EmpleadoController.RegistrarEmpleado(txtboxNombre.Text, txtboxCelular.Text, txtboxGmail.Text, txtboxGmail.Text, txtboxNacimiento.Text, comboBoxDiasPersonales.Text, comboBoxVacaciones.Text, comboBoxLicenciaAsignada.Text, txtBoxContraseña.Text);
             
             // Verificamos si se registró el empleado
             if (rowaffected == 0)
              {
                     MessageBox.Show("No se pudo registrar el empleado.");
+                    if (mensaje.StartsWith("Por favor complete todos los campos."))
+                {
+                    MessageBox.Show("Por favor complete todos los campos.");
+                }
              }
             else
              {
-                    MessageBox.Show("Empleado registrado correctamente.");
+                    MessageBox.Show(mensaje);
                     txtboxNombre.Clear();
                     txtboxCelular.Clear();
                     txtboxGmail.Clear();

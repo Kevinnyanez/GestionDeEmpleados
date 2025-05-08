@@ -8,7 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.Database;
+using GestionDeEmpleadosProductos.Controllers;
+using GestionDeempleadosProductos.Models;
+using GestionDeEmpleadosProductos;
+using static GestionDeEmpleadosProductos.Controllers.CategoriaController;
+
 namespace WindowsFormsApp1
 {
     public partial class CrearProductos : UserControl
@@ -17,34 +21,38 @@ namespace WindowsFormsApp1
         public CrearProductos()
         {
             InitializeComponent();
-            CargarCategorias();
-            CargarSubCategorias();
+            LlenarComboBoxCategorias();
+            LlenarComboBoxSubCategorias();
         }
 
-        private void CargarCategorias()
+        private void LlenarComboBoxCategorias()
         {
-            using (SqlConnection connection = new SqlConnection(DatabaseHelper.ConnectionString))
-            {
-                string query = "SELECT CategoriaID, NombreCat FROM Categorias";
-                SqlCommand command = new SqlCommand(query, connection);
-                connection.Open();
+            List<KeyValuePair<int, string>> categorias = CategoriaController.ObtenerCategorias();
 
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    // Agrega los nombres al ComboBox, pero guarda el ID en el ValueMember
-                    comboBoxCategorias.Items.Add(new KeyValuePair<int, string>(reader.GetInt32(0), reader.GetString(1)));
-                }
-
-                reader.Close();
-            }
-
-            // Ajustar cómo se muestran los datos en el ComboBox
             comboBoxCategorias.DisplayMember = "Value";  // Muestra el nombre de la categoría
-            comboBoxCategorias.ValueMember = "Key";      // Guarda el ID de la categoría internamente
+            comboBoxCategorias.ValueMember = "Key";      // Guarda el ID internamente
+
+            foreach (var categoria in categorias)
+            {
+                comboBoxCategorias.Items.Add(categoria);
+            }
         }
-        private void CargarSubCategorias()
+
+        private void LlenarComboBoxSubCategorias()
+        {
+            List<KeyValuePair<int, string>> subCategorias = SubCategoriaController.ObtenerSubCategorias();
+
+            comboBoxSubCategorias.DisplayMember = "Value";  // Muestra el nombre de la subcategoría
+            comboBoxSubCategorias.ValueMember = "Key";      // Guarda el ID internamente
+
+            foreach (var subCategoria in subCategorias)
+            {
+                comboBoxSubCategorias.Items.Add(subCategoria);
+            }
+        }
+
+
+        /*private void CargarSubCategorias()
         {
             using (SqlConnection connection = new SqlConnection(DatabaseHelper.ConnectionString))
             {
@@ -62,7 +70,7 @@ namespace WindowsFormsApp1
             // Ajustar cómo se muestran los datos en el ComboBox
             comboBoxSubCategorias.DisplayMember = "Value";  // Muestra el nombre de la categoría
             comboBoxSubCategorias.ValueMember = "Key";      // Guarda el ID de la categoría internamente
-        }
+        }*/
 
         private void btnVolver_Click_1(object sender, EventArgs e)
         {

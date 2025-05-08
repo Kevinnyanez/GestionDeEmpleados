@@ -4,7 +4,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.Database;
+using GestionDeEmpleadosProductos.Controllers;
+using GestionDeempleadosProductos.Models;
+using GestionDeEmpleadosProductos;
 
 namespace WindowsFormsApp1
 {
@@ -17,7 +19,7 @@ namespace WindowsFormsApp1
         [STAThread]
         static void Main()
         {
-            DatabaseHelper.ConectarBD();
+             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormLogin());

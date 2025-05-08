@@ -151,6 +151,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\GestionDeEmpleadosProductos.Controllers\GestionDeEmpleadosProductos.Controllers.csproj">
+      <Project>{ed1c636a-715e-4ff6-b961-f43fd6dd091d}</Project>
+      <Name>GestionDeEmpleadosProductos.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestionDeEmpleadosProductos.Database\GestionDeEmpleadosProductosDatabase.csproj">
+      <Project>{ad377981-88ba-40b0-8a2f-bfc8bcee7c7f}</Project>
+      <Name>GestionDeEmpleadosProductosDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestionDeempleadosProductos.Models\GestionDeempleadosProductos.Models.csproj">
+      <Project>{21e03eaa-c7f4-4f84-a058-a6f965234dfe}</Project>
+      <Name>GestionDeempleadosProductos.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

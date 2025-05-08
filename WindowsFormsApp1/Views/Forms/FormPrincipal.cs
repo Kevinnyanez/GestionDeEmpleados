@@ -8,8 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.Database;
-using WindowsFormsApp1.Models;
+using GestionDeEmpleadosProductos.Controllers;
+using GestionDeempleadosProductos.Models;
+using GestionDeEmpleadosProductosDatabase;
 
 
 namespace WindowsFormsApp1
@@ -26,7 +27,7 @@ namespace WindowsFormsApp1
            btnVolverMenuPrincipal.Visible = false;
            panelDataGridView.Visible = true; // Muestra el panel del DataGridView
         }
-
+        
         //LÓGICA PARA RESTAURAR LOS BOTONES
         public void RestaurarControles()
         {

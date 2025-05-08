@@ -9,9 +9,9 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.Controllers;
-using WindowsFormsApp1.Database;
-using WindowsFormsApp1.Models;
+using GestionDeEmpleadosProductos.Controllers;
+using GestionDeempleadosProductos.Models;
+using GestionDeEmpleadosProductos;
 
 namespace WindowsFormsApp1
 {
@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                int columnasAfectadas = EmpleadoController.EditarDatosPersonalesEmpleados(textBoxEmpleadoModificar.Text, textBoxNuevoValor.Text, comboBoxDatoPersonalModificar.Text);
+                (int columnasAfectadas, string mensaje) = EmpleadoController.EditarDatosPersonalesEmpleados(textBoxEmpleadoModificar.Text, textBoxNuevoValor.Text, comboBoxDatoPersonalModificar.Text);
 
                 if (columnasAfectadas > 0)
                 {
@@ -50,7 +50,24 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
+                   
                     MessageBox.Show("No se pudo modificar el dato.");
+                    if(mensaje.StartsWith("Por favor, seleccione un empleado."))
+                    {
+                        MessageBox.Show(mensaje);
+                    }
+                    if(mensaje.StartsWith("Por favor, ingrese un nuevo dato."))
+                    {
+                        MessageBox.Show(mensaje);
+                    }
+                    if(mensaje.StartsWith("El empleado no existe."))
+                    {
+                        MessageBox.Show(mensaje);
+                    }
+                    if(mensaje.StartsWith("Error al conectar con la base de datos:"))
+                    {
+                        MessageBox.Show(mensaje);
+                    }
                 }
             }
             
@@ -76,7 +93,7 @@ namespace WindowsFormsApp1
             else
             {
 
-                int columnasAfectadasLaboral = EmpleadoController.EditarDatosLaboralesEmpleados(textBoxEmpleadoModificar.Text, diasAsignados, diasRestantes, vacacionesAsignadas, vacacionesUsadas, licenciasAsignadas, licenciasUsadas);
+                (int columnasAfectadasLaboral, string mensaje) = EmpleadoController.EditarDatosLaboralesEmpleados(textBoxEmpleadoModificar.Text, diasAsignados, diasRestantes, vacacionesAsignadas, vacacionesUsadas, licenciasAsignadas, licenciasUsadas);
 
                 if (columnasAfectadasLaboral > 0)
                 {
@@ -92,6 +109,10 @@ namespace WindowsFormsApp1
                 else
                 {
                     MessageBox.Show("No se pudo modificar el dato.");
+                    if(mensaje.StartsWith("El empleado no existe."))
+                    {
+                        MessageBox.Show(mensaje);
+                    }
                 }
             }
 

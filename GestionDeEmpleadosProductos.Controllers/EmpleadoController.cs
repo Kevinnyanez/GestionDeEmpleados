@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Data.SqlClient;
-using GestionDeEmpleados.Models;
-using GestionDeEmpleados.Database;
-using System.Windows.Form;
+using System.Data.SqlClient;
+using GestionDeempleadosProductos.Models;
+using GestionDeEmpleadosProductosDatabase;
 
-namespace GestionDeEmpleados.Controllers
+namespace GestionDeEmpleadosProductos.Controllers
 {
     public static class EmpleadoController
     {
@@ -27,8 +26,8 @@ namespace GestionDeEmpleados.Controllers
 
             if (string.IsNullOrEmpty(empleado.Contraseña) || string.IsNullOrEmpty(empleado.Gmail))
             {
-                MessageBox.Show("Por favor, complete todos los campos.");
-                return (count, "");
+                
+                return (count, "Por favor, complete todos los campos.");
             }
 
             using (SqlConnection connection = new SqlConnection(DatabaseHelper.GetConnectionString()))
@@ -53,8 +52,6 @@ namespace GestionDeEmpleados.Controllers
                     {
 
                         string nombre = reader["NombreCompleto"].ToString();
-                        MessageBox.Show("Inicio de sesión exitoso.");
-                        MessageBox.Show("Bienvenido " + nombre);
                         return (count, nombre);
                     }
                     
@@ -62,12 +59,12 @@ namespace GestionDeEmpleados.Controllers
                 // Si hay un error, mostrar mensaje
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
-                    return (count, "");
+                    
+                    return (count, "Error al conectar con la base de datos: " + ex.Message );
                 }
                 finally { connection.Close(); }
             }
-            return (count, ""); // Retorna 0 si no se encontró el empleado
+            return (count, "No se encontró ningun empleado"); // Retorna 0 si no se encontró el empleado
         }
 
 
@@ -77,7 +74,7 @@ namespace GestionDeEmpleados.Controllers
         //Si se registró correctamente, devuelve 1, si no, devuelve 0
         //El método recibe los datos del empleado y los guarda en la base de datos
         //El método devuelve la cantidad de filas afectadas
-        public static int RegistrarEmpleado(string nombre, string celular, string gmail, string dni, string fechaCumple, string diasPersonales, string vacaciones, string licencia, string contraseña)
+        public static (int,string) RegistrarEmpleado(string nombre, string celular, string gmail, string dni, string fechaCumple, string diasPersonales, string vacaciones, string licencia, string contraseña)
         {
             Empleados empleado = new Empleados();
             int rowaffected = 0;
@@ -117,8 +114,8 @@ namespace GestionDeEmpleados.Controllers
             //Validamos los campos
             if (campos.Any(c => string.IsNullOrEmpty(c?.ToString())) || camposInt.Any(c => c <= 0))
             {
-                MessageBox.Show("Por favor complete todos los campos.");
-                return (rowaffected);
+                string error = "Por favor complete todos los campos.";
+                return (rowaffected, error);
             }
 
 
@@ -146,14 +143,14 @@ namespace GestionDeEmpleados.Controllers
                     command.Parameters.AddWithValue("@LicenciasAsignadas", empleado.LicenciasAsignadas);
                     command.Parameters.AddWithValue("@Contraseña", empleado.Contraseña); // Contraseña por defecto
                     rowaffected = command.ExecuteNonQuery();
-
-                    return rowaffected;
+                    string mensaje = $"Empleado {empleado.NombreCompleto} registrado correctamente.";
+                    return (rowaffected, mensaje);
                 }
                 // Si hay un error, mostrar mensaje
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
-                    return rowaffected;
+                    string error = $"Error al conectar con la base de datos: {ex.Message} ";
+                    return (rowaffected, error);
                 }
                 finally { connection.Close(); }
             }
@@ -163,7 +160,7 @@ namespace GestionDeEmpleados.Controllers
         //Recibe el nombre del empleado, el nuevo dato y el dato a modificar
         //Devuelve la cantidad de filas afectadas
         //Si se modificó correctamente, devuelve 1, si no, devuelve 0
-        public static int EditarDatosPersonalesEmpleados(string empleado, string nuevoDato, string datoAModificar)
+        public static (int, string) EditarDatosPersonalesEmpleados(string empleado, string nuevoDato, string datoAModificar)
         {
             var DatosPersonales = new List<string>
             {
@@ -182,14 +179,15 @@ namespace GestionDeEmpleados.Controllers
             // Validar que el campo nombre de empleado no esté vacío
             if (string.IsNullOrEmpty(Empleado))
             {
-                MessageBox.Show("Por favor, seleccione un empleado.");
-                return count;
+                string error =  "Por favor, seleccione un empleado.";
+                return (count,error);
             }
             if (string.IsNullOrEmpty(NuevoDato))
             {
-                MessageBox.Show("Por favor, ingrese un nuevo dato.");
-                return count;
+                string error = "Por favor, ingrese un nuevo dato.";
+                return (count, error);
             }
+        
 
             foreach (string datos in DatosPersonales)
             {
@@ -212,8 +210,8 @@ namespace GestionDeEmpleados.Controllers
                         count = (int)commandVerificar.ExecuteScalar();
                         if (count == 0)
                         {
-                            MessageBox.Show("El empleado no existe.");
-                            return count;
+                            string error = "El empleado no existe.";
+                            return (count, error);
                         }
                         var columnaAModificar = dato;
 
@@ -228,8 +226,8 @@ namespace GestionDeEmpleados.Controllers
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
-                        return count;
+                        string error = $"Error al conectar con la base de datos: {ex.Message}";
+                        return (count, error);
                     }
                     finally { connection.Close(); }
 
@@ -237,16 +235,17 @@ namespace GestionDeEmpleados.Controllers
                 }
 
             }
-            return count;
+            return (count, "");
 
         }
+
 
         //Método para editar los datos laborales de un empleado
         //Recibe el nombre del empleado, los días personales asignados, los días personales restantes,
         //las vacaciones asignadas, las vacaciones usadas, las licencias asignadas y las licencias usadas
         //Devuelve la cantidad de filas afectadas
         //Si se modificó correctamente, devuelve filas afectadas, si no, devuelve 0
-        public static int EditarDatosLaboralesEmpleados(string empleado, int diasPersonalesAsignados, int diasPersonalesRestantes, int vacacionesAsignadas, int vacacionesUsadas, int licenciasAsignadas, int licenciasUsadas)
+        public static (int,string) EditarDatosLaboralesEmpleados(string empleado, int diasPersonalesAsignados, int diasPersonalesRestantes, int vacacionesAsignadas, int vacacionesUsadas, int licenciasAsignadas, int licenciasUsadas)
         {
 
             int columnasAfectadas = 0;
@@ -298,8 +297,8 @@ namespace GestionDeEmpleados.Controllers
                         int count = (int)commandVerificar.ExecuteScalar();
                         if (count == 0)
                         {
-                            MessageBox.Show("El empleado no existe.");
-                            return count;
+                            string error = "El empleado no existe.";
+                            return (count, error);
                         }
 
                         // Armamos el query
@@ -314,17 +313,17 @@ namespace GestionDeEmpleados.Controllers
                         
                     }
                 }
-            return columnasAfectadas;
+            return (columnasAfectadas, "");
             }
 
-        public static int EliminarEmpleado(string Empleado)
+        public static (int,string) EliminarEmpleado(string Empleado)
         {
             int rowsAffected = 0;
             // Verificar si el campo de texto está vacío
             if (string.IsNullOrEmpty(Empleado))
             {
-                MessageBox.Show("El campo de texto no puede estar vacío.");
-                return rowsAffected;
+                string error = "El campo de texto no puede estar vacío.";
+                return (rowsAffected, error);
             }
 
             // Conectamos a la base de datos
@@ -338,35 +337,33 @@ namespace GestionDeEmpleados.Controllers
             int count = (int)commandVerificar.ExecuteScalar();
             if (count == 0)
             {
-                MessageBox.Show("El empleado no existe.");
-                return rowsAffected;
+                string error = "El empleado no existe.";
+                return (rowsAffected,error);
             }
 
-            DialogResult resultado = MessageBox.Show(
-            "¿Seguro que quiere eliminar?",
-            "Confirmación",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Warning
-            );
+            /**/
 
-            if (resultado == DialogResult.Yes)
+
+            // Si el empleado existe, procedemos a eliminarlo
+            string queryEliminar = "DELETE FROM Empleados WHERE NombreCompleto = @Empleado";
+            SqlCommand commandEliminar = new SqlCommand(queryEliminar, connection);
+            commandEliminar.Parameters.AddWithValue("@Empleado", Empleado);
+            rowsAffected = commandEliminar.ExecuteNonQuery();
+
+            if (rowsAffected > 0)
             {
-                // Si el empleado existe, procedemos a eliminarlo
-                string queryEliminar = "DELETE FROM Empleados WHERE NombreCompleto = @Empleado";
-                SqlCommand commandEliminar = new SqlCommand(queryEliminar, connection);
-                commandEliminar.Parameters.AddWithValue("@Empleado", Empleado);
-                rowsAffected = commandEliminar.ExecuteNonQuery();
-                return rowsAffected;
-
-
+                return (rowsAffected, "");
             }
             else
             {
-                MessageBox.Show("Operación cancelada.");
-                return rowsAffected;
+                string error = "Operación cancelada.";
+                return (rowsAffected, error);
             }
         }
-        }
+        
+    
+    
+    }
     }
 
     
