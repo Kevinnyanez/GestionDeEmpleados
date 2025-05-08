@@ -316,6 +316,10 @@ namespace GestionDeEmpleadosProductos.Controllers
             return (columnasAfectadas, "");
             }
 
+        //Método para Eliminar un empleado
+        //Recibe el nombre del empleado
+        //Devuelve la cantidad de filas afectadas
+        //Si se eliminó correctamente, devuelve 1, si no, devuelve 0
         public static (int,string) EliminarEmpleado(string Empleado)
         {
             int rowsAffected = 0;
@@ -341,8 +345,7 @@ namespace GestionDeEmpleadosProductos.Controllers
                 return (rowsAffected,error);
             }
 
-            /**/
-
+            
 
             // Si el empleado existe, procedemos a eliminarlo
             string queryEliminar = "DELETE FROM Empleados WHERE NombreCompleto = @Empleado";
