@@ -59,7 +59,7 @@
             this.txtboxNacimiento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtboxNacimiento.Location = new System.Drawing.Point(244, 291);
             this.txtboxNacimiento.Name = "txtboxNacimiento";
-            this.txtboxNacimiento.Size = new System.Drawing.Size(572, 34);
+            this.txtboxNacimiento.Size = new System.Drawing.Size(298, 34);
             this.txtboxNacimiento.TabIndex = 31;
             // 
             // txtboxDni
@@ -67,16 +67,16 @@
             this.txtboxDni.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtboxDni.Location = new System.Drawing.Point(244, 219);
             this.txtboxDni.Name = "txtboxDni";
-            this.txtboxDni.Size = new System.Drawing.Size(572, 34);
+            this.txtboxDni.Size = new System.Drawing.Size(298, 34);
             this.txtboxDni.TabIndex = 30;
             // 
             // txtboxGmail
             // 
             this.txtboxGmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtboxGmail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtboxGmail.Location = new System.Drawing.Point(1132, 363);
+            this.txtboxGmail.Location = new System.Drawing.Point(858, 363);
             this.txtboxGmail.Name = "txtboxGmail";
-            this.txtboxGmail.Size = new System.Drawing.Size(572, 34);
+            this.txtboxGmail.Size = new System.Drawing.Size(298, 34);
             this.txtboxGmail.TabIndex = 29;
             // 
             // txtboxCelular
@@ -84,13 +84,13 @@
             this.txtboxCelular.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtboxCelular.Location = new System.Drawing.Point(244, 147);
             this.txtboxCelular.Name = "txtboxCelular";
-            this.txtboxCelular.Size = new System.Drawing.Size(572, 34);
+            this.txtboxCelular.Size = new System.Drawing.Size(298, 34);
             this.txtboxCelular.TabIndex = 28;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(822, 216);
+            this.label7.Location = new System.Drawing.Point(548, 216);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(255, 29);
             this.label7.TabIndex = 27;
@@ -99,7 +99,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(822, 144);
+            this.label6.Location = new System.Drawing.Point(548, 144);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(304, 29);
             this.label6.TabIndex = 26;
@@ -129,7 +129,7 @@
             // 
             this.lblContra.AutoSize = true;
             this.lblContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContra.Location = new System.Drawing.Point(822, 432);
+            this.lblContra.Location = new System.Drawing.Point(548, 432);
             this.lblContra.Name = "lblContra";
             this.lblContra.Size = new System.Drawing.Size(136, 29);
             this.lblContra.TabIndex = 23;
@@ -161,13 +161,13 @@
             this.txtboxNombre.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtboxNombre.Location = new System.Drawing.Point(244, 75);
             this.txtboxNombre.Name = "txtboxNombre";
-            this.txtboxNombre.Size = new System.Drawing.Size(572, 34);
+            this.txtboxNombre.Size = new System.Drawing.Size(298, 34);
             this.txtboxNombre.TabIndex = 20;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(822, 72);
+            this.label8.Location = new System.Drawing.Point(548, 72);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(232, 29);
             this.label8.TabIndex = 8;
@@ -182,9 +182,9 @@
             "20",
             "25",
             "30"});
-            this.comboBoxLicenciaAsignada.Location = new System.Drawing.Point(1132, 75);
+            this.comboBoxLicenciaAsignada.Location = new System.Drawing.Point(858, 75);
             this.comboBoxLicenciaAsignada.Name = "comboBoxLicenciaAsignada";
-            this.comboBoxLicenciaAsignada.Size = new System.Drawing.Size(572, 37);
+            this.comboBoxLicenciaAsignada.Size = new System.Drawing.Size(298, 37);
             this.comboBoxLicenciaAsignada.TabIndex = 22;
             // 
             // comboBoxVacaciones
@@ -196,9 +196,9 @@
             "15",
             "20",
             "30"});
-            this.comboBoxVacaciones.Location = new System.Drawing.Point(1132, 219);
+            this.comboBoxVacaciones.Location = new System.Drawing.Point(858, 219);
             this.comboBoxVacaciones.Name = "comboBoxVacaciones";
-            this.comboBoxVacaciones.Size = new System.Drawing.Size(572, 37);
+            this.comboBoxVacaciones.Size = new System.Drawing.Size(298, 37);
             this.comboBoxVacaciones.TabIndex = 21;
             // 
             // comboBoxDiasPersonales
@@ -209,9 +209,9 @@
             "1",
             "2",
             "3"});
-            this.comboBoxDiasPersonales.Location = new System.Drawing.Point(1132, 147);
+            this.comboBoxDiasPersonales.Location = new System.Drawing.Point(858, 147);
             this.comboBoxDiasPersonales.Name = "comboBoxDiasPersonales";
-            this.comboBoxDiasPersonales.Size = new System.Drawing.Size(572, 37);
+            this.comboBoxDiasPersonales.Size = new System.Drawing.Size(298, 37);
             this.comboBoxDiasPersonales.TabIndex = 23;
             // 
             // tableLayoutPanel1
@@ -255,7 +255,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1707, 504);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1159, 504);
             this.tableLayoutPanel1.TabIndex = 36;
             // 
             // lblDatosPersonales
@@ -285,7 +285,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label9.Location = new System.Drawing.Point(822, 0);
+            this.label9.Location = new System.Drawing.Point(548, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(222, 31);
             this.label9.TabIndex = 38;
@@ -296,7 +296,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label10.Location = new System.Drawing.Point(822, 288);
+            this.label10.Location = new System.Drawing.Point(548, 288);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(229, 31);
             this.label10.TabIndex = 39;
@@ -306,7 +306,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(822, 360);
+            this.label11.Location = new System.Drawing.Point(548, 360);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(76, 29);
             this.label11.TabIndex = 40;
@@ -315,9 +315,9 @@
             // txtBoxContraseña
             // 
             this.txtBoxContraseña.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBoxContraseña.Location = new System.Drawing.Point(1132, 435);
+            this.txtBoxContraseña.Location = new System.Drawing.Point(858, 435);
             this.txtBoxContraseña.Name = "txtBoxContraseña";
-            this.txtBoxContraseña.Size = new System.Drawing.Size(572, 34);
+            this.txtBoxContraseña.Size = new System.Drawing.Size(298, 34);
             this.txtBoxContraseña.TabIndex = 41;
             // 
             // RegistroDeEmpleados
@@ -327,7 +327,7 @@
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "RegistroDeEmpleados";
-            this.Size = new System.Drawing.Size(1707, 504);
+            this.Size = new System.Drawing.Size(1159, 504);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
