@@ -223,8 +223,9 @@ namespace WindowsFormsApp1
 
         }
 
+        private void lblNombreUsuario_Click(object sender, EventArgs e)
+        {
 
-  
-
+        }
     }
 }

@@ -50,7 +50,7 @@ namespace WindowsFormsApp1
 
                 FormLogin formulario = (FormLogin)this.ParentForm;
                 FormPrincipal principal = new FormPrincipal(admin);
-
+                principal.lblNombreUsuario.Text = nombre; // Cambia el texto del label
                 principal.Show();
                 formulario.Hide(); // Oculta el formulario de inicio de sesión
                 this.Hide();

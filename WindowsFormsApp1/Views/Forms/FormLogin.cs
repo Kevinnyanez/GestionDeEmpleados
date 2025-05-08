@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
     public partial class FormLogin: Form
     {
         private List<Control> controlesOriginales = new List<Control>();
-        
+        int contador = 0;
         public FormLogin()
         {
             InitializeComponent();
@@ -26,6 +26,7 @@ namespace WindowsFormsApp1
             {
                 controlesOriginales.Add(control);
             }
+            
         }
 
         public void RestaurarControles()
@@ -51,15 +52,20 @@ namespace WindowsFormsApp1
                 return;
             }
 
-        int count = AdminController.IniciarSesion(admin);
+            (int count, string mensaje)= AdminController.IniciarSesion(admin);
 
             if (count > 0)
             {
 
                 MessageBox.Show("Inicio de sesión exitoso.");
+                MessageBox.Show("Bienvenida " + admin.NombreUsuario);
+                // Si el inicio de sesión es exitoso, se abre el formulario principal
                 FormPrincipal principal = new FormPrincipal(admin);
+                principal.lblNombreUsuario.Text = admin.NombreUsuario;
                 principal.Show();
                 this.Hide();
+
+
                 principal.CargarEmpleados(); // Carga los empleados en el DataGridView
                 principal.panelPrincipal.Controls.Remove(this); // Elimina el control actual
                 admin.EsAdmin = true; // Cambia el estado de administrador
@@ -69,7 +75,15 @@ namespace WindowsFormsApp1
             }
             else
             {
-              MessageBox.Show("Usuario o contraseña incorrectos.");
+              if(mensaje.Contains("Surgió un problema con la base de datos:"))
+                {
+                    MessageBox.Show(mensaje);
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos.");
+                }
+
             }
                 
                
@@ -96,6 +110,21 @@ namespace WindowsFormsApp1
             nuevoControl.Dock = DockStyle.Fill;
             panelRegistroTrabajador.Controls.Add(nuevoControl);
 
+        }
+
+        private void btnMostrarContraseña_Click(object sender, EventArgs e)
+        {
+            contador += 1;
+
+
+            if (contador % 2 == 0)
+            {
+                txtContraseña.UseSystemPasswordChar = true;
+            }
+            else
+            {
+                txtContraseña.UseSystemPasswordChar = false;
+            }
         }
     }
 }

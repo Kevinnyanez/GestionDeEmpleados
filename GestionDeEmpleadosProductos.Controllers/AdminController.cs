@@ -14,7 +14,7 @@ namespace GestionDeEmpleadosProductos.Controllers
     public static class AdminController
     {
 
-        public static int IniciarSesion(Admin Admin)
+        public static (int,string) IniciarSesion(Admin Admin)
         {
 
             // Conectamos a la base de datos
@@ -31,7 +31,12 @@ namespace GestionDeEmpleadosProductos.Controllers
                     cmd.Parameters.AddWithValue("@Usuario", Admin.NombreUsuario);
                     cmd.Parameters.AddWithValue("@Contraseña", Admin.Contraseña);
                     count = (int)cmd.ExecuteScalar(); // Devuelve un número
-                    return count;
+                    return (count, "");
+                }
+                catch(Exception ex) 
+                {
+                   string mensaje = $"Surgió un problema con la base de datos: {ex.Message}";
+                   return (0, mensaje);
                 }
                
                 finally { connection.Close(); }
