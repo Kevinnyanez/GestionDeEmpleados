@@ -43,7 +43,7 @@ namespace WindowsFormsApp1
             List<KeyValuePair<int, string>> subCategorias = SubCategoriaController.ObtenerSubCategorias();
 
             comboBoxSubCategorias.DisplayMember = "Value";  // Muestra el nombre de la subcategoría
-            comboBoxSubCategorias.ValueMember = "Key";      // Guarda el ID internamente
+            comboBoxSubCategorias.ValueMember = "Key";      // Guarda el ID internamentee
 
             foreach (var subCategoria in subCategorias)
             {
