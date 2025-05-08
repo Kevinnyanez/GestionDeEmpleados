@@ -17,9 +17,12 @@ namespace WindowsFormsApp1
 {
     public partial class FormPrincipal: Form 
     {
+        // PROPIEDADES
         public Admin admin { get; set; }
         // LISTA DE CONTROLOES DE LA PANTALLA PRINCIPAL
         private List<Control> controlesOriginales = new List<Control>();
+
+        //LÓGICA DEL CONSTRUCTOR
         public FormPrincipal(Admin admin)
         {
             InitializeComponent();
@@ -39,7 +42,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        //LÓGICA DEL DATAGRIDVIEW
+        //LÓGICA DEL CARGAR FORMULARIO
         private void Form2_Load(object sender, EventArgs e)
         {
 
@@ -98,6 +101,8 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Error al cargar productos: " + ex.Message);
             }
         }
+
+  
 
         //BOTÓN DE SALIDA DE LA APLIACIÓN
         private void btnSalir_Click(object sender, EventArgs e)

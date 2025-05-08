@@ -25,7 +25,7 @@ namespace WindowsFormsApp1
             LlenarComboBoxSubCategorias();
         }
 
-        private void LlenarComboBoxCategorias()
+        public void LlenarComboBoxCategorias()
         {
             List<KeyValuePair<int, string>> categorias = CategoriaController.ObtenerCategorias();
 
@@ -38,7 +38,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void LlenarComboBoxSubCategorias()
+        public void LlenarComboBoxSubCategorias()
         {
             List<KeyValuePair<int, string>> subCategorias = SubCategoriaController.ObtenerSubCategorias();
 

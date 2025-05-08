@@ -45,22 +45,27 @@ namespace WindowsFormsApp1
 
             if (count > 0)
              {
-    
+                //Creamos el objeto admin
                 Admin admin = new Admin();
-
+                //Mensajes de bienvenida
+                MessageBox.Show("Inicio de sesión exitoso.");
+                MessageBox.Show("Bienvenido " + nombre);
+                //Creamos el formulario principal
                 FormLogin formulario = (FormLogin)this.ParentForm;
+                // Asignamos el objeto admin al formulario principal
                 FormPrincipal principal = new FormPrincipal(admin);
-                principal.lblNombreUsuario.Text = nombre; // Cambia el texto del label
-                principal.Show();
+                
+                principal.lblNombreUsuario.Text = nombre;//Le asignamos el nombre del usuario al label de bienvenida
+                principal.Show();//Mostramos el formulario principal
                 formulario.Hide(); // Oculta el formulario de inicio de sesión
                 this.Hide();
 
-                principal.CargarProductos(); // Carga los productos en el DataGridView
+                
+                principal.CargarProductos(); // Carga los productos en el DataGridView 
                 principal.panelPrincipal.Controls.Remove(this); // Elimina el control actual
                 principal.Text = "Gestión de productos - Bienvenido " + nombre; // Cambia el título del formulario
                 admin.EsAdmin = false; // Cambia el estado de administrador
-                MessageBox.Show("Inicio de sesión exitoso.");
-                MessageBox.Show("Bienvenido " + nombre);
+                
             }
             else
              {

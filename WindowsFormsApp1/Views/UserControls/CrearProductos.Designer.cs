@@ -30,7 +30,6 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblDatosPersonales = new System.Windows.Forms.Label();
-            this.btnCrearProducto = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtboxNombreProducto = new System.Windows.Forms.TextBox();
@@ -43,6 +42,7 @@
             this.txtboxPrecio = new System.Windows.Forms.TextBox();
             this.txtboxStock = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnCrearProducto = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +78,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1371, 534);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1095, 534);
             this.tableLayoutPanel1.TabIndex = 37;
             // 
             // lblDatosPersonales
@@ -91,16 +91,6 @@
             this.lblDatosPersonales.Size = new System.Drawing.Size(263, 31);
             this.lblDatosPersonales.TabIndex = 37;
             this.lblDatosPersonales.Text = "DATOS DEL PRODUCTO";
-            // 
-            // btnCrearProducto
-            // 
-            this.btnCrearProducto.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearProducto.Location = new System.Drawing.Point(3, 448);
-            this.btnCrearProducto.Name = "btnCrearProducto";
-            this.btnCrearProducto.Size = new System.Drawing.Size(174, 35);
-            this.btnCrearProducto.TabIndex = 34;
-            this.btnCrearProducto.Text = "Crear Producto ";
-            this.btnCrearProducto.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -128,7 +118,7 @@
             this.txtboxNombreProducto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtboxNombreProducto.Location = new System.Drawing.Point(272, 92);
             this.txtboxNombreProducto.Name = "txtboxNombreProducto";
-            this.txtboxNombreProducto.Size = new System.Drawing.Size(464, 34);
+            this.txtboxNombreProducto.Size = new System.Drawing.Size(326, 34);
             this.txtboxNombreProducto.TabIndex = 20;
             // 
             // txtboxDescripcion
@@ -136,13 +126,13 @@
             this.txtboxDescripcion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtboxDescripcion.Location = new System.Drawing.Point(272, 181);
             this.txtboxDescripcion.Name = "txtboxDescripcion";
-            this.txtboxDescripcion.Size = new System.Drawing.Size(464, 34);
+            this.txtboxDescripcion.Size = new System.Drawing.Size(326, 34);
             this.txtboxDescripcion.TabIndex = 28;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(742, 89);
+            this.label8.Location = new System.Drawing.Point(604, 89);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(118, 29);
             this.label8.TabIndex = 8;
@@ -151,7 +141,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(742, 178);
+            this.label6.Location = new System.Drawing.Point(604, 178);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(156, 29);
             this.label6.TabIndex = 26;
@@ -161,18 +151,18 @@
             // 
             this.comboBoxCategorias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBoxCategorias.FormattingEnabled = true;
-            this.comboBoxCategorias.Location = new System.Drawing.Point(904, 92);
+            this.comboBoxCategorias.Location = new System.Drawing.Point(766, 92);
             this.comboBoxCategorias.Name = "comboBoxCategorias";
-            this.comboBoxCategorias.Size = new System.Drawing.Size(464, 37);
+            this.comboBoxCategorias.Size = new System.Drawing.Size(326, 37);
             this.comboBoxCategorias.TabIndex = 22;
             // 
             // comboBoxSubCategorias
             // 
             this.comboBoxSubCategorias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBoxSubCategorias.FormattingEnabled = true;
-            this.comboBoxSubCategorias.Location = new System.Drawing.Point(904, 181);
+            this.comboBoxSubCategorias.Location = new System.Drawing.Point(766, 181);
             this.comboBoxSubCategorias.Name = "comboBoxSubCategorias";
-            this.comboBoxSubCategorias.Size = new System.Drawing.Size(464, 37);
+            this.comboBoxSubCategorias.Size = new System.Drawing.Size(326, 37);
             this.comboBoxSubCategorias.TabIndex = 23;
             // 
             // label4
@@ -190,7 +180,7 @@
             this.txtboxPrecio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtboxPrecio.Location = new System.Drawing.Point(272, 270);
             this.txtboxPrecio.Name = "txtboxPrecio";
-            this.txtboxPrecio.Size = new System.Drawing.Size(464, 34);
+            this.txtboxPrecio.Size = new System.Drawing.Size(326, 34);
             this.txtboxPrecio.TabIndex = 30;
             // 
             // txtboxStock
@@ -198,7 +188,7 @@
             this.txtboxStock.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtboxStock.Location = new System.Drawing.Point(272, 359);
             this.txtboxStock.Name = "txtboxStock";
-            this.txtboxStock.Size = new System.Drawing.Size(464, 34);
+            this.txtboxStock.Size = new System.Drawing.Size(326, 34);
             this.txtboxStock.TabIndex = 31;
             // 
             // label5
@@ -211,13 +201,23 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "Stock";
             // 
+            // btnCrearProducto
+            // 
+            this.btnCrearProducto.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearProducto.Location = new System.Drawing.Point(3, 448);
+            this.btnCrearProducto.Name = "btnCrearProducto";
+            this.btnCrearProducto.Size = new System.Drawing.Size(174, 35);
+            this.btnCrearProducto.TabIndex = 34;
+            this.btnCrearProducto.Text = "Crear Producto ";
+            this.btnCrearProducto.UseVisualStyleBackColor = true;
+            // 
             // CrearProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CrearProductos";
-            this.Size = new System.Drawing.Size(1371, 534);
+            this.Size = new System.Drawing.Size(1095, 534);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
