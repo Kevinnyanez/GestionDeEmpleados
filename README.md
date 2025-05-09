@@ -114,7 +114,7 @@ La conexión se encuentra definida en `DatabaseHelper.cs` dentro del proyecto `G
 
 ## 🏠 Autores
 
-* Proyecto desarrollado por estudiantes en contexto de práctica profesional / parcial integrador.
+* Proyecto desarrollado por estudiantes de la Universidad Tecnológica Nacional en contexto de parcial de la materia "Programación II"
 * Benjamín Veyries, Kevin Yañez, Lázaro Abecia, Mariano Young.
 
 ---
