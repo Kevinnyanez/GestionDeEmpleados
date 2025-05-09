@@ -30,26 +30,22 @@ namespace WindowsFormsApp1
         {
             List<KeyValuePair<int, string>> categorias = CategoriaController.ObtenerCategorias();
 
+            comboBoxCategorias.DataSource = categorias;
             comboBoxCategorias.DisplayMember = "Value";  // Muestra el nombre de la categoría
             comboBoxCategorias.ValueMember = "Key";      // Guarda el ID internamente
 
-            foreach (var categoria in categorias)
-            {
-                comboBoxCategorias.Items.Add(categoria);
-            }
+           
         }
 
         public void LlenarComboBoxSubCategorias()
         {
             List<KeyValuePair<int, string>> subCategorias = SubCategoriaController.ObtenerSubCategorias();
 
+            comboBoxSubCategorias.DataSource = subCategorias;
             comboBoxSubCategorias.DisplayMember = "Value";  // Muestra el nombre de la subcategoría
             comboBoxSubCategorias.ValueMember = "Key";      // Guarda el ID internamentee
 
-            foreach (var subCategoria in subCategorias)
-            {
-                comboBoxSubCategorias.Items.Add(subCategoria);
-            }
+           
         }
 
 

@@ -66,14 +66,14 @@ namespace GestionDeEmpleadosProductos.Controllers
             }
             public static (int,string) crear_producto (string nombreproducto, string descripcion, decimal precio, int stock, int categoria, int subcategoria)
             {
-                using (SqlConnection connection = new SqlConnection())
+                using (SqlConnection connection = new SqlConnection(DatabaseHelper.ConnectionString))
                 {
                     int rowaffected = 0;
                     
                     try
                     {
-                        string query = "Insert into Productos (NombreProducto, Descripcion, Precio, Stock, Categorias, SubCategorias)" +
-                            "VALUES (@NombreCompleto, @Descripcion, @Precio, @Stock, @Categoria, @SubCategoria)";
+                        string query = "Insert into Productos (NombreProducto, Descripcion, Precio, Stock, CategoriaID, SubCatID)" +
+                            "VALUES (@NombreProducto, @Descripcion, @Precio, @Stock, @Categoria, @SubCategoria)";
                         connection.Open();
 
 
