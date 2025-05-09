@@ -112,7 +112,7 @@ CREATE TABLE SubCategorias(
 	SubCatID INT IDENTITY (1,1) PRIMARY KEY,
 	CategoriaID INT NOT NULL,
 	SubCatNombre VARCHAR (50) NOT NULL,
-	FOREIGN KEY (CategoriaID) REFERENCES CategoriaProd (CategoriaID)
+	FOREIGN KEY (CategoriaID) REFERENCES Categorias (CategoriaID)
 	)
 	-- Inserto las subcat
 	INSERT INTO SubCategorias(CategoriaID, SubCatNombre)
@@ -132,8 +132,8 @@ CREATE TABLE Productos(
 	Stock INT CHECK (Stock >= 0) NOT NULL,-- NO DEBERIA SER MENOR A "0" (verificar)
 	CategoriaID INT NOT NULL,
 	SubCatID INT NOT NULL,
-	FOREIGN KEY (CategoriaID) REFERENCES CategoriaProd (CategoriaID),
-	FOREIGN KEY (SubCatID) REFERENCES SubCategoria (SubCatID)
+	FOREIGN KEY (CategoriaID) REFERENCES Categorias (CategoriaID),
+	FOREIGN KEY (SubCatID) REFERENCES SubCategorias (SubCatID)
 	)
 	--agregamos productos
 	INSERT INTO Productos (NombreProducto, Descripcion, Precio, Stock, CategoriaID, SubCatID)
