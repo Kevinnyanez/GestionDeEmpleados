@@ -40,6 +40,57 @@ values ('Miriam' , '2025');
 ALTER TABLE Empleados
 ADD Contraseña VARCHAR(100) UNIQUE;
 
+-- Inserts de empleados --
+INSERT INTO Empleados (
+    NombreCompleto, 
+    NumeroCelular, 
+    Gmail, 
+    DNI, 
+    FechaCumple, 
+    CumpleHoy, 
+    Contraseña
+)
+VALUES
+('juan perez', '+5491145678901', 'juan.perez@gmail.com', '40123456', '1990-05-15', 0, '40123456'),
+('maría gómez', '+5491156789012', 'maria.gomez@gmail.com', '39123456', '1985-08-22', 0, '39123456'),
+('carlos rodríguez', '+5491167890123', 'carlos.rod@gmail.com', '38123456', '1993-02-10', 0, '38123456'),
+('laura fernández', '+5491178901234', 'laura.fer@gmail.com', '37123456', '1988-11-30', 0, '37123456'),
+('pedro lópez', '+5491189012345', 'pedro.lopez@gmail.com', '36123456', '1995-07-04', 0, '36123456'),
+('ana martínez', '+5491190123456', 'ana.martinez@mail.com', '35123456', '1992-09-18', 0, '35123456'),
+('diego sánchez', '+5491101234567', 'diego.sanchez@mail.com', '34123456', '1987-04-25', 0, '34123456'),
+('sofía ramos', '+5491112345678', 'sofia.ramos@mail.com', '33123456', '1998-12-05', 0, '33123456'),
+('jorge díaz', '+5491123456789', 'jorge.diaz@mail.com', '32123456', '1991-03-14', 0, '32123456'),
+('marta ruiz', '+5491134567890', 'marta.ruiz@mail.com', '31123456', '1984-06-27', 0, '31123456'),
+('luis hernández', '+5491145678901', 'luis.hernan@mail.com', '30123456', '1997-01-09', 0, '30123456'),
+('elena castro', '+5491156789012', 'elena.castro@mail.com', '29123456', '1994-10-12', 0, '29123456'),
+('miguel torres', '+5491167890123', 'miguel.torre@mail.com', '28123456', '1989-07-19', 0, '28123456'),
+('isabel vargas', '+5491178901234', 'isabel.vargas@mail.com', '27123456', '1996-08-03', 0, '27123456'),
+('oscar romero', '+5491189012345', 'oscar.romero@mail.com', '26123456', '1983-05-28', 0, '26123456'),
+('carmen medina', '+5491190123456', 'carmen.medina@mail.com', '25123456', '1999-04-11', 0, '25123456'),
+('ricardo ortiz', '+5491201234567', 'ricardo.ort@mail.com', '24123456', '1986-12-24', 0, '24123456'),
+('patricia muñoz', '+5491212345678', 'patricia.mun@mail.com', '23123456', '1990-02-17', 0, '23123456'),
+('fernando gil', '+5491223456789', 'fernando.gil@mail.com', '22123456', '1981-09-08', 0, '22123456'),
+('teresa navarro', '+5491234567890', 'teresa.nava@mail.com', '21123456', '1993-06-13', 0, '21123456'),
+('roberto campos', '+5491245678901', 'roberto.cam@mail.com', '20123456', '1984-03-26', 0, '20123456'),
+('silvia reyes', '+5491256789012', 'silvia.reyes@mail.com', '19123456', '1997-10-07', 0, '19123456'),
+('javier morales', '+5491267890123', 'javier.mor@mail.com', '18123456', '1988-01-14', 0, '18123456'),
+('lucía ibáñez', '+5491278901234', 'lucia.ibanez@mail.com', '17123456', '1995-11-23', 0, '17123456'),
+('manuel delgado', '+5491289012345', 'manuel.del@mail.com', '16123456', '1982-07-30', 0, '16123456'),
+('eva pascual', '+5491290123456', 'eva.pascual@mail.com', '15123456', '1998-04-09', 0, '15123456'),
+('alberto marín', '+5491301234567', 'alberto.mar@mail.com', '14123456', '1989-08-16', 0, '14123456'),
+('rosa serrano', '+5491312345678', 'rosa.serrano@mail.com', '13123456', '1991-12-19', 0, '13123456'),
+('víctor bravo', '+5491323456789', 'victor.bravo@mail.com', '12123456', '1985-05-02', 0, '12123456'),
+('concepción león', '+5491334567890', 'con.leon@mail.com', '11123456', '1994-03-15', 0, '11123456'),
+('sergio cabrera', '+5491345678901', 'sergio.cab@mail.com', '10123456', '1987-10-28', 0, '10123456'),
+('irene peña', '+5491356789012', 'irene.pena@mail.com', '9123456', '1996-09-04', 0, '9123456'),
+('alfonso vega', '+5491367890123', 'alfonso.vega@mail.com', '8123456', '1983-02-11', 0, '8123456'),
+('nuria santos', '+5491378901234', 'nuria.santos@mail.com', '7123456', '1999-07-22', 0, '7123456'),
+('ramón molina', '+5491389012345', 'ramon.molina@mail.com', '6123456', '1980-11-05', 0, '6123456'),
+('pilar herrero', '+5491390123456', 'pilar.herrero@mail.com', '5123456', '1992-04-18', 0, '5123456'),
+('joaquín montero', '+5491401234567', 'joaquin.mon@mail.com', '4123456', '1986-06-25', 0, '4123456'),
+('consuelo palma', '+5491412345678', 'consuelo.pal@mail.com', '3123456', '1997-01-08', 0, '3123456'),
+('gabriel pons', '+5491423456789', 'gabriel.pon@mail.com', '2123456', '1984-10-13', 0, '2123456'),
+('clara segura', '+5491434567890', 'clara.segura@mail.com', '1123456', '1993-12-31', 0, '1123456');
 -- --------------------------------------TABLAS DE LOS PRODUCTOS, CATEGORIAS Y SUBCATEGORIAS-------------------------------------------------
 -- CREAR TABLA DE tipo
 CREATE TABLE Categorias(

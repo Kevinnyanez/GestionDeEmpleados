@@ -42,6 +42,25 @@ namespace WindowsFormsApp1
             }
         }
 
+        //LÓGICA PARA EL BUSCADOR
+        private void txtboxBuscador_TextChanged(object sender, EventArgs e)
+        {
+            string nombreBuscado = txtboxBuscador.Text;
+            if (admin.EsAdmin == true)
+            {
+                (dataGridViewEmpleados.DataSource as DataTable).DefaultView.RowFilter =
+                $"NombreCompleto LIKE '%{txtboxBuscador.Text}%'";
+
+            }
+            else
+            {
+                string filtro = txtboxBuscador.Text;
+                (dataGridViewEmpleados.DataSource as DataTable).DefaultView.RowFilter =
+                    $"NombreProducto LIKE '%{filtro}%' OR NombreCategoria LIKE '%{filtro}%' OR NombreSubCategoria LIKE '%{filtro}%'";
+
+            }
+        }
+
         //LÓGICA DEL CARGAR FORMULARIO
         private void Form2_Load(object sender, EventArgs e)
         {

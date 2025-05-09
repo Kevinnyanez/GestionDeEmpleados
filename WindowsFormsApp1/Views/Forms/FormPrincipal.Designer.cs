@@ -43,10 +43,13 @@ namespace WindowsFormsApp1
             this.panelDataGridView = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelTexto = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblBienvenido = new System.Windows.Forms.Label();
             this.lblQueDeseaHacer = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
-            this.lblBienvenido = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.txtboxBuscador = new System.Windows.Forms.TextBox();
+            this.lblBuscador = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).BeginInit();
             this.panelPrincipal.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -55,6 +58,7 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1.SuspendLayout();
             this.panelTexto.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewEmpleados
@@ -82,6 +86,7 @@ namespace WindowsFormsApp1
             // panelPrincipal
             // 
             this.panelPrincipal.BackColor = System.Drawing.Color.LightGray;
+            this.panelPrincipal.Controls.Add(this.flowLayoutPanel2);
             this.panelPrincipal.Controls.Add(this.flowLayoutPanel1);
             this.panelPrincipal.Controls.Add(this.flowLayoutPanelSalir);
             this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -206,6 +211,36 @@ namespace WindowsFormsApp1
             this.panelTexto.Size = new System.Drawing.Size(471, 305);
             this.panelTexto.TabIndex = 0;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Controls.Add(this.lblBienvenido, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lblQueDeseaHacer, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lblNombreUsuario, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(471, 305);
+            this.tableLayoutPanel2.TabIndex = 3;
+            // 
+            // lblBienvenido
+            // 
+            this.lblBienvenido.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblBienvenido.AutoSize = true;
+            this.lblBienvenido.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBienvenido.Location = new System.Drawing.Point(111, 0);
+            this.lblBienvenido.Name = "lblBienvenido";
+            this.lblBienvenido.Size = new System.Drawing.Size(248, 54);
+            this.lblBienvenido.TabIndex = 0;
+            this.lblBienvenido.Text = "Bienvenido/a";
+            this.lblBienvenido.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // lblQueDeseaHacer
             // 
             this.lblQueDeseaHacer.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -230,35 +265,33 @@ namespace WindowsFormsApp1
             this.lblNombreUsuario.Text = "Maximiliano";
             this.lblNombreUsuario.Click += new System.EventHandler(this.lblNombreUsuario_Click);
             // 
-            // lblBienvenido
+            // flowLayoutPanel2
             // 
-            this.lblBienvenido.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblBienvenido.AutoSize = true;
-            this.lblBienvenido.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBienvenido.Location = new System.Drawing.Point(111, 0);
-            this.lblBienvenido.Name = "lblBienvenido";
-            this.lblBienvenido.Size = new System.Drawing.Size(248, 54);
-            this.lblBienvenido.TabIndex = 0;
-            this.lblBienvenido.Text = "Bienvenido/a";
-            this.lblBienvenido.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.flowLayoutPanel2.Controls.Add(this.lblBuscador);
+            this.flowLayoutPanel2.Controls.Add(this.txtboxBuscador);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 200);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(164, 87);
+            this.flowLayoutPanel2.TabIndex = 9;
             // 
-            // tableLayoutPanel2
+            // txtboxBuscador
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.lblBienvenido, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblQueDeseaHacer, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.lblNombreUsuario, 0, 1);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(471, 305);
-            this.tableLayoutPanel2.TabIndex = 3;
+            this.txtboxBuscador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtboxBuscador.Location = new System.Drawing.Point(3, 19);
+            this.txtboxBuscador.Name = "txtboxBuscador";
+            this.txtboxBuscador.Size = new System.Drawing.Size(161, 22);
+            this.txtboxBuscador.TabIndex = 0;
+            this.txtboxBuscador.TextChanged += new System.EventHandler(this.txtboxBuscador_TextChanged);
+            // 
+            // lblBuscador
+            // 
+            this.lblBuscador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lblBuscador.AutoSize = true;
+            this.lblBuscador.Location = new System.Drawing.Point(3, 0);
+            this.lblBuscador.Name = "lblBuscador";
+            this.lblBuscador.Size = new System.Drawing.Size(65, 16);
+            this.lblBuscador.TabIndex = 1;
+            this.lblBuscador.Text = "Buscador";
             // 
             // FormPrincipal
             // 
@@ -279,6 +312,8 @@ namespace WindowsFormsApp1
             this.panelTexto.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -301,5 +336,8 @@ namespace WindowsFormsApp1
         public System.Windows.Forms.Label lblBienvenido;
         public System.Windows.Forms.Label lblQueDeseaHacer;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label lblBuscador;
+        private System.Windows.Forms.TextBox txtboxBuscador;
     }
 }
