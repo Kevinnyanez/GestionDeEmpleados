@@ -1,8 +1,11 @@
-﻿using GestionDeEmpleadosProductosDatabase;
+﻿using GestionDeempleadosProductos.Models;
+using GestionDeEmpleadosProductosDatabase;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -59,9 +62,47 @@ namespace GestionDeEmpleadosProductos.Controllers
                 }
 
                 return subCategorias;
+
+            }
+            public static (int,string) crear_producto (string nombreproducto, string descripcion, decimal precio, int stock, int categoria, int subcategoria)
+            {
+                using (SqlConnection connection = new SqlConnection())
+                {
+                    int rowaffected = 0;
+                    
+                    try
+                    {
+                        string query = "Insert into Productos (NombreProducto, Descripcion, Precio, Stock, Categorias, SubCategorias)" +
+                            "VALUES (@NombreCompleto, @Descripcion, @Precio, @Stock, @Categoria, @SubCategoria)";
+                        connection.Open();
+
+
+                        SqlCommand command = new SqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@NombreProducto", nombreproducto);
+                        command.Parameters.AddWithValue("@Descripcion", descripcion);
+                        command.Parameters.AddWithValue("@Precio", precio);
+                        command.Parameters.AddWithValue("@Stock", stock);
+                        command.Parameters.AddWithValue("@Categoria", categoria);
+                        command.Parameters.AddWithValue("@SubCategoria", subcategoria);
+
+                        rowaffected = command.ExecuteNonQuery();
+                        string message = $"El producto {nombreproducto} ha sido creado ";
+                        return (rowaffected, message);
+
+
+
+
+
+                    }
+                    catch (Exception ex) 
+                    {
+                        return (rowaffected, ex.Message);
+                    }
+                    }
+                }
             }
         }
 
     }
-}
+
 

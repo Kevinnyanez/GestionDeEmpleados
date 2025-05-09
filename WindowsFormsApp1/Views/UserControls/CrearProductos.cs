@@ -12,6 +12,7 @@ using GestionDeEmpleadosProductos.Controllers;
 using GestionDeempleadosProductos.Models;
 using GestionDeEmpleadosProductos;
 using static GestionDeEmpleadosProductos.Controllers.CategoriaController;
+using System.Collections.Concurrent;
 
 namespace WindowsFormsApp1
 {
@@ -56,6 +57,27 @@ namespace WindowsFormsApp1
         private void btnVolver_Click_1(object sender, EventArgs e)
         {
            
+        }
+
+        private void btnCrearProducto_Click(object sender, EventArgs e)
+        {
+            decimal precio = decimal.Parse(txtboxPrecio.Text);
+            int stock = int.Parse(txtboxStock.Text);
+            int categoria = Convert.ToInt32(comboBoxCategorias.SelectedValue);
+            int subcategoria = Convert.ToInt32(comboBoxSubCategorias.SelectedValue);
+
+            (int count, string message) = SubCategoriaController.crear_producto(txtboxNombreProducto.Text, txtboxDescripcion.Text, precio, stock, categoria, subcategoria);
+            if (count > 0)
+            {
+                MessageBox.Show(message);
+
+            }
+            else 
+            { 
+            MessageBox.Show(message, "Error");
+            }
+
+                
         }
     }
 }
