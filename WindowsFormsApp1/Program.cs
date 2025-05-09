@@ -11,7 +11,7 @@ namespace WindowsFormsApp1
     // Clase que contiene la lógica de conexión a la base de datos
     public static class DatabaseHelper
     {
-       public static string ConnectionString = "Server=MARIANOY\\SQLEXPRESS;Database=Gestion_De_Empleados;Integrated Security=True;";
+       public static string ConnectionString = "Server=DESKTOP-67ATF2C\\SQLEXPRESS;Database=Gestion_De_Empleados;Integrated Security=True;";
 
         public static string GetConnectionString()
         {
