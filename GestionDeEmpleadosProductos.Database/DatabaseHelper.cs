@@ -12,7 +12,7 @@ namespace GestionDeEmpleadosProductosDatabase
     // Clase que contiene la lógica de conexión a la base de datos
     public class DatabaseHelper
     {
-        public static string ConnectionString = "Server=MARIANOY\\SQLEXPRESS;Database=Gestion_De_Empleados;Integrated Security=True;";
+        public static string ConnectionString = "Server=YANEZKEVIN\\SQLEXPRESS01;Database=Gestion_De_Empleados;Integrated Security=True;";
 
         public static string GetConnectionString()
         {
