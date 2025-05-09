@@ -46,39 +46,84 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Emplado.cs">
+    <Compile Include="Views\UserControls\CrearProductos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Emplado.Designer.cs">
+    <Compile Include="Views\UserControls\CrearProductos.Designer.cs">
+      <DependentUpon>CrearProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\EditarEmpleado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\EditarEmpleado.Designer.cs">
+      <DependentUpon>EditarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\EditarProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\EditarProducto.Designer.cs">
+      <DependentUpon>EditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\EliminarEmpleado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\EliminarEmpleado.Designer.cs">
+      <DependentUpon>EliminarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\EliminarProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\EliminarProducto.Designer.cs">
+      <DependentUpon>EliminarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\Emplado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\Emplado.Designer.cs">
       <DependentUpon>Emplado.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.cs">
+    <Compile Include="Views\Forms\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.Designer.cs">
+    <Compile Include="Views\Forms\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPrincipal.cs">
+    <Compile Include="Views\Forms\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPrincipal.Designer.cs">
+    <Compile Include="Views\Forms\FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistroDeEmpleados.cs">
+    <Compile Include="Views\UserControls\RegistroDeEmpleados.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="RegistroDeEmpleados.Designer.cs">
+    <Compile Include="Views\UserControls\RegistroDeEmpleados.Designer.cs">
       <DependentUpon>RegistroDeEmpleados.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Emplado.resx">
+    <EmbeddedResource Include="Views\UserControls\CrearProductos.resx">
+      <DependentUpon>CrearProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\EditarEmpleado.resx">
+      <DependentUpon>EditarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\EditarProducto.resx">
+      <DependentUpon>EditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\EliminarEmpleado.resx">
+      <DependentUpon>EliminarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\EliminarProducto.resx">
+      <DependentUpon>EliminarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\Emplado.resx">
       <DependentUpon>Emplado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
+    <EmbeddedResource Include="Views\Forms\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPrincipal.resx">
+    <EmbeddedResource Include="Views\Forms\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -90,7 +135,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RegistroDeEmpleados.resx">
+    <EmbeddedResource Include="Views\UserControls\RegistroDeEmpleados.resx">
       <DependentUpon>RegistroDeEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -105,6 +150,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestionDeEmpleadosProductos.Controllers\GestionDeEmpleadosProductos.Controllers.csproj">
+      <Project>{ed1c636a-715e-4ff6-b961-f43fd6dd091d}</Project>
+      <Name>GestionDeEmpleadosProductos.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestionDeEmpleadosProductos.Database\GestionDeEmpleadosProductosDatabase.csproj">
+      <Project>{ad377981-88ba-40b0-8a2f-bfc8bcee7c7f}</Project>
+      <Name>GestionDeEmpleadosProductosDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GestionDeempleadosProductos.Models\GestionDeempleadosProductos.Models.csproj">
+      <Project>{21e03eaa-c7f4-4f84-a058-a6f965234dfe}</Project>
+      <Name>GestionDeempleadosProductos.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
