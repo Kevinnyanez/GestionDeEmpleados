@@ -33,6 +33,9 @@ namespace WindowsFormsApp1
             this.dataGridViewEmpleados = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
             this.panelPrincipal = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblBuscador = new System.Windows.Forms.Label();
+            this.txtboxBuscador = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnRegistrarEmpleado = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -47,18 +50,15 @@ namespace WindowsFormsApp1
             this.lblBienvenido = new System.Windows.Forms.Label();
             this.lblQueDeseaHacer = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.txtboxBuscador = new System.Windows.Forms.TextBox();
-            this.lblBuscador = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).BeginInit();
             this.panelPrincipal.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanelSalir.SuspendLayout();
             this.panelDataGridView.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelTexto.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewEmpleados
@@ -95,6 +95,34 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1.SetRowSpan(this.panelPrincipal, 2);
             this.panelPrincipal.Size = new System.Drawing.Size(176, 616);
             this.panelPrincipal.TabIndex = 4;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.lblBuscador);
+            this.flowLayoutPanel2.Controls.Add(this.txtboxBuscador);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 200);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(164, 87);
+            this.flowLayoutPanel2.TabIndex = 9;
+            // 
+            // lblBuscador
+            // 
+            this.lblBuscador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lblBuscador.AutoSize = true;
+            this.lblBuscador.Location = new System.Drawing.Point(3, 0);
+            this.lblBuscador.Name = "lblBuscador";
+            this.lblBuscador.Size = new System.Drawing.Size(65, 16);
+            this.lblBuscador.TabIndex = 1;
+            this.lblBuscador.Text = "Buscador";
+            // 
+            // txtboxBuscador
+            // 
+            this.txtboxBuscador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtboxBuscador.Location = new System.Drawing.Point(3, 19);
+            this.txtboxBuscador.Name = "txtboxBuscador";
+            this.txtboxBuscador.Size = new System.Drawing.Size(161, 22);
+            this.txtboxBuscador.TabIndex = 0;
+            this.txtboxBuscador.TextChanged += new System.EventHandler(this.txtboxBuscador_TextChanged);
             // 
             // flowLayoutPanel1
             // 
@@ -215,17 +243,17 @@ namespace WindowsFormsApp1
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.lblBienvenido, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblQueDeseaHacer, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.lblNombreUsuario, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.69919F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.65041F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.65041F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(471, 305);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
@@ -247,7 +275,7 @@ namespace WindowsFormsApp1
             this.lblQueDeseaHacer.AutoSize = true;
             this.lblQueDeseaHacer.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQueDeseaHacer.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lblQueDeseaHacer.Location = new System.Drawing.Point(77, 202);
+            this.lblQueDeseaHacer.Location = new System.Drawing.Point(77, 180);
             this.lblQueDeseaHacer.Name = "lblQueDeseaHacer";
             this.lblQueDeseaHacer.Size = new System.Drawing.Size(317, 41);
             this.lblQueDeseaHacer.TabIndex = 2;
@@ -258,40 +286,12 @@ namespace WindowsFormsApp1
             this.lblNombreUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblNombreUsuario.AutoSize = true;
             this.lblNombreUsuario.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreUsuario.Location = new System.Drawing.Point(145, 101);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(145, 57);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.Size = new System.Drawing.Size(180, 41);
             this.lblNombreUsuario.TabIndex = 1;
             this.lblNombreUsuario.Text = "Maximiliano";
             this.lblNombreUsuario.Click += new System.EventHandler(this.lblNombreUsuario_Click);
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.lblBuscador);
-            this.flowLayoutPanel2.Controls.Add(this.txtboxBuscador);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(6, 200);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(164, 87);
-            this.flowLayoutPanel2.TabIndex = 9;
-            // 
-            // txtboxBuscador
-            // 
-            this.txtboxBuscador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtboxBuscador.Location = new System.Drawing.Point(3, 19);
-            this.txtboxBuscador.Name = "txtboxBuscador";
-            this.txtboxBuscador.Size = new System.Drawing.Size(161, 22);
-            this.txtboxBuscador.TabIndex = 0;
-            this.txtboxBuscador.TextChanged += new System.EventHandler(this.txtboxBuscador_TextChanged);
-            // 
-            // lblBuscador
-            // 
-            this.lblBuscador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lblBuscador.AutoSize = true;
-            this.lblBuscador.Location = new System.Drawing.Point(3, 0);
-            this.lblBuscador.Name = "lblBuscador";
-            this.lblBuscador.Size = new System.Drawing.Size(65, 16);
-            this.lblBuscador.TabIndex = 1;
-            this.lblBuscador.Text = "Buscador";
             // 
             // FormPrincipal
             // 
@@ -305,6 +305,8 @@ namespace WindowsFormsApp1
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmpleados)).EndInit();
             this.panelPrincipal.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanelSalir.ResumeLayout(false);
             this.panelDataGridView.ResumeLayout(false);
@@ -312,8 +314,6 @@ namespace WindowsFormsApp1
             this.panelTexto.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

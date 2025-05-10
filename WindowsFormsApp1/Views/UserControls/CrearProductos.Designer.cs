@@ -70,7 +70,6 @@
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
@@ -79,7 +78,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(970, 381);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(862, 305);
             this.tableLayoutPanel1.TabIndex = 37;
             // 
             // lblDatosPersonales
@@ -89,7 +88,7 @@
             this.lblDatosPersonales.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblDatosPersonales.Location = new System.Drawing.Point(3, 0);
             this.lblDatosPersonales.Name = "lblDatosPersonales";
-            this.lblDatosPersonales.Size = new System.Drawing.Size(324, 38);
+            this.lblDatosPersonales.Size = new System.Drawing.Size(263, 31);
             this.lblDatosPersonales.TabIndex = 37;
             this.lblDatosPersonales.Text = "DATOS DEL PRODUCTO";
             // 
@@ -97,9 +96,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 63);
+            this.label1.Location = new System.Drawing.Point(3, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 32);
+            this.label1.Size = new System.Drawing.Size(107, 29);
             this.label1.TabIndex = 21;
             this.label1.Text = "Nombre ";
             // 
@@ -107,9 +106,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 126);
+            this.label2.Location = new System.Drawing.Point(3, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(302, 32);
+            this.label2.Size = new System.Drawing.Size(260, 29);
             this.label2.TabIndex = 22;
             this.label2.Text = "Descripción (Opcional)";
             // 
@@ -117,36 +116,34 @@
             // 
             this.txtboxNombreProducto.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtboxNombreProducto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtboxNombreProducto.Location = new System.Drawing.Point(333, 67);
-            this.txtboxNombreProducto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtboxNombreProducto.Location = new System.Drawing.Point(272, 53);
             this.txtboxNombreProducto.Name = "txtboxNombreProducto";
-            this.txtboxNombreProducto.Size = new System.Drawing.Size(219, 39);
+            this.txtboxNombreProducto.Size = new System.Drawing.Size(209, 34);
             this.txtboxNombreProducto.TabIndex = 20;
             // 
             // txtboxDescripcion
             // 
             this.txtboxDescripcion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtboxDescripcion.Location = new System.Drawing.Point(333, 130);
-            this.txtboxDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtboxDescripcion.Location = new System.Drawing.Point(272, 103);
             this.txtboxDescripcion.Name = "txtboxDescripcion";
-            this.txtboxDescripcion.Size = new System.Drawing.Size(219, 39);
+            this.txtboxDescripcion.Size = new System.Drawing.Size(209, 34);
             this.txtboxDescripcion.TabIndex = 28;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(558, 63);
+            this.label8.Location = new System.Drawing.Point(487, 50);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(138, 32);
+            this.label8.Size = new System.Drawing.Size(118, 29);
             this.label8.TabIndex = 8;
             this.label8.Text = "Categoria";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(558, 126);
+            this.label6.Location = new System.Drawing.Point(487, 100);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(183, 32);
+            this.label6.Size = new System.Drawing.Size(156, 29);
             this.label6.TabIndex = 26;
             this.label6.Text = "Subcategoria";
             // 
@@ -154,67 +151,62 @@
             // 
             this.comboBoxCategorias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBoxCategorias.FormattingEnabled = true;
-            this.comboBoxCategorias.Location = new System.Drawing.Point(747, 67);
-            this.comboBoxCategorias.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxCategorias.Location = new System.Drawing.Point(649, 53);
             this.comboBoxCategorias.Name = "comboBoxCategorias";
-            this.comboBoxCategorias.Size = new System.Drawing.Size(220, 40);
+            this.comboBoxCategorias.Size = new System.Drawing.Size(210, 37);
             this.comboBoxCategorias.TabIndex = 22;
             // 
             // comboBoxSubCategorias
             // 
             this.comboBoxSubCategorias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBoxSubCategorias.FormattingEnabled = true;
-            this.comboBoxSubCategorias.Location = new System.Drawing.Point(747, 130);
-            this.comboBoxSubCategorias.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxSubCategorias.Location = new System.Drawing.Point(649, 103);
             this.comboBoxSubCategorias.Name = "comboBoxSubCategorias";
-            this.comboBoxSubCategorias.Size = new System.Drawing.Size(220, 40);
+            this.comboBoxSubCategorias.Size = new System.Drawing.Size(210, 37);
             this.comboBoxSubCategorias.TabIndex = 23;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 189);
+            this.label4.Location = new System.Drawing.Point(3, 150);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 32);
+            this.label4.Size = new System.Drawing.Size(83, 29);
             this.label4.TabIndex = 24;
             this.label4.Text = "Precio";
             // 
             // txtboxPrecio
             // 
             this.txtboxPrecio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtboxPrecio.Location = new System.Drawing.Point(333, 193);
-            this.txtboxPrecio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtboxPrecio.Location = new System.Drawing.Point(272, 153);
             this.txtboxPrecio.Name = "txtboxPrecio";
-            this.txtboxPrecio.Size = new System.Drawing.Size(219, 39);
+            this.txtboxPrecio.Size = new System.Drawing.Size(209, 34);
             this.txtboxPrecio.TabIndex = 30;
             // 
             // txtboxStock
             // 
             this.txtboxStock.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtboxStock.Location = new System.Drawing.Point(333, 256);
-            this.txtboxStock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtboxStock.Location = new System.Drawing.Point(272, 203);
             this.txtboxStock.Name = "txtboxStock";
-            this.txtboxStock.Size = new System.Drawing.Size(219, 39);
+            this.txtboxStock.Size = new System.Drawing.Size(209, 34);
             this.txtboxStock.TabIndex = 31;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 252);
+            this.label5.Location = new System.Drawing.Point(3, 200);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 32);
+            this.label5.Size = new System.Drawing.Size(73, 29);
             this.label5.TabIndex = 25;
             this.label5.Text = "Stock";
             // 
             // btnCrearProducto
             // 
             this.btnCrearProducto.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearProducto.Location = new System.Drawing.Point(3, 319);
-            this.btnCrearProducto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCrearProducto.Location = new System.Drawing.Point(3, 253);
             this.btnCrearProducto.Name = "btnCrearProducto";
-            this.btnCrearProducto.Size = new System.Drawing.Size(196, 44);
+            this.btnCrearProducto.Size = new System.Drawing.Size(174, 35);
             this.btnCrearProducto.TabIndex = 34;
             this.btnCrearProducto.Text = "Crear Producto ";
             this.btnCrearProducto.UseVisualStyleBackColor = true;
@@ -222,12 +214,11 @@
             // 
             // CrearProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "CrearProductos";
-            this.Size = new System.Drawing.Size(970, 381);
+            this.Size = new System.Drawing.Size(862, 305);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

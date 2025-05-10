@@ -62,10 +62,17 @@ namespace WindowsFormsApp1
             int categoria = Convert.ToInt32(comboBoxCategorias.SelectedValue);
             int subcategoria = Convert.ToInt32(comboBoxSubCategorias.SelectedValue);
 
-            (int count, string message) = SubCategoriaController.crear_producto(txtboxNombreProducto.Text, txtboxDescripcion.Text, precio, stock, categoria, subcategoria);
+            (int count, string message) = ProductoController.crear_producto(txtboxNombreProducto.Text, txtboxDescripcion.Text, precio, stock, categoria, subcategoria);
             if (count > 0)
             {
                 MessageBox.Show(message);
+                txtboxNombreProducto.Clear();
+                txtboxDescripcion.Clear();
+                txtboxPrecio.Clear();
+                txtboxStock.Clear();
+                comboBoxCategorias.SelectedIndex = -1;
+                comboBoxSubCategorias.SelectedIndex = -1;
+                txtboxNombreProducto.Focus();
 
             }
             else 

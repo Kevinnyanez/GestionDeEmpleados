@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblNombreProducto = new System.Windows.Forms.Label();
             this.lblDatosPersonales = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@
             this.txtboxStock = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCrearProducto = new System.Windows.Forms.Button();
+            this.comboBoxSeleccionDeProducto = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +55,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.lblNombreProducto, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblDatosPersonales, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
@@ -67,6 +70,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtboxStock, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnCrearProducto, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxSeleccionDeProducto, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -80,6 +84,16 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1140, 516);
             this.tableLayoutPanel1.TabIndex = 38;
+            // 
+            // lblNombreProducto
+            // 
+            this.lblNombreProducto.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblNombreProducto.AutoSize = true;
+            this.lblNombreProducto.Location = new System.Drawing.Point(329, 0);
+            this.lblNombreProducto.Name = "lblNombreProducto";
+            this.lblNombreProducto.Size = new System.Drawing.Size(196, 29);
+            this.lblNombreProducto.TabIndex = 39;
+            this.lblNombreProducto.Text = "Producto a editar";
             // 
             // lblDatosPersonales
             // 
@@ -118,7 +132,7 @@
             this.txtboxNombreProducto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtboxNombreProducto.Location = new System.Drawing.Point(272, 89);
             this.txtboxNombreProducto.Name = "txtboxNombreProducto";
-            this.txtboxNombreProducto.Size = new System.Drawing.Size(348, 34);
+            this.txtboxNombreProducto.Size = new System.Drawing.Size(311, 34);
             this.txtboxNombreProducto.TabIndex = 20;
             // 
             // txtboxDescripcion
@@ -126,13 +140,13 @@
             this.txtboxDescripcion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtboxDescripcion.Location = new System.Drawing.Point(272, 175);
             this.txtboxDescripcion.Name = "txtboxDescripcion";
-            this.txtboxDescripcion.Size = new System.Drawing.Size(348, 34);
+            this.txtboxDescripcion.Size = new System.Drawing.Size(311, 34);
             this.txtboxDescripcion.TabIndex = 28;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(626, 86);
+            this.label8.Location = new System.Drawing.Point(589, 86);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(118, 29);
             this.label8.TabIndex = 8;
@@ -141,7 +155,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(626, 172);
+            this.label6.Location = new System.Drawing.Point(589, 172);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(156, 29);
             this.label6.TabIndex = 26;
@@ -151,18 +165,18 @@
             // 
             this.comboBoxCategorias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBoxCategorias.FormattingEnabled = true;
-            this.comboBoxCategorias.Location = new System.Drawing.Point(788, 89);
+            this.comboBoxCategorias.Location = new System.Drawing.Point(825, 89);
             this.comboBoxCategorias.Name = "comboBoxCategorias";
-            this.comboBoxCategorias.Size = new System.Drawing.Size(349, 37);
+            this.comboBoxCategorias.Size = new System.Drawing.Size(312, 37);
             this.comboBoxCategorias.TabIndex = 22;
             // 
             // comboBoxSubCategorias
             // 
             this.comboBoxSubCategorias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBoxSubCategorias.FormattingEnabled = true;
-            this.comboBoxSubCategorias.Location = new System.Drawing.Point(788, 175);
+            this.comboBoxSubCategorias.Location = new System.Drawing.Point(825, 175);
             this.comboBoxSubCategorias.Name = "comboBoxSubCategorias";
-            this.comboBoxSubCategorias.Size = new System.Drawing.Size(349, 37);
+            this.comboBoxSubCategorias.Size = new System.Drawing.Size(312, 37);
             this.comboBoxSubCategorias.TabIndex = 23;
             // 
             // label4
@@ -180,7 +194,7 @@
             this.txtboxPrecio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtboxPrecio.Location = new System.Drawing.Point(272, 261);
             this.txtboxPrecio.Name = "txtboxPrecio";
-            this.txtboxPrecio.Size = new System.Drawing.Size(348, 34);
+            this.txtboxPrecio.Size = new System.Drawing.Size(311, 34);
             this.txtboxPrecio.TabIndex = 30;
             // 
             // txtboxStock
@@ -188,7 +202,7 @@
             this.txtboxStock.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtboxStock.Location = new System.Drawing.Point(272, 347);
             this.txtboxStock.Name = "txtboxStock";
-            this.txtboxStock.Size = new System.Drawing.Size(348, 34);
+            this.txtboxStock.Size = new System.Drawing.Size(311, 34);
             this.txtboxStock.TabIndex = 31;
             // 
             // label5
@@ -210,6 +224,15 @@
             this.btnCrearProducto.TabIndex = 34;
             this.btnCrearProducto.Text = "Editar Producto";
             this.btnCrearProducto.UseVisualStyleBackColor = true;
+            this.btnCrearProducto.Click += new System.EventHandler(this.btnCrearProducto_Click);
+            // 
+            // comboBoxSeleccionDeProducto
+            // 
+            this.comboBoxSeleccionDeProducto.FormattingEnabled = true;
+            this.comboBoxSeleccionDeProducto.Location = new System.Drawing.Point(589, 3);
+            this.comboBoxSeleccionDeProducto.Name = "comboBoxSeleccionDeProducto";
+            this.comboBoxSeleccionDeProducto.Size = new System.Drawing.Size(230, 37);
+            this.comboBoxSeleccionDeProducto.TabIndex = 38;
             // 
             // EditarProducto
             // 
@@ -241,5 +264,7 @@
         private System.Windows.Forms.TextBox txtboxStock;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCrearProducto;
+        private System.Windows.Forms.Label lblNombreProducto;
+        private System.Windows.Forms.ComboBox comboBoxSeleccionDeProducto;
     }
 }

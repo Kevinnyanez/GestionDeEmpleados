@@ -89,6 +89,8 @@ namespace GestionDeEmpleadosProductos.Controllers
             empleado.LicenciasAsignadas = int.Parse(licencia);
             empleado.Contraseña = contraseña; // Contraseña por defecto
 
+
+            
             var campos = new object[]
             {
                 empleado.NombreCompleto,
@@ -160,8 +162,10 @@ namespace GestionDeEmpleadosProductos.Controllers
         //Recibe el nombre del empleado, el nuevo dato y el dato a modificar
         //Devuelve la cantidad de filas afectadas
         //Si se modificó correctamente, devuelve 1, si no, devuelve 0
-        public static (int, string) EditarDatosPersonalesEmpleados(string empleado, string nuevoDato, string datoAModificar)
+        public static (int, string, bool) EditarDatosPersonalesEmpleados(string empleado, string nuevoDato, string datoAModificar)
         {
+
+
             var DatosPersonales = new List<string>
             {
                 "Nombre Completo",
@@ -171,6 +175,8 @@ namespace GestionDeEmpleadosProductos.Controllers
                 "Cumpleaños"
             };
 
+
+            ;
             int count = 0;
             string Empleado = empleado;
             string NuevoDato = nuevoDato;
@@ -180,12 +186,12 @@ namespace GestionDeEmpleadosProductos.Controllers
             if (string.IsNullOrEmpty(Empleado))
             {
                 string error =  "Por favor, seleccione un empleado.";
-                return (count,error);
+                return (count,error,false);
             }
             if (string.IsNullOrEmpty(NuevoDato))
             {
                 string error = "Por favor, ingrese un nuevo dato.";
-                return (count, error);
+                return (count, error,false);
             }
         
 
@@ -211,7 +217,7 @@ namespace GestionDeEmpleadosProductos.Controllers
                         if (count == 0)
                         {
                             string error = "El empleado no existe.";
-                            return (count, error);
+                            return (count, error, false);
                         }
                         var columnaAModificar = dato;
 
@@ -223,11 +229,17 @@ namespace GestionDeEmpleadosProductos.Controllers
                         // Ejecutamos el query
                         count = command.ExecuteNonQuery();
 
+                        if(columnaAModificar.StartsWith("NombreCompleto")){
+                            return (count, $"El nombre del empleado ha sido modificado a {NuevoDato}",true);
+
+                        }
+                        
+
                     }
                     catch (Exception ex)
                     {
                         string error = $"Error al conectar con la base de datos: {ex.Message}";
-                        return (count, error);
+                        return (count, error, false);
                     }
                     finally { connection.Close(); }
 
@@ -235,7 +247,7 @@ namespace GestionDeEmpleadosProductos.Controllers
                 }
 
             }
-            return (count, "");
+            return (count, "",false);
 
         }
 

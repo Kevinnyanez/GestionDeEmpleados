@@ -53,7 +53,7 @@ namespace WindowsFormsApp1
                 //Creamos el formulario principal
                 FormLogin formulario = (FormLogin)this.ParentForm;
                 // Asignamos el objeto admin al formulario principal
-                FormPrincipal principal = new FormPrincipal(admin);
+                FormPrincipal principal = new FormPrincipal(admin, nombre);
                 
                 principal.lblNombreUsuario.Text = nombre;//Le asignamos el nombre del usuario al label de bienvenida
                 principal.Show();//Mostramos el formulario principal

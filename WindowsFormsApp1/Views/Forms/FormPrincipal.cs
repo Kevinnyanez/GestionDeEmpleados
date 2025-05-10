@@ -19,11 +19,12 @@ namespace WindowsFormsApp1
     {
         // PROPIEDADES
         public Admin admin { get; set; }
+        public string nombre { get; set; }
         // LISTA DE CONTROLOES DE LA PANTALLA PRINCIPAL
         private List<Control> controlesOriginales = new List<Control>();
 
         //LÓGICA DEL CONSTRUCTOR
-        public FormPrincipal(Admin admin)
+        public FormPrincipal(Admin admin,string nombre)
         {
             InitializeComponent();
            this.admin = admin;
@@ -137,6 +138,24 @@ namespace WindowsFormsApp1
             CargarUserControl(new RegistroDeEmpleados());
             btnVolverMenuPrincipal.Visible = true;
             btnEliminar.Enabled = false;
+
+
+                //CONFIGURACIÓN DE LAS ETIQUETAS
+                lblBienvenido.Dock = DockStyle.Fill;
+                lblNombreUsuario.Dock = DockStyle.Fill;
+                lblQueDeseaHacer.Dock = DockStyle.Fill;
+                lblBienvenido.TextAlign = ContentAlignment.MiddleCenter;
+                lblNombreUsuario.TextAlign = ContentAlignment.MiddleCenter;
+                lblQueDeseaHacer.TextAlign = ContentAlignment.MiddleCenter;
+                
+                //INSTRUCCIONES
+                lblBienvenido.Text = "Recomendaciones";
+                lblNombreUsuario.Text = "1) Los campos de datos laborales pueden quedar sin seleccionar\n" +
+                          "2) Los que no seleccione tomarán valores por default\n";
+                          
+
+                lblQueDeseaHacer.Text = "3) Los datos personales y de usuarios deben ingresarse sí o sí\n" +
+                          "4) Al terminar los datos, verifique y seleccione el botón registrar.";
             }
             else
             {
@@ -144,6 +163,23 @@ namespace WindowsFormsApp1
                 CargarUserControl(new CrearProductos());
                 btnVolverMenuPrincipal.Visible = true;
                 btnEliminar.Enabled = false;
+
+                //CONFIGURACIÓN DE LAS ETIQUETAS
+                lblBienvenido.Dock = DockStyle.Fill;
+                lblNombreUsuario.Dock = DockStyle.Fill;
+                lblQueDeseaHacer.Dock = DockStyle.Fill;
+                lblBienvenido.TextAlign = ContentAlignment.MiddleCenter;
+                lblNombreUsuario.TextAlign = ContentAlignment.MiddleCenter;
+                lblQueDeseaHacer.TextAlign = ContentAlignment.MiddleCenter;
+
+                //INSTRUCCIONES
+                lblBienvenido.Text = "Recomendaciones";
+                lblNombreUsuario.Text = "1) Todos los datos son obligatorios excepto la descripción\n" +
+                          "2) Si desea escribir una descripción le recomendamos que sea concisa\n";
+
+
+                lblQueDeseaHacer.Text = "3) El precio permite tener desimales\n" +
+                          "4) El stock permite numero entero";
             }
 
         }
@@ -157,6 +193,24 @@ namespace WindowsFormsApp1
                 btnVolverMenuPrincipal.Visible = true;
                 btnRegistrarEmpleado.Enabled = false;
                 btnEliminar.Enabled = false;
+
+                
+                //CONFIGURACIÓN DE LAS ETIQUETAS
+                lblBienvenido.Dock = DockStyle.Fill;
+                lblNombreUsuario.Dock = DockStyle.Fill;
+                lblQueDeseaHacer.Dock = DockStyle.Fill;
+                lblBienvenido.TextAlign = ContentAlignment.MiddleCenter;
+                lblNombreUsuario.TextAlign = ContentAlignment.MiddleCenter;
+                lblQueDeseaHacer.TextAlign = ContentAlignment.MiddleCenter;
+
+                //INSTRUCCIONES
+                lblBienvenido.Text = "Recomendaciones";
+                lblNombreUsuario.Text = "1) Trate de escribir el nombre del empleado de forma precisa para evitar errores\n" +
+                          "2) Si se edita nombre de empleado, no podrá editar otro dato en un mismo edit. \n";
+
+
+                lblQueDeseaHacer.Text = "3) Una vez cambiado el nombre actualice la casilla Empleado a modificar para cambiar otros datos\n" +
+                          "4)Puede editar varios datos laborales a la vez, y tambien editar uno personal.";
             }
             else
             {
@@ -164,6 +218,23 @@ namespace WindowsFormsApp1
                 btnVolverMenuPrincipal.Visible = true;
                 btnRegistrarEmpleado.Enabled = false;
                 btnEliminar.Enabled = false;
+
+                //CONFIGURACIÓN DE LAS ETIQUETAS
+                lblBienvenido.Dock = DockStyle.Fill;
+                lblNombreUsuario.Dock = DockStyle.Fill;
+                lblQueDeseaHacer.Dock = DockStyle.Fill;
+                lblBienvenido.TextAlign = ContentAlignment.MiddleCenter;
+                lblNombreUsuario.TextAlign = ContentAlignment.MiddleCenter;
+                lblQueDeseaHacer.TextAlign = ContentAlignment.MiddleCenter;
+
+                //INSTRUCCIONES
+                lblBienvenido.Text = "Recomendaciones";
+                lblNombreUsuario.Text = "1) No es necesario cambiar todos los datos de un producto (deje en blanco lo que no vaya a cambiar).\n" +
+                          "2) Si quiere cambiar el nombre y editar datos del producto, haz uno a la vez. \n";
+
+
+                lblQueDeseaHacer.Text = "3) Puede cambiar varios datos a la vez (Exceptuando el caso de cambio de nombre). \n" +
+                          "4)Verifique datos antes de hacer cambios para evitar cambios inecesarios.";
             }
         }
 
@@ -176,6 +247,22 @@ namespace WindowsFormsApp1
                 btnVolverMenuPrincipal.Visible = true;
                 btnRegistrarEmpleado.Enabled = false;
                 btnEditar.Enabled = false;
+
+                //CONFIGURACIÓN DE LAS ETIQUETAS
+                lblBienvenido.Dock = DockStyle.Fill;
+                lblNombreUsuario.Dock = DockStyle.Fill;
+                lblQueDeseaHacer.Dock = DockStyle.Fill;
+                lblBienvenido.TextAlign = ContentAlignment.MiddleCenter;
+                lblNombreUsuario.TextAlign = ContentAlignment.MiddleCenter;
+                lblQueDeseaHacer.TextAlign = ContentAlignment.MiddleCenter;
+
+                //INSTRUCCIONES
+                lblBienvenido.Text = "Recomendaciones";
+                lblNombreUsuario.Text = "1) Sea preciso con el nombre del empleado para evitar errores de productos con nombre similares.\n" +
+                          "2) Verifique el dato introducido antes de seleccionar el botón de eliminar. \n";
+
+
+                lblQueDeseaHacer.Text = "3) PRECACUCIÓN: Una vez eliminado no se podrá volver hacia atras. \n";
             }
             else
             {
@@ -183,6 +270,22 @@ namespace WindowsFormsApp1
                 btnVolverMenuPrincipal.Visible = true;
                 btnRegistrarEmpleado.Enabled = false;
                 btnEditar.Enabled = false;
+
+                //CONFIGURACIÓN DE LAS ETIQUETAS
+                lblBienvenido.Dock = DockStyle.Fill;
+                lblNombreUsuario.Dock = DockStyle.Fill;
+                lblQueDeseaHacer.Dock = DockStyle.Fill;
+                lblBienvenido.TextAlign = ContentAlignment.MiddleCenter;
+                lblNombreUsuario.TextAlign = ContentAlignment.MiddleCenter;
+                lblQueDeseaHacer.TextAlign = ContentAlignment.MiddleCenter;
+
+                //INSTRUCCIONES
+                lblBienvenido.Text = "Recomendaciones";
+                lblNombreUsuario.Text = "1) Sea preciso con el nombre del producto para evitar errores de productos con nombre similares.\n" +
+                          "2) Verifique el dato introducido antes de seleccionar el botón de eliminar. \n";
+
+
+                lblQueDeseaHacer.Text = "3) PRECACUCIÓN: Una vez eliminado no se podrá volver hacia atras. \n";
             }
         }
 
@@ -229,6 +332,11 @@ namespace WindowsFormsApp1
             btnEditar.Enabled = true;
             btnRegistrarEmpleado.Enabled = true;
             btnEliminar.Enabled = true;
+
+                // Mostrar etiquetas
+                lblBienvenido.Text = "Benvenido/a";
+                lblNombreUsuario.Text = admin.NombreUsuario;
+                lblQueDeseaHacer.Text = "¿Que desea hacer?";
             }
             else {
                 // Método para eliminar los controles del panel de contenido 
@@ -243,6 +351,11 @@ namespace WindowsFormsApp1
                 btnEditar.Enabled = true;
                 btnRegistrarEmpleado.Enabled = true;
                 btnEliminar.Enabled = true;
+
+                // Mostrar etiquetas
+                lblBienvenido.Text = "Benvenido/a";
+                lblNombreUsuario.Text = nombre;
+                lblQueDeseaHacer.Text = "¿Que desea hacer?";
             }
 
         }

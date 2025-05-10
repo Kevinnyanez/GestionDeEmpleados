@@ -27,16 +27,18 @@ namespace WindowsFormsApp1
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            bool CambioDeNombre = false;
             if (string.IsNullOrEmpty(textBoxEmpleadoModificar.Text) || string.IsNullOrEmpty(textBoxNuevoValor.Text) || comboBoxDatoPersonalModificar.SelectedItem == null)
             {
                 MessageBox.Show("Datos Personales no seleccionados");
             }
             else
             {
-                (int columnasAfectadas, string mensaje) = EmpleadoController.EditarDatosPersonalesEmpleados(textBoxEmpleadoModificar.Text, textBoxNuevoValor.Text, comboBoxDatoPersonalModificar.Text);
+                //Elemento 1 = columnasAfectadas, Elemento 2= mensaje, Elemento 3 = CambioDeNombre
+                var Resultados = EmpleadoController.EditarDatosPersonalesEmpleados(textBoxEmpleadoModificar.Text, textBoxNuevoValor.Text, comboBoxDatoPersonalModificar.Text);
+                CambioDeNombre = Resultados.Item3;
 
-                if (columnasAfectadas > 0)
+                if (Resultados.Item1 > 0)
                 {
                     MessageBox.Show("El dato se ha modificado correctamente.");
                     textBoxNuevoValor.Clear(); // Limpiar el campo de texto
@@ -52,21 +54,21 @@ namespace WindowsFormsApp1
                 {
                    
                     MessageBox.Show("No se pudo modificar el dato.");
-                    if(mensaje.StartsWith("Por favor, seleccione un empleado."))
+                    if(Resultados.Item2.StartsWith("Por favor, seleccione un empleado."))
                     {
-                        MessageBox.Show(mensaje);
+                        MessageBox.Show(Resultados.Item2);
                     }
-                    if(mensaje.StartsWith("Por favor, ingrese un nuevo dato."))
+                    if(Resultados.Item2.StartsWith("Por favor, ingrese un nuevo dato."))
                     {
-                        MessageBox.Show(mensaje);
+                        MessageBox.Show(Resultados.Item2);
                     }
-                    if(mensaje.StartsWith("El empleado no existe."))
+                    if(Resultados.Item2.StartsWith("El empleado no existe."))
                     {
-                        MessageBox.Show(mensaje);
+                        MessageBox.Show(Resultados.Item2);
                     }
-                    if(mensaje.StartsWith("Error al conectar con la base de datos:"))
+                    if(Resultados.Item2.StartsWith("Error al conectar con la base de datos:"))
                     {
-                        MessageBox.Show(mensaje);
+                        MessageBox.Show(Resultados.Item2);
                     }
                 }
             }
@@ -85,7 +87,7 @@ namespace WindowsFormsApp1
                 diasAsignados, diasRestantes, vacacionesAsignadas, vacacionesUsadas, licenciasAsignadas, licenciasUsadas
              };
 
-            if (valores.All(v => v == 0))
+            if (valores.All(v => v == 0) || CambioDeNombre == true)
             {
                 MessageBox.Show("Datos Laborales no seleccionados");
                 return;

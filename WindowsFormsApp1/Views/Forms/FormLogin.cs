@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Inicio de sesión exitoso.");
                 MessageBox.Show("Bienvenida " + admin.NombreUsuario);
                 // Si el inicio de sesión es exitoso, se abre el formulario principal
-                FormPrincipal principal = new FormPrincipal(admin);
+                FormPrincipal principal = new FormPrincipal(admin, "");
                 principal.lblNombreUsuario.Text = admin.NombreUsuario;
                 principal.Show();
                 this.Hide();

@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             LlenarComboBoxCategorias();
             LlenarComboBoxSubCategorias();
+            LlenarComboBoxProductos();
         }
 
         public void LlenarComboBoxCategorias()
@@ -46,6 +47,31 @@ namespace WindowsFormsApp1
             {
                 comboBoxSubCategorias.Items.Add(subCategoria);
             }
+        }
+
+        public void LlenarComboBoxProductos()
+        {
+            List<KeyValuePair<int, string>> productos = ProductoController.ObtenerProductos();
+            comboBoxSeleccionDeProducto.DataSource = productos;
+            comboBoxSeleccionDeProducto.DisplayMember = "Value";  // Muestra el nombre de la subcategoría
+            comboBoxSeleccionDeProducto.ValueMember = "Key";      // Guarda el ID internamentee
+           
+        }
+
+        private void btnCrearProducto_Click(object sender, EventArgs e)
+        {
+
+            (int count, string menssage) = ProductoController.EditarProducto(Convert.ToInt32(comboBoxSeleccionDeProducto.SelectedValue), txtboxNombreProducto.Text, txtboxDescripcion.Text, decimal.Parse(txtboxPrecio.Text), int.Parse(txtboxStock.Text), Convert.ToInt32(comboBoxCategorias.SelectedValue), Convert.ToInt32(comboBoxSubCategorias.SelectedValue));
+
+            if (count > 0)
+            {
+                MessageBox.Show(menssage, $"{count} Datos cambiados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(menssage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }
