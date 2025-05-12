@@ -21,7 +21,8 @@ DiasPersonalesRestantes int default 3,
 VacacionesAsignadas int default 15,
 VacacionesUsadas int default 0,
 LicenciasAsignadas int default 5 ,
-LicenciasUsadas int default 0
+LicenciasUsadas int default 0,
+Contraseña nvarchar(100) not null unique
 );
 
 
@@ -34,11 +35,8 @@ Contraseña varchar (50) not null
 
 -- agregamos los datos del administrador
 insert into Admins (NombreUsuario, Contraseña) 
-values ('Miriam' , '2025');
+values ('Matias' , '2025');
 
--- Agregamos La columna contraseña para poder entrar en el Login Empleados a partir de ella y un gmail
-ALTER TABLE Empleados
-ADD Contraseña VARCHAR(100) UNIQUE;
 
 -- Inserts de empleados --
 INSERT INTO Empleados (
