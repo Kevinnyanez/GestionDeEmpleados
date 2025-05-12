@@ -137,6 +137,7 @@ namespace WindowsFormsApp1
             btnEditar.Enabled = false;
             RegistroDeEmpleados registroDeEmpleados = new RegistroDeEmpleados();
             registroDeEmpleados.Dock = DockStyle.Fill;
+            registroDeEmpleados.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
             CargarUserControl(registroDeEmpleados);
             btnVolverMenuPrincipal.Visible = true;
             btnEliminar.Enabled = false;

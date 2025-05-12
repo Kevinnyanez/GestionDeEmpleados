@@ -216,9 +216,9 @@ namespace WindowsFormsApp1
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.94279F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.91704F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.14017F));
+            this.tableLayoutPanel1.Controls.Add(this.panelContenido, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panelTexto, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.panelPrincipal, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panelContenido, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panelDataGridView, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
