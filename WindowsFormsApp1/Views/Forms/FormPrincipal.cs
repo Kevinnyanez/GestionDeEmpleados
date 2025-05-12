@@ -236,6 +236,7 @@ namespace WindowsFormsApp1
                 EditarProducto editarProducto = new EditarProducto();
                 editarProducto.Dock = DockStyle.Fill;
                 editarProducto.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+                editarProducto.Size = panelContenido.Size;
                 CargarUserControl(editarProducto);
                 btnVolverMenuPrincipal.Visible = true;
                 btnRegistrarEmpleado.Enabled = false;
@@ -295,6 +296,7 @@ namespace WindowsFormsApp1
                 EliminarProducto eliminarProducto = new EliminarProducto();
                 eliminarProducto.Dock = DockStyle.Fill;
                 eliminarProducto.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+                eliminarProducto.Size = panelContenido.Size;
                 CargarUserControl(eliminarProducto);
                 btnVolverMenuPrincipal.Visible = true;
                 btnRegistrarEmpleado.Enabled = false;
