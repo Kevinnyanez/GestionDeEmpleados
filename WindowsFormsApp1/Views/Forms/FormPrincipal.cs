@@ -135,9 +135,12 @@ namespace WindowsFormsApp1
         {
             if(admin.EsAdmin == true) { 
             btnEditar.Enabled = false;
-            CargarUserControl(new RegistroDeEmpleados());
+            RegistroDeEmpleados registroDeEmpleados = new RegistroDeEmpleados();
+            registroDeEmpleados.Dock = DockStyle.Fill;
+            CargarUserControl(registroDeEmpleados);
             btnVolverMenuPrincipal.Visible = true;
             btnEliminar.Enabled = false;
+            
 
 
                 //CONFIGURACIÓN DE LAS ETIQUETAS
