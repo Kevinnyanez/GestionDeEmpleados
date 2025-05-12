@@ -30,8 +30,13 @@ namespace WindowsFormsApp1
            this.admin = admin;
            btnVolverMenuPrincipal.Visible = false;
            panelDataGridView.Visible = true; // Muestra el panel del DataGridView
+
+           
+           this.AutoScaleMode = AutoScaleMode.Font;
+           this.AutoScaleDimensions = new SizeF(96F, 96F);
+
         }
-        
+
         //LÓGICA PARA RESTAURAR LOS BOTONES
         public void RestaurarControles()
         {
@@ -138,7 +143,8 @@ namespace WindowsFormsApp1
             RegistroDeEmpleados registroDeEmpleados = new RegistroDeEmpleados();
             registroDeEmpleados.Dock = DockStyle.Fill;
             registroDeEmpleados.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
-            CargarUserControl(registroDeEmpleados);
+            registroDeEmpleados.Size = panelContenido.Size;
+                CargarUserControl(registroDeEmpleados);
             btnVolverMenuPrincipal.Visible = true;
             btnEliminar.Enabled = false;
             
@@ -164,7 +170,11 @@ namespace WindowsFormsApp1
             else
             {
                 btnEditar.Enabled = false;
-                CargarUserControl(new CrearProductos());
+                CrearProductos crearProductos = new CrearProductos();
+                crearProductos.Dock = DockStyle.Fill;
+                crearProductos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+                crearProductos.Size = panelContenido.Size;
+                CargarUserControl(crearProductos);
                 btnVolverMenuPrincipal.Visible = true;
                 btnEliminar.Enabled = false;
 
@@ -193,7 +203,11 @@ namespace WindowsFormsApp1
         {
             if (admin.EsAdmin == true)
             {
-                CargarUserControl(new EditarEmpleado());
+                EditarEmpleado editarEmpleado = new EditarEmpleado();
+                editarEmpleado.Dock = DockStyle.Fill;
+                editarEmpleado.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+                editarEmpleado.Size = panelContenido.Size;
+                CargarUserControl(editarEmpleado);
                 btnVolverMenuPrincipal.Visible = true;
                 btnRegistrarEmpleado.Enabled = false;
                 btnEliminar.Enabled = false;
@@ -218,7 +232,11 @@ namespace WindowsFormsApp1
             }
             else
             {
-                CargarUserControl(new EditarProducto());
+
+                EditarProducto editarProducto = new EditarProducto();
+                editarProducto.Dock = DockStyle.Fill;
+                editarProducto.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+                CargarUserControl(editarProducto);
                 btnVolverMenuPrincipal.Visible = true;
                 btnRegistrarEmpleado.Enabled = false;
                 btnEliminar.Enabled = false;
@@ -247,7 +265,11 @@ namespace WindowsFormsApp1
         {
             if (admin.EsAdmin == true)
             {
-                CargarUserControl(new EliminarEmpleado());
+                EliminarEmpleado eliminarEmpleado = new EliminarEmpleado();
+                eliminarEmpleado.Dock = DockStyle.Fill;
+                eliminarEmpleado.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+                eliminarEmpleado.Size = panelContenido.Size;
+                CargarUserControl(eliminarEmpleado);
                 btnVolverMenuPrincipal.Visible = true;
                 btnRegistrarEmpleado.Enabled = false;
                 btnEditar.Enabled = false;
@@ -270,7 +292,10 @@ namespace WindowsFormsApp1
             }
             else
             {
-                CargarUserControl(new EliminarProducto());
+                EliminarProducto eliminarProducto = new EliminarProducto();
+                eliminarProducto.Dock = DockStyle.Fill;
+                eliminarProducto.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+                CargarUserControl(eliminarProducto);
                 btnVolverMenuPrincipal.Visible = true;
                 btnRegistrarEmpleado.Enabled = false;
                 btnEditar.Enabled = false;

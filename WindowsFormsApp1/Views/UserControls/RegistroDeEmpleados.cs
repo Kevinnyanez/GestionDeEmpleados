@@ -33,6 +33,10 @@ namespace WindowsFormsApp1
             toolTip.SetToolTip(comboBoxVacaciones, "Seleccione sus vacaciones asignadas");
             toolTip.SetToolTip(comboBoxLicenciaAsignada, "Seleccione su licencia asignada");
             toolTip.SetToolTip(btnRegistrarEmpleado, "Registrar empleado");
+
+            this.AutoScaleMode = AutoScaleMode.Font;
+            this.AutoScaleDimensions = new SizeF(96F, 96F);
+
         }
 
 
