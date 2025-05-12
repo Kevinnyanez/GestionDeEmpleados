@@ -57,7 +57,7 @@
             this.lblEleccionEmpleado.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.lblEleccionEmpleado, 2);
             this.lblEleccionEmpleado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEleccionEmpleado.Location = new System.Drawing.Point(346, 14);
+            this.lblEleccionEmpleado.Location = new System.Drawing.Point(492, 23);
             this.lblEleccionEmpleado.Name = "lblEleccionEmpleado";
             this.lblEleccionEmpleado.Size = new System.Drawing.Size(204, 28);
             this.lblEleccionEmpleado.TabIndex = 0;
@@ -68,7 +68,7 @@
             this.textBoxEmpleadoModificar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tableLayoutPanel1.SetColumnSpan(this.textBoxEmpleadoModificar, 2);
             this.textBoxEmpleadoModificar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmpleadoModificar.Location = new System.Drawing.Point(346, 45);
+            this.textBoxEmpleadoModificar.Location = new System.Drawing.Point(492, 54);
             this.textBoxEmpleadoModificar.Name = "textBoxEmpleadoModificar";
             this.textBoxEmpleadoModificar.Size = new System.Drawing.Size(205, 30);
             this.textBoxEmpleadoModificar.TabIndex = 1;
@@ -78,7 +78,7 @@
             this.lblColumnaModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblColumnaModificar.AutoSize = true;
             this.lblColumnaModificar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColumnaModificar.Location = new System.Drawing.Point(105, 98);
+            this.lblColumnaModificar.Location = new System.Drawing.Point(178, 125);
             this.lblColumnaModificar.Name = "lblColumnaModificar";
             this.lblColumnaModificar.Size = new System.Drawing.Size(238, 28);
             this.lblColumnaModificar.TabIndex = 2;
@@ -89,7 +89,7 @@
             this.lblNuevoValor.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblNuevoValor.AutoSize = true;
             this.lblNuevoValor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNuevoValor.Location = new System.Drawing.Point(612, 98);
+            this.lblNuevoValor.Location = new System.Drawing.Point(831, 125);
             this.lblNuevoValor.Name = "lblNuevoValor";
             this.lblNuevoValor.Size = new System.Drawing.Size(120, 28);
             this.lblNuevoValor.TabIndex = 4;
@@ -99,7 +99,7 @@
             // 
             this.textBoxNuevoValor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBoxNuevoValor.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNuevoValor.Location = new System.Drawing.Point(582, 129);
+            this.textBoxNuevoValor.Location = new System.Drawing.Point(801, 156);
             this.textBoxNuevoValor.Name = "textBoxNuevoValor";
             this.textBoxNuevoValor.Size = new System.Drawing.Size(181, 30);
             this.textBoxNuevoValor.TabIndex = 5;
@@ -129,7 +129,8 @@
             this.tableLayoutPanel1.Controls.Add(this.label6, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxLicenciasAsignadasCambio, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxLicenciasRestantesCambio, 1, 9);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(170, 29);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
@@ -143,19 +144,17 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(897, 463);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1189, 564);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // btnEditar
             // 
-            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tableLayoutPanel1.SetColumnSpan(this.btnEditar, 2);
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(3, 423);
+            this.btnEditar.Location = new System.Drawing.Point(537, 513);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(891, 37);
+            this.btnEditar.Size = new System.Drawing.Size(115, 32);
             this.btnEditar.TabIndex = 6;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -172,7 +171,7 @@
             "Gmail",
             "DNI",
             "Cumpleaños"});
-            this.comboBoxDatoPersonalModificar.Location = new System.Drawing.Point(126, 129);
+            this.comboBoxDatoPersonalModificar.Location = new System.Drawing.Point(199, 156);
             this.comboBoxDatoPersonalModificar.Name = "comboBoxDatoPersonalModificar";
             this.comboBoxDatoPersonalModificar.Size = new System.Drawing.Size(196, 31);
             this.comboBoxDatoPersonalModificar.TabIndex = 7;
@@ -182,7 +181,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(103, 182);
+            this.label1.Location = new System.Drawing.Point(176, 227);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(241, 28);
             this.label1.TabIndex = 10;
@@ -198,7 +197,7 @@
             "1",
             "2",
             "3"});
-            this.comboBoxDiasPersonalesAsignadosCambio.Location = new System.Drawing.Point(126, 213);
+            this.comboBoxDiasPersonalesAsignadosCambio.Location = new System.Drawing.Point(199, 258);
             this.comboBoxDiasPersonalesAsignadosCambio.Name = "comboBoxDiasPersonalesAsignadosCambio";
             this.comboBoxDiasPersonalesAsignadosCambio.Size = new System.Drawing.Size(196, 31);
             this.comboBoxDiasPersonalesAsignadosCambio.TabIndex = 8;
@@ -208,7 +207,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(556, 182);
+            this.label4.Location = new System.Drawing.Point(775, 227);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(232, 28);
             this.label4.TabIndex = 13;
@@ -225,7 +224,7 @@
             "15",
             "20",
             "30"});
-            this.comboBoxVacacionesAsignadasCambio.Location = new System.Drawing.Point(126, 297);
+            this.comboBoxVacacionesAsignadasCambio.Location = new System.Drawing.Point(199, 360);
             this.comboBoxVacacionesAsignadasCambio.Name = "comboBoxVacacionesAsignadasCambio";
             this.comboBoxVacacionesAsignadasCambio.Size = new System.Drawing.Size(196, 31);
             this.comboBoxVacacionesAsignadasCambio.TabIndex = 14;
@@ -235,7 +234,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(123, 266);
+            this.label5.Location = new System.Drawing.Point(196, 329);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(201, 28);
             this.label5.TabIndex = 16;
@@ -246,7 +245,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(575, 266);
+            this.label2.Location = new System.Drawing.Point(794, 329);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(194, 28);
             this.label2.TabIndex = 17;
@@ -262,7 +261,7 @@
             "3",
             "2",
             "1"});
-            this.comboBoxDiasPersonalesRestantesCambio.Location = new System.Drawing.Point(574, 213);
+            this.comboBoxDiasPersonalesRestantesCambio.Location = new System.Drawing.Point(793, 258);
             this.comboBoxDiasPersonalesRestantesCambio.Name = "comboBoxDiasPersonalesRestantesCambio";
             this.comboBoxDiasPersonalesRestantesCambio.Size = new System.Drawing.Size(196, 31);
             this.comboBoxDiasPersonalesRestantesCambio.TabIndex = 15;
@@ -280,7 +279,7 @@
             "20",
             "25",
             "30"});
-            this.comboBoxVacacionesRestantesCambio.Location = new System.Drawing.Point(574, 297);
+            this.comboBoxVacacionesRestantesCambio.Location = new System.Drawing.Point(793, 360);
             this.comboBoxVacacionesRestantesCambio.Name = "comboBoxVacacionesRestantesCambio";
             this.comboBoxVacacionesRestantesCambio.Size = new System.Drawing.Size(196, 31);
             this.comboBoxVacacionesRestantesCambio.TabIndex = 18;
@@ -290,7 +289,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(133, 350);
+            this.label3.Location = new System.Drawing.Point(206, 431);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(182, 28);
             this.label3.TabIndex = 19;
@@ -301,7 +300,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(585, 350);
+            this.label6.Location = new System.Drawing.Point(804, 431);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(175, 28);
             this.label6.TabIndex = 20;
@@ -318,7 +317,7 @@
             "20",
             "25",
             "30"});
-            this.comboBoxLicenciasAsignadasCambio.Location = new System.Drawing.Point(126, 381);
+            this.comboBoxLicenciasAsignadasCambio.Location = new System.Drawing.Point(199, 462);
             this.comboBoxLicenciasAsignadasCambio.Name = "comboBoxLicenciasAsignadasCambio";
             this.comboBoxLicenciasAsignadasCambio.Size = new System.Drawing.Size(196, 31);
             this.comboBoxLicenciasAsignadasCambio.TabIndex = 21;
@@ -336,7 +335,7 @@
             "20",
             "25",
             "30"});
-            this.comboBoxLicenciasRestantesCambio.Location = new System.Drawing.Point(574, 381);
+            this.comboBoxLicenciasRestantesCambio.Location = new System.Drawing.Point(793, 462);
             this.comboBoxLicenciasRestantesCambio.Name = "comboBoxLicenciasRestantesCambio";
             this.comboBoxLicenciasRestantesCambio.Size = new System.Drawing.Size(196, 31);
             this.comboBoxLicenciasRestantesCambio.TabIndex = 22;
