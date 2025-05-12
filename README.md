@@ -72,8 +72,11 @@ GestionDeEmpleadosProductos.app
 ---
 
 ## 🔗 Conexión a Base de Datos
-
+1) Realizar los querys que se encuentran en la carpeta dentro proyecto "Base de datos"
+2) Buscar el codigo que se encarga de la conexión de la base de datos
 La conexión se encuentra definida en `DatabaseHelper.cs` dentro del proyecto `GestionDeEmpleadosProductosDatabase`.
+3) Solo debe cambiarse el nombre de la base de datos
+ public static string ConnectionString = "Server=[Nombre De Tu Base De Datos];Database=Gestion_De_Empleados;Integrated Security=True;";
 
 **Tablas principales:**
 
@@ -90,6 +93,7 @@ La conexión se encuentra definida en `DatabaseHelper.cs` dentro del proyecto `G
 * Visual Studio 2022 o superior
 * SQL Server Express o superior
 * .NET Framework instalado
+* Nuggets "System.Data.SqlClient" 
 
 ---
 
@@ -100,15 +104,6 @@ La conexión se encuentra definida en `DatabaseHelper.cs` dentro del proyecto `G
 * Múltiples UserControls para modularidad
 * DataGridView dinámico según rol
 * Separación de lógica y acceso a datos en proyectos independientes
-
----
-
-## 🔍 Pendientes / mejoras sugeridas
-
-* Validación de datos al ingresar (formatos, campos vacíos)
-* Confirmación al eliminar registros
-* Agregado de historial o bitácora de acciones (opcional)
-* Exportación de datos (Excel / PDF) \[opcional extra]
 
 ---
 
