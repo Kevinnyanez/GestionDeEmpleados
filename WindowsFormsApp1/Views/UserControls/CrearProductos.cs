@@ -57,30 +57,43 @@ namespace WindowsFormsApp1
 
         private void btnCrearProducto_Click(object sender, EventArgs e)
         {
-            decimal precio = decimal.Parse(txtboxPrecio.Text);
-            int stock = int.Parse(txtboxStock.Text);
-            int categoria = Convert.ToInt32(comboBoxCategorias.SelectedValue);
-            int subcategoria = Convert.ToInt32(comboBoxSubCategorias.SelectedValue);
-
-            (int count, string message) = ProductoController.crear_producto(txtboxNombreProducto.Text, txtboxDescripcion.Text, precio, stock, categoria, subcategoria);
-            if (count > 0)
+            DialogResult resultado = MessageBox.Show(
+                 "¿Seguro que quiere crear el producto?",
+                       "Confirmación",
+                   MessageBoxButtons.YesNo,
+                   MessageBoxIcon.Warning
+                   );
+            if (resultado == DialogResult.Yes)
             {
-                MessageBox.Show(message);
-                txtboxNombreProducto.Clear();
-                txtboxDescripcion.Clear();
-                txtboxPrecio.Clear();
-                txtboxStock.Clear();
-                comboBoxCategorias.SelectedIndex = -1;
-                comboBoxSubCategorias.SelectedIndex = -1;
-                txtboxNombreProducto.Focus();
+                decimal precio = decimal.Parse(txtboxPrecio.Text);
+                int stock = int.Parse(txtboxStock.Text);
+                int categoria = Convert.ToInt32(comboBoxCategorias.SelectedValue);
+                int subcategoria = Convert.ToInt32(comboBoxSubCategorias.SelectedValue);
+
+                (int count, string message) = ProductoController.crear_producto(txtboxNombreProducto.Text, txtboxDescripcion.Text, precio, stock, categoria, subcategoria);
+                if (count > 0)
+                {
+                    MessageBox.Show(message);
+                    txtboxNombreProducto.Clear();
+                    txtboxDescripcion.Clear();
+                    txtboxPrecio.Clear();
+                    txtboxStock.Clear();
+                    comboBoxCategorias.SelectedIndex = -1;
+                    comboBoxSubCategorias.SelectedIndex = -1;
+                    txtboxNombreProducto.Focus();
+
+                }
+                else
+                {
+                    MessageBox.Show(message, "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("El producto no ha sido creado");
+            }
+
 
             }
-            else 
-            { 
-            MessageBox.Show(message, "Error");
-            }
-
-                
-        }
     }
 }

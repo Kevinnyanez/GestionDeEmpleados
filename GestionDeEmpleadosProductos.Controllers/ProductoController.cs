@@ -193,7 +193,29 @@ namespace GestionDeEmpleadosProductos.Controllers
                 }
 
             }
+
+        public static (int, string) EliminarProducto(string NombreProducto)
+        {
+            int rowaffected = 0;
+            using (SqlConnection connection = new SqlConnection(DatabaseHelper.ConnectionString))
+            {
+                try
+                {
+                    string query = "DELETE FROM Productos WHERE NombreProducto = @NombreProducto";
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@NombreProducto", NombreProducto);
+                    rowaffected = command.ExecuteNonQuery();
+                    string message = NombreProducto;
+                    return (rowaffected, message);
+                }
+                catch (Exception ex)
+                {
+                    return (rowaffected, ex.Message);
+                }
+            }
         }
+    }
 
     }
 

@@ -75,6 +75,7 @@
             this.btnBotonEliminarProducto.TabIndex = 2;
             this.btnBotonEliminarProducto.Text = "Eliminar";
             this.btnBotonEliminarProducto.UseVisualStyleBackColor = true;
+            this.btnBotonEliminarProducto.Click += new System.EventHandler(this.btnBotonEliminarProducto_Click);
             // 
             // txtBoxProductoEliminar
             // 

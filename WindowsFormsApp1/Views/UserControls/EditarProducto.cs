@@ -60,18 +60,31 @@ namespace WindowsFormsApp1
 
         private void btnCrearProducto_Click(object sender, EventArgs e)
         {
+            DialogResult resultado = MessageBox.Show(
+                 "¿Seguro que quiere editar el producto?",
+                       "Confirmación",
+                   MessageBoxButtons.YesNo,
+                   MessageBoxIcon.Warning
+                   );
 
-            (int count, string menssage) = ProductoController.EditarProducto(Convert.ToInt32(comboBoxSeleccionDeProducto.SelectedValue), txtboxNombreProducto.Text, txtboxDescripcion.Text, decimal.Parse(txtboxPrecio.Text), int.Parse(txtboxStock.Text), Convert.ToInt32(comboBoxCategorias.SelectedValue), Convert.ToInt32(comboBoxSubCategorias.SelectedValue));
-
-            if (count > 0)
+            if (resultado == DialogResult.Yes)
             {
-                MessageBox.Show(menssage, $"{count} Datos cambiados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                (int count, string menssage) = ProductoController.EditarProducto(Convert.ToInt32(comboBoxSeleccionDeProducto.SelectedValue), txtboxNombreProducto.Text, txtboxDescripcion.Text, decimal.Parse(txtboxPrecio.Text), int.Parse(txtboxStock.Text), Convert.ToInt32(comboBoxCategorias.SelectedValue), Convert.ToInt32(comboBoxSubCategorias.SelectedValue));
+
+                if (count > 0)
+                {
+                    MessageBox.Show(menssage, $"{count} Datos cambiados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(menssage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show(menssage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se ha editado el producto", "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-        }
+            }
     }
 }

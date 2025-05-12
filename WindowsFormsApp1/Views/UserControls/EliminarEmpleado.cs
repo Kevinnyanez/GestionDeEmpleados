@@ -24,10 +24,6 @@ namespace WindowsFormsApp1
         private void btnEliminaTrabajador_Click(object sender, EventArgs e)
         {
 
-            (int rowsAffected, string mensaje) = EmpleadoController.EliminarEmpleado(textBoxEmpleadoAEliminar.Text);
-
-            if (rowsAffected > 0)
-            {
                 DialogResult resultado = MessageBox.Show(
                     "¿Seguro que quiere eliminar?",
                         "Confirmación",
@@ -36,32 +32,37 @@ namespace WindowsFormsApp1
                     );
                 if (resultado == DialogResult.Yes)
                 {
-                    MessageBox.Show("Empleado eliminado exitosamente.");
-                    textBoxEmpleadoAEliminar.Clear(); // Limpiar el campo de texto
-                    textBoxEmpleadoAEliminar.Focus(); // Enfocar el campo de texto
+                    (int rowsAffected, string mensaje) = EmpleadoController.EliminarEmpleado(textBoxEmpleadoAEliminar.Text);
+                     if (rowsAffected > 0)
+                        {
+                        MessageBox.Show("Empleado eliminado exitosamente.");
+                        textBoxEmpleadoAEliminar.Clear(); // Limpiar el campo de texto
+                        textBoxEmpleadoAEliminar.Focus(); // Enfocar el campo de texto
                                                       // Aquí puedes agregar código para actualizar el DataGridView o realizar otras acciones necesarias
-                    FormPrincipal form = (FormPrincipal)this.ParentForm;
-                    form.CargarEmpleados(); // Llamar al método para cargar los empleados nuevamente
+                        FormPrincipal form = (FormPrincipal)this.ParentForm;
+                        form.CargarEmpleados(); // Llamar al método para cargar los empleados nuevamente
+                        }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar el empleado.");
+                        if (mensaje.StartsWith("El campo de texto no puede estar vacío."))
+                        {
+                            MessageBox.Show(mensaje);
+                        }
+                        if (mensaje.StartsWith("El empleado no existe."))
+                        {
+                            MessageBox.Show(mensaje);
+                        }
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Eliminación cancelada.");
                 }
-                }
-            else
-            {
-                MessageBox.Show("Error al eliminar el empleado.");
-                if(mensaje.StartsWith("El campo de texto no puede estar vacío."))
-                {
-                    MessageBox.Show(mensaje);
-                }
-                if(mensaje.StartsWith("El empleado no existe."))
-                {
-                    MessageBox.Show(mensaje);
-                }
-            }
+        }
+            
 
 
         }
     }
-}
+

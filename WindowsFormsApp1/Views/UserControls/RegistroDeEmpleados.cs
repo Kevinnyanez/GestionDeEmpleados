@@ -42,23 +42,31 @@ namespace WindowsFormsApp1
             // Enfocar en el txt de nombre
             txtboxNombre.Focus();
 
-            //Llamamos al método estatico RegistrarEmpleado de la clase EmpleadoController 
-            //y le pasamos los datos del empleado que ingreso el usuario
-            //El método devuelve la cantidad de filas afectadas
-            //Si se registró correctamente, devuelve 1, si no, devuelve 0
-            (int rowaffected, string mensaje) = EmpleadoController.RegistrarEmpleado(txtboxNombre.Text, txtboxCelular.Text, txtboxGmail.Text, txtboxGmail.Text, txtboxNacimiento.Text, comboBoxDiasPersonales.Text, comboBoxVacaciones.Text, comboBoxLicenciaAsignada.Text, txtBoxContraseña.Text);
-            
-            // Verificamos si se registró el empleado
-            if (rowaffected == 0)
-             {
+            DialogResult resultado = MessageBox.Show(
+                 "¿Seguro que quiere registrar el empleado?",
+                       "Confirmación",
+                   MessageBoxButtons.YesNo,
+                   MessageBoxIcon.Warning
+                   );
+            if (resultado == DialogResult.Yes)
+            {
+                //Llamamos al método estatico RegistrarEmpleado de la clase EmpleadoController 
+                //y le pasamos los datos del empleado que ingreso el usuario
+                //El método devuelve la cantidad de filas afectadas
+                //Si se registró correctamente, devuelve 1, si no, devuelve 0
+                (int rowaffected, string mensaje) = EmpleadoController.RegistrarEmpleado(txtboxNombre.Text, txtboxCelular.Text, txtboxGmail.Text, txtboxGmail.Text, txtboxNacimiento.Text, comboBoxDiasPersonales.Text, comboBoxVacaciones.Text, comboBoxLicenciaAsignada.Text, txtBoxContraseña.Text);
+
+                // Verificamos si se registró el empleado
+                if (rowaffected == 0)
+                {
                     MessageBox.Show("No se pudo registrar el empleado.");
                     if (mensaje.StartsWith("Por favor complete todos los campos."))
-                {
-                    MessageBox.Show("Por favor complete todos los campos.");
+                    {
+                        MessageBox.Show("Por favor complete todos los campos.");
+                    }
                 }
-             }
-            else
-             {
+                else
+                {
                     MessageBox.Show(mensaje);
                     txtboxNombre.Clear();
                     txtboxCelular.Clear();
@@ -69,8 +77,13 @@ namespace WindowsFormsApp1
                     comboBoxDiasPersonales.SelectedIndex = -1;
                     comboBoxVacaciones.SelectedIndex = -1;
                     comboBoxLicenciaAsignada.SelectedIndex = -1;
-             }
+                }
 
+            }
+            else
+            {
+                MessageBox.Show("El empleado no ha sido registrado");
+            }
         }
 
         
