@@ -24,9 +24,9 @@ Desarrollado en C# con Windows Forms y SQL Server como base de datos, sigue una 
 * **Base de datos:** SQL Server
 * **Diseño modular:**
 
-  * `GestionDeEmpleadosProductos.Models`
-  * `GestionDeEmpleadosProductos.Controllers`
-  * `GestionDeEmpleadosProductosDatabase`
+  * `GestionDeEmpleadosProductos.Models` (Modelos de las tablas de SQLserver)
+  * `GestionDeEmpleadosProductos.Controllers` (Lógica)
+  * `GestionDeEmpleadosProductosDatabase` (Conexión de base de datos)
   * `WindowsFormsApp1` (Interfaz)
 
 ---
@@ -60,23 +60,25 @@ GestionDeEmpleadosProductos.app
 ### Administrador
 
 * Accede a la gestión de empleados.
+Mediante Usuario = Matias , Contraseña = 2025
 * Puede registrar, modificar o eliminar empleados.
 * Ve el listado de empleados.
 
 ### Empleado (Trabajador)
 
 * Accede a la gestión de productos.
+Mediante el gmail y contraseña que el administrador registro al empleado
 * Puede registrar, modificar o eliminar productos.
 * Ve el listado de productos.
 
 ---
 
 ## 🔗 Conexión a Base de Datos
-1) Realizar los querys que se encuentran en la carpeta dentro proyecto "Base de datos"
-2) Buscar el codigo que se encarga de la conexión de la base de datos
-La conexión se encuentra definida en `DatabaseHelper.cs` dentro del proyecto `GestionDeEmpleadosProductosDatabase`.
+1) Ejecutar los querys que se encuentran en la carpeta del proyecto llamada "Base de datos"
+2) Buscar el codigo que se encarga de la conexión de la base de datos.
+   La conexión se encuentra definida en `DatabaseHelper.cs` dentro del proyecto `GestionDeEmpleadosProductosDatabase`.
 3) Solo debe cambiarse el nombre de la base de datos
- public static string ConnectionString = "Server=[Nombre De Tu Base De Datos];Database=Gestion_De_Empleados;Integrated Security=True;";
+   public static string ConnectionString = "Server=[Nombre De Tu Server usado en SQLserver];Database=Gestion_De_Empleados;Integrated Security=True;";
 
 **Tablas principales:**
 
