@@ -6,14 +6,14 @@ GO
 use Gestion_De_Empleados;
 GO
 
--- -------------------- TABLAS DE ADMIN Y EMPLEADOS ---------------------------------
+-- -------------------- CREAMOS TABLAS DE ADMIN Y EMPLEADOS ---------------------------------
 Create table Empleados (
 
 IdEmpleado int identity(1,1) primary key,
 NombreCompleto varchar(50) not null,
 NumeroCelular varchar(18),
-Gmail varchar (25),
-DNI varchar (20),
+Gmail nvarchar (250) NOT NULL,
+DNI nvarchar (20) NOT NULL,
 FechaCumple date,
 CumpleHoy bit,
 DiasPersonalesAsignados int default 3 ,
@@ -33,12 +33,12 @@ NombreUsuario varchar (50) not null,
 Contraseña varchar (50) not null
 );
 
--- agregamos los datos del administrador
+-- -------------------- HACEMOS INSERT A LA TABLA ADMIN CON LOS DATOS PARA EL LOGIN ---------------------------------
 insert into Admins (NombreUsuario, Contraseña) 
 values ('Matias' , '2025');
 
 
--- Inserts de empleados --
+-- -------------------- HACEMOS INSERTS A LA TABLA EMPLEADOS ---------------------------------
 INSERT INTO Empleados (
     NombreCompleto, 
     NumeroCelular, 
@@ -90,13 +90,15 @@ VALUES
 ('gabriel pons', '+5491423456789', 'gabriel.pon@mail.com', '2123456', '1984-10-13', 0, '2123456'),
 ('clara segura', '+5491434567890', 'clara.segura@mail.com', '1123456', '1993-12-31', 0, '1123456');
 -- --------------------------------------TABLAS DE LOS PRODUCTOS, CATEGORIAS Y SUBCATEGORIAS-------------------------------------------------
--- CREAR TABLA DE tipo
+
+
+-- -------------------- CREAMOS LA TABLA CATEGORIAS ---------------------------------
 CREATE TABLE Categorias(
 	CategoriaID INT IDENTITY (1,1) PRIMARY KEY,
 	NombreCat VARCHAR (50) NOT NULL 
 	)
 	
--- Inserto las categorias
+-- -------------------- HACEMOS INSERTS A LA TABLA CATEGORIAS ---------------------------------
 	INSERT INTO Categorias(NombreCat)
 	VALUES
 		('Calzado'),
@@ -105,14 +107,15 @@ CREATE TABLE Categorias(
 		('Perfumes')
 
 
--- CREAR TABLA DE SUBCATEGORIA
+-- -------------------- CREAMOS LA TABLA SUBCATEGORIAS ---------------------------------
 CREATE TABLE SubCategorias(
 	SubCatID INT IDENTITY (1,1) PRIMARY KEY,
 	CategoriaID INT NOT NULL,
 	SubCatNombre VARCHAR (50) NOT NULL,
-	FOREIGN KEY (CategoriaID) REFERENCES CategoriaProd (CategoriaID)
+	FOREIGN KEY (CategoriaID) REFERENCES Categorias (CategoriaID)
 	)
-	-- Inserto las subcat
+
+-- -------------------- HACEMOS INSERTS A LA TABLA SUBCATEGORIAS ---------------------------------
 	INSERT INTO SubCategorias(CategoriaID, SubCatNombre)
 	VALUES
 		(1, 'Running'), (1, 'Basquet'), (1, 'Futbol'), (1, 'Tenis'),
@@ -121,7 +124,7 @@ CREATE TABLE SubCategorias(
 		(4, 'Masculino'), (4, 'Femenino')
 
 
---CREAR TABLA DE PRODUCTOS
+-- -------------------- CREAMOS LA TABLA PRODUCTOS ---------------------------------
 CREATE TABLE Productos(
 	ProductoID INT IDENTITY (1,1) PRIMARY KEY,
 	NombreProducto NVARCHAR (50) NOT NULL,
@@ -130,10 +133,11 @@ CREATE TABLE Productos(
 	Stock INT CHECK (Stock >= 0) NOT NULL,-- NO DEBERIA SER MENOR A "0" (verificar)
 	CategoriaID INT NOT NULL,
 	SubCatID INT NOT NULL,
-	FOREIGN KEY (CategoriaID) REFERENCES CategoriaProd (CategoriaID),
-	FOREIGN KEY (SubCatID) REFERENCES SubCategoria (SubCatID)
+	FOREIGN KEY (CategoriaID) REFERENCES Categorias (CategoriaID),
+	FOREIGN KEY (SubCatID) REFERENCES SubCategorias (SubCatID)
 	)
-	--agregamos productos
+
+-- -------------------- HACEMOS INSERTS A LA TABLA PRODUCTOS ---------------------------------
 	INSERT INTO Productos (NombreProducto, Descripcion, Precio, Stock, CategoriaID, SubCatID)
 	VALUES 
 		('Zapatillas ADIDAS xx5', 'Zapatilla deportiva de running para calle', 78900.00, 300, 1, 1),
@@ -222,6 +226,7 @@ JOIN
     Categorias ON Productos.CategoriaID = Categorias.CategoriaID
 JOIN 
     SubCategorias ON Productos.SubCatID = SubCategorias.SubCatID;
+
 
 
 
