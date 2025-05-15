@@ -327,8 +327,9 @@ namespace WindowsFormsApp1
            
             panelContenido.Visible = true;
             nuevoControl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-         
 
+            //Limpiar panel de contenido
+            panelContenido.Controls.Clear();
             // Agrega el UserControl al Panel
             panelContenido.Controls.Add(nuevoControl);
         }
@@ -341,11 +342,7 @@ namespace WindowsFormsApp1
 
        private void EliminarUsersControls()
         {
-            // Elimina todos los controles del panel de contenido
-            foreach (Control control in panelContenido.Controls)
-            {
-                panelContenido.Controls.Remove(control);
-            }
+            panelContenido.Controls.Clear(); // Limpia el panel de contenido    
         }
 
         private void btnVolverMenuPrincipal_Click(object sender, EventArgs e)
