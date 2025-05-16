@@ -7,23 +7,48 @@ use Gestion_De_Empleados;
 GO
 
 -- -------------------- CREAMOS TABLAS DE ADMIN Y EMPLEADOS ---------------------------------
-Create table Empleados (
-
-IdEmpleado int identity(1,1) primary key,
-NombreCompleto varchar(50) not null,
-NumeroCelular varchar(18),
-Gmail nvarchar (250) NOT NULL,
-DNI nvarchar (20) NOT NULL,
-FechaCumple date,
-CumpleHoy bit,
-DiasPersonalesAsignados int default 3 ,
-DiasPersonalesRestantes int default 3,
-VacacionesAsignadas int default 15,
-VacacionesUsadas int default 0,
-LicenciasAsignadas int default 5 ,
-LicenciasUsadas int default 0,
-Contraseña nvarchar(100) not null unique
+CREATE TABLE Empleados (
+    IdEmpleado INT IDENTITY(1,1) PRIMARY KEY,
+    NombreCompleto VARCHAR(50) NOT NULL,
+    NumeroCelular VARCHAR(18),
+    Gmail NVARCHAR(250) NOT NULL,
+    DNI NVARCHAR(20) NOT NULL UNIQUE,
+    FechaCumple DATE,
+    Contraseña NVARCHAR(100) NOT NULL UNIQUE
 );
+
+CREATE TABLE Vacaciones (
+    IdVacacion INT IDENTITY(1,1) PRIMARY KEY,
+    IdEmpleado INT NOT NULL,
+    FechaInicio DATE NOT NULL,
+    FechaFin DATE NOT NULL,
+    DiasSolicitados AS DATEDIFF(DAY, FechaInicio, FechaFin) + 1 PERSISTED,
+    Aprobado BIT DEFAULT 0,
+    FOREIGN KEY (IdEmpleado) REFERENCES Empleados(IdEmpleado)
+);
+
+CREATE TABLE Licencias (
+    IdLicencia INT IDENTITY(1,1) PRIMARY KEY,
+    IdEmpleado INT NOT NULL,
+    TipoLicencia VARCHAR(50) NOT NULL, -- Ejemplo: 'Médica', 'Estudios', 'Maternidad'
+    FechaInicio DATE NOT NULL,
+    FechaFin DATE NOT NULL,
+    DiasSolicitados AS DATEDIFF(DAY, FechaInicio, FechaFin) + 1 PERSISTED,
+    Aprobado BIT DEFAULT 0,
+    FOREIGN KEY (IdEmpleado) REFERENCES Empleados(IdEmpleado)
+);
+
+CREATE TABLE DiasPersonales (
+    IdDiaPersonal INT IDENTITY(1,1) PRIMARY KEY,
+    IdEmpleado INT NOT NULL,
+    Fecha DATE NOT NULL,
+    Motivo NVARCHAR(250),
+    Aprobado BIT DEFAULT 0,
+    FOREIGN KEY (IdEmpleado) REFERENCES Empleados(IdEmpleado)
+);
+
+
+
 
 
 
